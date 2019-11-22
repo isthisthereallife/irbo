@@ -2,10 +2,9 @@ class Cart {
 
   /*
     
-    I am a Cart.
+    I am a Cart!
 
-    I want to be a shopping-cart
-    but so far I am really stupid... 😢
+    I want to be a shopping-cart!
   */
 
   add(product) {
@@ -17,7 +16,7 @@ class Cart {
     // intelligent methods... This i purely to
     // show what product that is intended to be added...
     alert(`
-      I am a cart. I'm still really stupid 😢!
+      I am a cart. 
       I have no render-method and no methods that calc sums.
       I have no add and remove methods...
       But I know that you tried to add this product to me:
