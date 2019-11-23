@@ -51,10 +51,8 @@ class Product {
       </section>
       <section class="row">
         <div class="col-12 col-lg-9">
-          <p>${this.description} 
-           <h6>This snake weights ${this.weight}kg</h6>
-          </p>
-          <h4>${this.price} kr/kg</p>
+        <p>${this.description}</p>
+        <h6 class="">This snake costs ${this.price}kr/kg<small class="muted-text">, and weights ${this.weight}kg</small></small></h6>
           <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
         </div>
         <div class="col-12 col-lg-3">
