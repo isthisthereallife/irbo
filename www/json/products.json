@@ -3,120 +3,135 @@
     "id": 1,
     "slug": "produkter-taipan",
     "name": "Taipan",
-    "price": 239,
+    "price": 439,
+    "weight": "4.8",
     "image": "/images/snake1.jpg",
-    "description": "En äventyrlig orm med ormig struktur!"
+    "description": "En taipan med en brunaktig färg, camouflage färgerna mellan löv och grenar.<br>En äventyrlig orm med fin ljus/mörk brun färg-struktur!"
   },
   {
     "id": 2,
     "slug": "produkter-rod-Skalleorm",
     "name": "Röd Skalleorm",
-    "price": 149,
+    "price": 659,
+    "weight": "5.7",
     "image": "/images/snake2.jpg",
-    "description": ""
+    "description": "En röd Skalleorm med bred randiga mindre vita och svart delar.<br> En unik orm av sin slag, vilda Skalleorm brukar göra mycket ljud av sig med sin svans,<br>men inte tama ormar, de brukar vara tystare av sig." 
   },
   {
     "id": 3,
     "slug": "produkter-tigerorm",
     "name": "Tigerorm",
-    "price": 34,
+    "price": 412,
+    "weight": "4.2",
     "image": "/images/snake3.jpg",
-    "description": ""
+    "description": "Tiger ormen får sitt namn av tigern då den har samma utseende. <br> Dessa ormar är av de mer populära tamormarna internationellt."
   },
   {
     "id": 4,
     "slug": "produkter-filipinsk-kobra",
     "name": "Filipinsk Kobra",
-    "price": 99,
+    "price": 2089,
+    "weight": "9.9",
     "image": "/images/snake4.jpg",
-    "description": ""
+    "description": "En väldigt sällsynt ormslag, dessutom väldigt unik färg på ormen.<br> Denna är väldigt folkvänlig men den är inte jätte glad över att vara tämjde, så förvänta dig att den försöker smita."
   },
   {
     "id": 5,
     "slug": "produkter-huggorm",
     "name": "Huggorm",
-    "price": 99,
+    "price": 249,
+    "weight": "6.9",
     "image": "/images/snake5.jpg",
-    "description": "En äventyrlig orm med ormig struktur!"
+    "description": "En äventyrlig orm med en fascinerande typisk ormig färgstruktur!<br> Denna huggormen är svart med väldigt vaga bruna randar."
   },
   {
     "id": 6,
     "slug": "produkter-dodsorm",
     "name": "Dödsorm",
-    "price": 99,
+    "price": 1099,
+    "weight": "6.6",
     "image": "/images/snake6.jpg",
-    "description": ""
+    "description": "Denna ormen kräver extra tillsyn då den äter mycket mer än en vanliga orm, dessutom äter de ni större volym per måltid. Denna ormen har vunnit sitt namn och är därför ormen du söker!"
   },
   {
     "id": 7,
     "slug": "produkter-svensk-skalleorm",
     "name": "Svensk Skalleorm",
-    "price": 99,
+    "price": 209,
+    "weight": "7.2",
     "image": "/images/snake7.jpg",
-    "description": ""
+    "description": "En grå Skalleorm med brun-prickiga prickar.<br> En unik orm av sin slag, vilda Skalleorm brukar göra mycket ljud av sig med sin svans,<br>men inte tama ormar, de brukar vara tystare av sig."
   },
   {
     "id": 8,
     "slug": "produkter-amazon-viper",
     "name": "Amazon Viper",
-    "price": 149,
+    "price": 548,
+    "weight": "12.2",
     "image": "/images/snake8.jpg",
-    "description": ""
+    "description": "Detta är en grön viper från amazon, en väldigt sällsynt ormart.<br> Denna ormarten är giftig och behöver därför lite mer uppmärksamhet i hushållet."
   },
   {
     "id": 9,
     "slug": "produkter-svensk-huggorm",
     "name": "Svensk Huggorm",
-    "price": 34,
+    "price": 234,
+    "weight": "4.3",
     "image": "/images/snake9.jpg",
-    "description": ""
+    "description": "Denna ormen kommer direkt från mellersta Sverige, de brukar inte bli så jätte stora i sin storlek och är inte alls farliga på något viss."
   },
   {
     "id": 10,
     "slug": "produkter-amazon-huggorm",
     "name": "Amazon Huggorm",
-    "price": 99,
+    "price": 2699,
+    "weight": "8.5",
     "image": "/images/snake10.jpg",
-    "description": ""
+    "description": "Denna huggorm kommer direkt från amazon, denna ormen är väldigt sällsynt, med sin turkos-blå färg med en udnersida av ljusgrönt gör att det syns från flera meter. Denna ormen är en av de väldigt unika ormarna, och finns endast i amazon."
   },
   {
     "id": 11,
     "slug": "produkter-kinesisk-skalleorm",
     "name": "Kinesisk Skalleorm",
-    "price": 99,
+    "price": 385,
+    "weight": "3.6",
     "image": "/images/snake11.jpg",
-    "description": ""
+    "description": "En grå-gul randing Skalleorm från Kina <br> En unik orm av sin slag, vilda Skalleorm brukar göra mycket ljud av sig med sin svans,<br>men inte tama ormar, de brukar vara tystare av sig."
   },
   {
     "id": 12,
-    "slug": "produkter-svar-viper",
+    "slug": "produkter-svart-viper",
     "name": "Svart Viper",
-    "price": 99,
+    "price": 579,
+    "weight": "4.4",
     "image": "/images/snake12.jpg",
-    "description": ""
+    "description": "Detta är en svart viper från amazon, en väldigt sällsynt ormart.<br> Denna ormarten är giftig och behöver därför lite mer uppmärksamhet i hushållet."
   },
   {
     "id": 13,
     "slug": "produkter-Yellow-Anaconda",
     "name": "Yellow Anaconda",
-    "price": 99,
+    "price": 1299,
+    "weight": "20.7",
     "image": "/images/snake13.jpg",
-    "description": ""
+    "description": "En vädligt fin gul anaconda som är jätte kraftiga, vi rekommenderar därför att man har lite större och kraftigare terrarium."
   },
   {
     "id": 14,
-    "slug": "produkter-ryggborste",
-    "name": "Ryggborste",
+    "slug": "produkter-brasiliansk-viper",
+    "name": "Brasiliansk Viper",
     "price": 149,
+    "weight": "5.3",
     "image": "/images/snake14.jpg",
-    "description": ""
+    "description": "Detta är en mörk-grön viper med små svarta fläckar från Brasilien, en väldigt sällsynt ormart.<br> Denna ormarten är giftig och behöver därför lite mer uppmärksamhet i hushållet."
   },
   {
     "id": 15,
-    "slug": "produkter-tval",
-    "name": "Tvål",
-    "price": 34,
+    "slug": "produkter-kubansk-viper",
+    "name": "Kubansk Viper",
+    "price": 348,
+    "weight": "12.1",
     "image": "/images/snake15.jpg",
-    "description": ""
+    "description": "Detta är en mörk-grön viper med små svarta fläckar, som är från Kuba, en väldigt sällsynt ormart.<br> Denna ormarten är giftig och behöver därför lite mer uppmärksamhet i hushållet."
   }
 ]

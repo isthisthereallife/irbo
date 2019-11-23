@@ -51,7 +51,9 @@ class Product {
       </section>
       <section class="row">
         <div class="col-12 col-lg-9">
-          <p>${this.description}</p>
+          <p>${this.description} 
+           <h6>This snake weights ${this.weight}kg</h6>
+          </p>
           <h4>${this.price} kr/kg</p>
           <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
         </div>
@@ -68,9 +70,11 @@ class Product {
     return `
       <div class="col-12 col-md-6 col-lg-4 mt-5">
         <a href="#${this.slug}">
-          <h4>${this.name}</h4>
-          <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
+        <div class="row">
+           <h4 class="-100" class="col-6">${this.name}</h4>
+          </div>
           <img class="img-fluid border border-primary rounded w-70 h-70" src="${this.image}">
+          <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
         </a>
       </div>
     `
