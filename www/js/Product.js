@@ -50,12 +50,18 @@ class Product {
         </div>
       </section>
       <section class="row">
-        <div class="col-12 col-lg-9">
+        <div class="col-12 col-lg-8">
           <p>${this.description}</p>
-          <h4>${this.price} kr</p>
-          <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
-        </div>
-        <div class="col-12 col-lg-3">
+          <h5 class="pb-2">About this Snake</h5>
+          <div class="row pb-4">
+              <h6 class="col-3">Costs ${this.price}kr/kg</h6>
+              <h6 class="col-3">Weights ${this.weight}kg</h6>
+              <h6 class="col-3">Shipping price at ${this.weight * 40}kr</h6>
+            </div>
+          <button id="buy-button-${this.id}" class="btn btn-primary my-2 ">Köp</button>
+          </div>
+          <p></p>
+        <div class="col-12 col-lg-4">
           <img class="img-fluid border border-primary rounded" src="${this.image}">
         </div>
       </section>
@@ -68,9 +74,11 @@ class Product {
     return `
       <div class="col-12 col-md-6 col-lg-4 mt-5">
         <a href="#${this.slug}">
-          <h4>${this.name} ${this.price} kr</h4>
+        <div class="row">
+           <h4 class="-100" class="col-6">${this.name}</h4>
+          </div>
+          <img class="img-fluid border border-primary rounded w-70 h-70" src="${this.image}">
           <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
-          <img class="img-fluid border border-primary rounded" src="${this.image}">
         </a>
       </div>
     `
