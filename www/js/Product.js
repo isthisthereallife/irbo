@@ -46,17 +46,17 @@ class Product {
     $('main').html(/*html*/`
      <section class="row">
         <div class="col">
-          <h1>${this.name}</h1>
+          <h2 class="h1">${this.name}</h2>
         </div>
       </section>
       <section class="row">
         <div class="col-12 col-lg-8">
           <p>${this.description}</p>
-          <h5 class="pb-2">About this Snake</h5>
+          <h5 class="pb-2">Orminformation</h5>
           <div class="row pb-4">
-              <h6 class="col-3">Costs ${this.price}kr/kg</h6>
-              <h6 class="col-3">Weights ${this.weight}kg</h6>
-              <h6 class="col-3">Shipping price at ${this.weight * 40}kr</h6>
+              <h6 class="col-3">Pris ${this.price} kr</h6>
+              <h6 class="col-3">Vikt ${this.weight} kg</h6>
+              <h6 class="col-3">Fraktpris ${this.weight * 40} kr</h6>
             </div>
           <button id="buy-button-${this.id}" class="btn btn-primary my-2 ">Köp</button>
           </div>
