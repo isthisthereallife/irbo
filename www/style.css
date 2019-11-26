@@ -10444,6 +10444,7 @@ main {
   background-repeat: no-repeat;
   height: 100vh;
   text-align: right;
+  margin-bottom: -25px;
 }
 
 [data-page="start-page"] .start-text {
