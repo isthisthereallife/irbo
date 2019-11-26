@@ -3,7 +3,10 @@ class Cart {
 
   constructor() {
     //skapa en array i localstorage
-    store.cartProducts = store.cartProducts || []
+    store.cartProducts = store.cartProducts || [];
+    store.cartCount = store.cartCount || 0;
+    
+    // 2 DO: hitta ett sätt att faktiskt spara i localstorage
     store.save();
   }
 
@@ -11,8 +14,9 @@ class Cart {
 
     //lägg till produkten som valts till arrayen i localstorage
     store.cartProducts.push(product)
-    
+    store.cartCount++;
     store.save();
+    $('.oi-cart').html(" "+store.cartCount)
 
 
 
