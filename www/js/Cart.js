@@ -81,13 +81,15 @@ class Cart {
 
     console.log(store.cartProducts)
     $('main').html(`
-  <section class="row">
+    <section class="container mt-4">
+    <div class="row">
     <div class="col">
     <h1>Cart</h1>
     <p>Summan av dina valda produkter: ${Math.round(sum)} kr</p>
     <p>Vikten av dina valda produkter: ${Math.round(totalWeight)} kg</p>
     <p>Fraktkostnad för dina valda produkter: ${Math.round(shippingCost)} kr</p>
     <h4>Att betala: ${Math.round(totalSum)} kr</h4>
+    </div>
     </div>
     </section>
     `);
