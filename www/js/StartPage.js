@@ -9,7 +9,6 @@ class StartPage {
     $('main').html(/*html*/`
       <section class="row">
         <div class="col">
-        <img src="" alt="">
           <h1>Välkommen!</h1>
           <p>Välkommen till vår fina webbsida!</p>
         </div>
