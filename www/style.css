@@ -9486,3 +9486,17 @@ body {
 main {
   flex: 1;
 }
+
+[data-page="start-page"] .start-cover-bg {
+  background-image: url(/images/backgroundORM.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  text-align: right;
+}
+
+[data-page="start-page"] .start-text {
+  padding-right: 10%;
+  padding-top: 20%;
+}

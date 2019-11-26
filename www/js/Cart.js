@@ -27,12 +27,14 @@ class Cart {
   }
   
   render(){
+    $('main').attr('data-page','cart-page');
     $('main').html(`
-  <section class="row">
+    <section class="container mt-4">
+    <div class="row">
     <div class="col">
     <h1>Cart</h1>
     <p> här ska vi lägga in en lista av valda produkter, t ex 
-
+    </div>
     </div>
     </section>
     `);
