@@ -10523,3 +10523,8 @@ main {
 .oi-zoom-out:before {
   content: '\e0de';
 }
+
+.snakebby-logo {
+  width: 25vw;
+  height: 12vh;
+}
