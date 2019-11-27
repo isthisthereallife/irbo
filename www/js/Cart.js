@@ -12,7 +12,7 @@ class Cart {
     //lägg till produkten som valts till arrayen i localstorage
     store.cartProducts.push(product)
     store.save();
-    $('.oi-cart').html(" "+store.cartProducts.length)
+    $('.oi-cart').html(" " + store.cartProducts.length)
 
 
 
@@ -33,48 +33,55 @@ class Cart {
     //   // remove all extra spaces after a new-line
     // `.replace(/\n\s*/g, '\n'))
   }
-  calculateSum(){
+  calculateSum() {
     let sum = 0
-    for (let i=0;i<store.cartProducts.length;i++ ){
-      Object.assign(this,store.cartProducts[i])
-      sum+=this.price;
+    for (let i = 0; i < store.cartProducts.length; i++) {
+      sum += store.cartProducts[i].price;
     }
     return sum;
   }
-  calculateTotalWeight(){
+  calculateTotalWeight() {
     let w = 0;
-    for (let i=0;i<store.cartProducts.length;i++ ){
-      Object.assign(this,store.cartProducts[i])
-      w+=this.weight;
+    for (let i = 0; i < store.cartProducts.length; i++) {
+      w += store.cartProducts[i].weight;
     }
     return w;
 
   }
-  calculateShippingCost(){
+  calculateShippingCost() {
     let cost = 0
-    for (let i=0;i<store.cartProducts.length;i++ ){
-      Object.assign(this,store.cartProducts[i])
-      cost+=this.weight;
+    for (let i = 0; i < store.cartProducts.length; i++) {
+      
+      cost += store.cartProducts[i].weight
     }
-    cost=cost*40
+    cost = cost * 40
     return cost;
   }
+
   render() {
-      //console.log(store.cartProducts[i])
-      let sum = this.calculateSum()
-      let shippingCost = this.calculateShippingCost()
-      let totalWeight = this.calculateTotalWeight()
+    let sum = this.calculateSum()
+    let shippingCost = this.calculateShippingCost()
+    let totalWeight = this.calculateTotalWeight()
+    let totalSum = sum+shippingCost
+    for (let i = 0; i < store.cartProducts.length; i++) {
+      /**skriv ut */
+    }
+
+
+
     $('main').html(`
   <section class="row">
     <div class="col">
     <h1>Cart</h1>
-    <p>Summan av dina valda produkter: ${sum}</p>
-    <p>Vikten av dina valda produkter: ${totalWeight}</p>
-    <p>Fraktkostnad för dina valda produkter: ${shippingCost}</p>
+    <p>Summan av dina valda produkter: ${sum} kr</p>
+    <p>Vikten av dina valda produkter: ${totalWeight} kg</p>
+    <p>Fraktkostnad för dina valda produkter: ${shippingCost} kr</p>
+    <h4>Att betala: ${Math.round(totalSum)} kr</h4>
     </div>
     </section>
     `);
-  }0
+
+  }
 
 }
 
