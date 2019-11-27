@@ -74,12 +74,14 @@ class Product {
     return `
       <div class="col-12 col-md-6 col-lg-4 mt-5">
         <a href="#${this.slug}">
-        <div class="row">
-           <h4 class="-100" class="col-6">${this.name}</h4>
-          </div>
-          <img class="img-fluid border border-primary rounded w-70 h-70" src="${this.image}">
-          <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
-        </a>
+        <!--<span><i class="product-animation"></i></span>-->
+        <div class="clear"></div>
+        <div class="row items">
+            <h4 class="-100" class="col-6">${this.name}</h4>
+            </div>
+            <img class="img-fluid border border-primary rounded w-70 h-70" src="${this.image}">
+            <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
+          </a>
       </div>
     `
   }
