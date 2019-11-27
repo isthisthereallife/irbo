@@ -4,46 +4,58 @@ class Cart {
   constructor() {
     //skapa en array i localstorage om det inte redan finns en
     store.cartProducts = store.cartProducts || [];
+    store.cartQuantity = store.cartQuantity || 0;
     store.save();
   }
 
   add(product) {
+    //bool för att se om valet är unikt/nytt
+    let unique = true;
 
-    //lägg till produkten som valts till arrayen i localstorage
-    store.cartProducts.push(product)
+    console.log("added one " + product.name)
+
+    //om listan inte är tom
+    if (store.cartProducts.length > 0) {
+      //loopa igenom listan
+      for (let i = 0; i < store.cartProducts.length; i++) {
+        //om ett element med samma id redan finns
+        if (product.id == store.cartProducts[i].id) {
+
+          // öka dess quantity med 1
+          store.cartProducts[i].quantity += 1;
+          unique = false;
+          //bryt ut ur for-loopen (eftersom det ändå bara finns en av varje sort i arrayen)
+          break;
+        }
+      }
+    }
+    //om det är ett unikt/nytt val
+    if (unique) {
+      store.cartProducts.push(product)
+    }
+    //öka antalet varor i kundvagnen
+    store.cartQuantity += 1;
+
+    //spara
     store.save();
-    $('.oi-cart').html(" " + store.cartProducts.length)
-
-
-
-    // We are doing a json stringify of the product
-    // minus the cart property of a product
-    // (which is just a reference to the cart)
-    //
-    // We don't need a JSON.stringify when we have
-    // intelligent methods... This i purely to
-    // show what product that is intended to be added...
-
-    // alert(`
-    //   I am a cart. 
-    //   I have no render-method and no methods that calc sums.
-    //   I have no add and remove methods...
-    //   But I know that you tried to add this product to me:
-    //   ${JSON.stringify({ ...product, cart: undefined }, '', '  ')}
-    //   // remove all extra spaces after a new-line
-    // `.replace(/\n\s*/g, '\n'))
+    //skriv om siffran vid bilden, utgå från antalet varor i kundvagnen
+    $('.oi-cart').html(" " + store.cartQuantity)
   }
+
+  /**räkna ut summan av */
   calculateSum() {
     let sum = 0
     for (let i = 0; i < store.cartProducts.length; i++) {
-      sum += store.cartProducts[i].price;
+      sum += store.cartProducts[i].price * store.cartProducts[i].quantity;
     }
     return sum;
   }
+
+  /**räkna ut totalvikten */
   calculateTotalWeight() {
     let w = 0;
     for (let i = 0; i < store.cartProducts.length; i++) {
-      w += store.cartProducts[i].weight;
+      w += store.cartProducts[i].weight * store.cartProducts[i].quantity;
     }
     return w;
 
@@ -51,8 +63,8 @@ class Cart {
   calculateShippingCost() {
     let cost = 0
     for (let i = 0; i < store.cartProducts.length; i++) {
-      
-      cost += store.cartProducts[i].weight
+
+      cost += store.cartProducts[i].weight * store.cartProducts[i].quantity;
     }
     cost = cost * 40
     return cost;
@@ -62,20 +74,19 @@ class Cart {
     let sum = this.calculateSum()
     let shippingCost = this.calculateShippingCost()
     let totalWeight = this.calculateTotalWeight()
-    let totalSum = sum+shippingCost
-    for (let i = 0; i < store.cartProducts.length; i++) {
-      /**skriv ut */
-    }
+    let totalSum = sum + shippingCost
 
 
 
+
+    console.log(store.cartProducts)
     $('main').html(`
   <section class="row">
     <div class="col">
     <h1>Cart</h1>
-    <p>Summan av dina valda produkter: ${sum} kr</p>
-    <p>Vikten av dina valda produkter: ${totalWeight} kg</p>
-    <p>Fraktkostnad för dina valda produkter: ${shippingCost} kr</p>
+    <p>Summan av dina valda produkter: ${Math.round(sum)} kr</p>
+    <p>Vikten av dina valda produkter: ${Math.round(totalWeight)} kg</p>
+    <p>Fraktkostnad för dina valda produkter: ${Math.round(shippingCost)} kr</p>
     <h4>Att betala: ${Math.round(totalSum)} kr</h4>
     </div>
     </section>
@@ -112,7 +123,7 @@ $(this.id).on('click', function () {
               'width': 75,
               'height': 75
       }, 1000, 'easeInOutExpo');
-      
+
       setTimeout(function () {
           cart.effect("shake", {
               times: 2
