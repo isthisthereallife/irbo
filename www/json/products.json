@@ -1,137 +1,152 @@
 [
   {
     "id": 1,
+    "qty": 1,
     "slug": "produkter-taipan",
     "name": "Taipan",
     "price": 439,
-    "weight": "4.8",
+    "weight": 4.8,
     "image": "/images/snake1.jpg",
     "description": "En taipan med en brunaktig färg: utmärkta camouflagefärger mellan löv och grenar.<br>En äventyrlig orm med fin färgstruktur."
   },
   {
     "id": 2,
+    "qty": 1,
     "slug": "produkter-rod-skallerorm",
     "name": "Röd Skallerorm",
     "price": 659,
-    "weight": "5.7",
+    "weight": 5.7,
     "image": "/images/snake2.jpg",
     "description": "En röd skallerorm med bredrandiga mindre vita och svart delar.<br> En unik orm; vilda skallerormar brukar göra mycket ljud av sig med sin svans,<br>men inte tama ormar, de brukar vara tystare av sig." 
   },
   {
     "id": 3,
-    "slug": "produkter-tigerorm",
-    "name": "Tigerorm",
-    "price": 412,
-    "weight": "4.2",
-    "image": "/images/snake3.jpg",
-    "description": "Tigerormen får sitt namn av tigern då den har samma utseende. <br> Dessa ormar är en av de mest populära tamormarna internationellt."
+    "qty": 1,
+    "slug": "produkter-musbebis",
+    "name": "Musbebis",
+    "price": 10,
+    "weight": 0.2,
+    "image": "/images/mousebaby.jpg",
+    "description": "En liten, gullig mus. Den gillar ormar."
   },
   {
     "id": 4,
+    "qty": 1,
     "slug": "produkter-filipinsk-kobra",
     "name": "Filipinsk Kobra",
     "price": 2089,
-    "weight": "9.9",
+    "weight": 9.9,
     "image": "/images/snake4.jpg",
     "description": "Ett väldigt sällsynt ormslag, med en helt unik färg.<br> Denna är väldigt människovänlig, men den är inte jätte glad över att vara instängd; förvänta dig att den försöker smita!"
   },
   {
     "id": 5,
+    "qty": 1,
     "slug": "produkter-huggorm",
     "name": "Huggorm",
     "price": 249,
-    "weight": "6.9",
+    "weight": 6.9,
     "image": "/images/snake5.jpg",
     "description": "En äventyrlig orm med en fascinerande typisk ormig färgstruktur!<br> Denna huggormen är svart med väldigt vaga bruna ränder."
   },
   {
     "id": 6,
+    "qty": 1,
     "slug": "produkter-dodsorm",
     "name": "Dödsorm",
     "price": 1099,
-    "weight": "6.6",
+    "weight": 6.6,
     "image": "/images/snake6.jpg",
     "description": "Denna ormen kräver extra tillsyn då den äter mycket mer än en vanliga orm; dessutom äter de större volym per måltid. Denna ormen har förtjänat sitt namn och är därför ormen du söker!"
   },
   {
     "id": 7,
+    "qty": 1,
     "slug": "produkter-svensk-skallerorm",
     "name": "Svensk skallerorm",
     "price": 209,
-    "weight": "7.2",
+    "weight": 7.2,
     "image": "/images/snake7.jpg",
     "description": "En grå skallerorm med bruna prickar.<br> En unik orm av sitt slag. Vilda skallerormar brukar göra mycket ljud av sig med sin svans,<br>men inte tama ormar, de brukar vara tystare av sig."
   },
   {
     "id": 8,
+    "qty": 1,
     "slug": "produkter-amazon-viper",
     "name": "Amazon Viper",
     "price": 548,
-    "weight": "12.2",
+    "weight": 12.2,
     "image": "/images/snake8.jpg",
     "description": "Detta är en grön huggorm från Amazonas, en väldigt sällsynt ormart.<br> Denna ormarten är giftig och kräver därför lite mer uppmärksamhet i hushållet."
   },
   {
     "id": 9,
+    "qty": 1,
     "slug": "produkter-svensk-huggorm",
     "name": "Svensk Huggorm",
     "price": 234,
-    "weight": "4.3",
+    "weight": 4.3,
     "image": "/images/snake9.jpg",
     "description": "Denna ormen kommer direkt från mellersta Sverige, de brukar inte bli så stora och är inte alls farliga på något vis."
   },
   {
     "id": 10,
+    "qty": 1,
     "slug": "produkter-amazon-huggorm",
     "name": "Amazon Huggorm",
     "price": 2699,
-    "weight": "8.5",
+    "weight": 8.5,
     "image": "/images/snake10.jpg",
     "description": "Denna huggorm kommer direkt från Amazonas, och är väldigt sällsynt. Med sin turkos-blå färg med en undersida av ljusgrönt syns på flera meters avstånd. "
   },
   {
     "id": 11,
+    "qty": 1,
     "slug": "produkter-kinesisk-skallerorm",
     "name": "Kinesisk Skallerorm",
     "price": 385,
-    "weight": "3.6",
+    "weight": 3.6,
     "image": "/images/snake11.jpg",
     "description": "En grågul-randing skallerorm från Kina. <br> En unik orm av sitt slag. Vilda skallerormar brukar göra mycket ljud av sig med sin svans,<br>men inte tama ormar; de brukar vara tystare av sig."
   },
   {
     "id": 12,
+    "qty": 1,
     "slug": "produkter-svart-viper",
     "name": "Svart Viper",
     "price": 579,
-    "weight": "4.4",
+    "weight": 4.4,
     "image": "/images/snake12.jpg",
     "description": "Detta är en svart huggorm från Amazonas; en väldigt sällsynt ormart.<br> Denna ormarten är giftig och kräver därför lite mer uppmärksamhet i hushållet."
   },
   {
     "id": 13,
+    "qty": 1,
     "slug": "produkter-Yellow-Anaconda",
     "name": "Yellow Anaconda",
     "price": 1299,
-    "weight": "20.7",
+    "weight": 20.7,
     "image": "/images/snake13.jpg",
     "description": "En vädligt fin gul anaconda som är mycket stor! Vi rekommenderar därför att du har ett lite större och kraftigare terrarium."
   },
   {
     "id": 14,
+    "qty": 1,
     "slug": "produkter-brasiliansk-viper",
     "name": "Brasiliansk Viper",
     "price": 149,
-    "weight": "5.3",
+    "weight": 5.3,
     "image": "/images/snake14.jpg",
-    "description": "Detta är en mörkgrön huggorm med små svarta fläckar från Brasilien, en väldigt sällsynt ormart.<br> Denna ormarten är giftig och kräver därför lite mer uppmärksamhet i hushållet."
+    "description": "Detta är en mörkgrön huggorm med små svarta fläckar, från Brasilien, en väldigt sällsynt ormart.<br> Denna ormarten är giftig och kräver därför lite mer uppmärksamhet i hushållet."
   },
   {
     "id": 15,
+    "qty": 1,
     "slug": "produkter-kubansk-viper",
     "name": "Kubansk Viper",
     "price": 348,
-    "weight": "12.1",
+    "weight": 12,
     "image": "/images/snake15.jpg",
-    "description": "Detta är en mörkgrön huggorm med små svarta fläckar, som är från Kuba, en väldigt sällsynt ormart.<br> Denna ormarten är giftig och kräver därför lite mer uppmärksamhet i hushållet."
+    "description": "Detta är en mörkgrön huggorm med små svarta fläckar, som är från Kuba. En väldigt sällsynt ormart.<br> Denna ormarten är giftig och kräver därför lite mer uppmärksamhet i hushållet."
   }
 ]
