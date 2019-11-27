@@ -72,7 +72,7 @@ class Product {
     // This is how I render myself in a list of products
     // (this method is called from a ProductList)
     return `
-      <div class="col-12 col-md-6 col-lg-4 mt-5">
+      <div class="col-12 col-md-6 col-lg-4 mt-5 w-100">
         <a href="#${this.slug}">
         <div class="row">
            <h4 class="-100" class="col-6">${this.name}</h4>

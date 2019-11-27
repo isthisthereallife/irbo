@@ -15,10 +15,10 @@ class ProductList {
     $('main').html(`
       <section class="row">
         <div class="col">
-          <h1>Våra produkter</h1>
+          <h1 class="text-center">Våra produkter</h1>
         </div>
       </section>
-      <section class="row">
+      <section class="row text-center">
         <!-- Notice the "loop" using the array map method -->
         ${this.products.map(product => product.renderInList()).join('')}
       </section>
