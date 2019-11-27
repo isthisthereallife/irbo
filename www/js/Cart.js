@@ -4,7 +4,7 @@ class Cart {
   constructor() {
     //skapa en array i localstorage om det inte redan finns en
     store.cartProducts = store.cartProducts || [];
-    store.cartQuantity = store.cartQuantity || 0;
+    store.cartQty = store.cartQty || 0;
     store.save();
   }
 
@@ -21,8 +21,8 @@ class Cart {
         //om ett element med samma id redan finns
         if (product.id == store.cartProducts[i].id) {
 
-          // öka dess quantity med 1
-          store.cartProducts[i].quantity += 1;
+          // öka dess qty med 1
+          store.cartProducts[i].qty += 1;
           unique = false;
           //bryt ut ur for-loopen (eftersom det ändå bara finns en av varje sort i arrayen)
           break;
@@ -34,19 +34,19 @@ class Cart {
       store.cartProducts.push(product)
     }
     //öka antalet varor i kundvagnen
-    store.cartQuantity += 1;
+    store.cartQty += 1;
 
     //spara
     store.save();
     //skriv om siffran vid bilden, utgå från antalet varor i kundvagnen
-    $('.oi-cart').html(" " + store.cartQuantity)
+    $('.oi-cart').html(" " + store.cartQty)
   }
 
   /**räkna ut summan av */
   calculateSum() {
     let sum = 0
     for (let i = 0; i < store.cartProducts.length; i++) {
-      sum += store.cartProducts[i].price * store.cartProducts[i].quantity;
+      sum += store.cartProducts[i].price * store.cartProducts[i].qty;
     }
     return sum;
   }
@@ -55,7 +55,7 @@ class Cart {
   calculateTotalWeight() {
     let w = 0;
     for (let i = 0; i < store.cartProducts.length; i++) {
-      w += store.cartProducts[i].weight * store.cartProducts[i].quantity;
+      w += store.cartProducts[i].weight * store.cartProducts[i].qty;
     }
     return w;
 
@@ -64,7 +64,7 @@ class Cart {
     let cost = 0
     for (let i = 0; i < store.cartProducts.length; i++) {
 
-      cost += store.cartProducts[i].weight * store.cartProducts[i].quantity;
+      cost += store.cartProducts[i].weight * store.cartProducts[i].qty;
     }
     cost = cost * 40
     return cost;
