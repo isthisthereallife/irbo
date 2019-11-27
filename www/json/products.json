@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "qty": 1,
     "slug": "produkter-taipan",
     "name": "Taipan",
     "price": 439,
@@ -10,6 +11,7 @@
   },
   {
     "id": 2,
+    "qty": 1,
     "slug": "produkter-rod-skallerorm",
     "name": "Röd Skallerorm",
     "price": 659,
@@ -19,15 +21,17 @@
   },
   {
     "id": 3,
-    "slug": "produkter-tigerorm",
-    "name": "Tigerorm",
-    "price": 412,
-    "weight": 4.2,
-    "image": "/images/snake3.jpg",
-    "description": "Tigerormen får sitt namn av tigern då den har samma utseende. <br> Dessa ormar är en av de mest populära tamormarna internationellt."
+    "qty": 1,
+    "slug": "produkter-musbebis",
+    "name": "Musbebis",
+    "price": 10,
+    "weight": 0.2,
+    "image": "/images/mousebaby.jpg",
+    "description": "En liten, gullig mus. Den gillar ormar."
   },
   {
     "id": 4,
+    "qty": 1,
     "slug": "produkter-filipinsk-kobra",
     "name": "Filipinsk Kobra",
     "price": 2089,
@@ -37,6 +41,7 @@
   },
   {
     "id": 5,
+    "qty": 1,
     "slug": "produkter-huggorm",
     "name": "Huggorm",
     "price": 249,
@@ -46,6 +51,7 @@
   },
   {
     "id": 6,
+    "qty": 1,
     "slug": "produkter-dodsorm",
     "name": "Dödsorm",
     "price": 1099,
@@ -55,6 +61,7 @@
   },
   {
     "id": 7,
+    "qty": 1,
     "slug": "produkter-svensk-skallerorm",
     "name": "Svensk skallerorm",
     "price": 209,
@@ -64,6 +71,7 @@
   },
   {
     "id": 8,
+    "qty": 1,
     "slug": "produkter-amazon-viper",
     "name": "Amazon Viper",
     "price": 548,
@@ -73,6 +81,7 @@
   },
   {
     "id": 9,
+    "qty": 1,
     "slug": "produkter-svensk-huggorm",
     "name": "Svensk Huggorm",
     "price": 234,
@@ -82,6 +91,7 @@
   },
   {
     "id": 10,
+    "qty": 1,
     "slug": "produkter-amazon-huggorm",
     "name": "Amazon Huggorm",
     "price": 2699,
@@ -91,6 +101,7 @@
   },
   {
     "id": 11,
+    "qty": 1,
     "slug": "produkter-kinesisk-skallerorm",
     "name": "Kinesisk Skallerorm",
     "price": 385,
@@ -100,6 +111,7 @@
   },
   {
     "id": 12,
+    "qty": 1,
     "slug": "produkter-svart-viper",
     "name": "Svart Viper",
     "price": 579,
@@ -109,6 +121,7 @@
   },
   {
     "id": 13,
+    "qty": 1,
     "slug": "produkter-Yellow-Anaconda",
     "name": "Yellow Anaconda",
     "price": 1299,
@@ -118,20 +131,22 @@
   },
   {
     "id": 14,
+    "qty": 1,
     "slug": "produkter-brasiliansk-viper",
     "name": "Brasiliansk Viper",
     "price": 149,
     "weight": 5.3,
     "image": "/images/snake14.jpg",
-    "description": "Detta är en mörkgrön huggorm med små svarta fläckar från Brasilien, en väldigt sällsynt ormart.<br> Denna ormarten är giftig och kräver därför lite mer uppmärksamhet i hushållet."
+    "description": "Detta är en mörkgrön huggorm med små svarta fläckar, från Brasilien, en väldigt sällsynt ormart.<br> Denna ormarten är giftig och kräver därför lite mer uppmärksamhet i hushållet."
   },
   {
     "id": 15,
+    "qty": 1,
     "slug": "produkter-kubansk-viper",
     "name": "Kubansk Viper",
     "price": 348,
     "weight": 12,
     "image": "/images/snake15.jpg",
-    "description": "Detta är en mörkgrön huggorm med små svarta fläckar, som är från Kuba, en väldigt sällsynt ormart.<br> Denna ormarten är giftig och kräver därför lite mer uppmärksamhet i hushållet."
+    "description": "Detta är en mörkgrön huggorm med små svarta fläckar, som är från Kuba. En väldigt sällsynt ormart.<br> Denna ormarten är giftig och kräver därför lite mer uppmärksamhet i hushållet."
   }
 ]
