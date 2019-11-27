@@ -9506,29 +9506,32 @@ h4 {
   height: 100vh;
   text-align: right;
   margin-bottom: -40px;
-  color: #a1a7a0;
+  color: #DFC3C6;
 }
 
 [data-page="start-page"] .start-text {
-  padding-right: 10%;
+  padding-right: 6%;
   padding-top: 20%;
 }
 
-@media (max-width: 800px) {
-  .start-text {
-    margin-top: 80vw;
-  }
-  .start-text h1 {
-    font-size: 8vw;
-  }
-  .start-text p {
-    font-size: 3vw;
-  }
+[data-page="start-page"] .start-text h1 {
+  font-size: 3.5rem;
 }
 
-@media (max-width: 600px) {
+[data-page="start-page"] .start-text p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 991.98px) {
+  .start-text h1 {
+    font-size: 3vw;
+    text-shadow: 3px 3px 5px rgba(122, 73, 73, 0.7);
+  }
+  .start-text p {
+    font-size: 4vw;
+  }
   .start-text {
-    margin-top: 90vw;
+    padding: 15%;
   }
 }
 
@@ -10532,6 +10535,11 @@ h4 {
   content: '\e0de';
 }
 
+.snakebby-logo {
+  width: 25vw;
+  height: 12vh;
+}
+
 [data-page="start-page"] .start-cover-bg {
   background-image: url(/images/backgroundORM.jpg);
   background-position: center;
@@ -10540,29 +10548,21 @@ h4 {
   height: 100vh;
   text-align: right;
   margin-bottom: -40px;
-  color: #a1a7a0;
+  color: #DFC3C6;
 }
 
 [data-page="start-page"] .start-text {
-  padding-right: 10%;
-  padding-top: 20%;
+  padding-right: 20px;
+  padding-top: 22%;
 }
 
-@media (max-width: 800px) {
-  .start-text {
-    margin-top: 80vw;
-  }
+@media (max-width: 991.98px) {
   .start-text h1 {
-    font-size: 8vw;
+    font-size: 9vw;
+    text-shadow: 3px 3px 5px rgba(122, 73, 73, 0.7);
   }
   .start-text p {
-    font-size: 3vw;
-  }
-}
-
-@media (max-width: 600px) {
-  .start-text {
-    margin-top: 90vw;
+    font-size: 4vw;
   }
 }
 
@@ -10614,4 +10614,9 @@ h4 {
 .startpage-btn:hover {
   background-color: #DFC3C6;
   color: #434949;
+}
+
+.snakebby-logo {
+  width: 25vw;
+  height: 12vh;
 }
