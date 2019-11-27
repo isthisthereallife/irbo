@@ -11,19 +11,33 @@
         
     }   
     .start-text{
-        padding-right: 20px;
-        padding-top: 22%;
+        padding-right: 6%;
+        padding-top: 20%
     }
+    .start-text h1{
+        font-size: 3.5rem;
+    }
+
+    .start-text p{
+        font-size: 1.2rem;
+    }
+
+    
 
 }
 
 @include media-breakpoint-down(md){
+    
     .start-text h1{
-        font-size: 9vw;
+        font-size: 3vw;
         text-shadow: 3px 3px 5px rgba(122, 73, 73, 0.7);
     }
     .start-text p{
     font-size: 4vw;
+    }
+    .start-text{
+       padding: 15%;
+       
     }
 }
 
