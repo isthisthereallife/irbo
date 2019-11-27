@@ -8,8 +8,8 @@ class AboutUs {
   render() {
     $('main').html(/*html*/`
       <section class="container data-aboutUs">
-        <section class="row d-flex">
-          <article class="col col-12 col-md-6">
+        <section class="row d-flex justify-content-center">
+          <article class="col col-12 col-md-6 border border-primary rounded m-1">
              <h2>Om Snakebaby</h2>    
             <p>Snakebaby är Sveriges största, rikstäckande ormkedja som erbjuder de bästa djuren. 
             Vårt sortiment är noga utvalt och innehåller alla ormar du kan tänkas behöva. 
@@ -20,6 +20,8 @@ class AboutUs {
             </p>
             <p>Sedan 2015 är Snakebaby en del av nordens största ormkedjekoncept, Slithery Group, med över 200 butiker i Sverige, Norge och Finland.
             </p>
+            </article>
+            <article class="col col-12 col-md-6 border border-primary rounded m-1">
             <h3><span>Full service, trygghet & goda råd
             </span></h3>
             <p>Snakebaby grundades 1987 och har alltså över 30 års erfarenhet i branschen. 
