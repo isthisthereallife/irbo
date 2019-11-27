@@ -6,11 +6,35 @@
         background-repeat: no-repeat;
         height: 100vh;
         text-align: right;
-        margin-bottom: -25px;
+        margin-bottom: -40px;
+        color: $secondary;
+      
     }   
     .start-text{
         padding-right: 10%;
         padding-top: 20%;
     }
 
+}
+
+
+@media (max-width: 800px){
+    .start-text{
+        margin-top: 80vw;
+        
+    }
+    .start-text h1{
+        font-size: 8vw;
+        }
+    .start-text p {
+            font-size: 3vw;
+        }
+  
+}
+
+@media (max-width: 600px){
+    .start-text{
+        margin-top: 90vw;
+        
+    }
 }

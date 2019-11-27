@@ -9,13 +9,12 @@ class StartPage {
     $('body').attr('data-page','start-page');
     $('main').html(/*html*/`
       <section class="container-fluid start-cover-bg">
-      <div class="row start-text">
-        <div class="col">
+      <div class="row">
+        <div class="col start-text">
             <h1>Skaffa dig en ny vän</h1>
             <p>En orm är lojalare än en hund och fäller ingen päls.</p>
-            <button type="button" class="btn btn-light btn-lg">Slingra mig till webb-shoppen</button>
-        </div>
-        </div>
+            <a class="nav-link" href="#produkter"><button type="button" class="btn btn-light btn-lg startpage-btn order-sm-1 order-md-2">KÖP ORM NU</button>
+        </div></div>
       </section>
     `);
   }
