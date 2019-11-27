@@ -57,10 +57,9 @@ class Product {
               <h6 class="col-3">Pris ${this.price} kr</h6>
               <h6 class="col-3">Vikt ${this.weight} kg</h6>
               <h6 class="col-3">Fraktpris ${this.weight * 40} kr</h6>
-            </div>
-          <button id="buy-button-${this.id}" class="btn btn-primary my-2 ">Köp</button>
           </div>
-          <p></p>
+          <button id="buy-button-${this.id}" class="btn btn-primary my-2 ">Köp</button>
+        </div>
         <div class="col-12 col-lg-4">
           <img class="img-fluid border border-primary rounded" src="${this.image}">
         </div>
@@ -74,12 +73,14 @@ class Product {
     return `
       <div class="col-12 col-md-6 col-lg-4 mt-5 w-100">
         <a href="#${this.slug}">
-        <div class="row">
-           <h4 class="-100" class="col-6">${this.name}</h4>
+          <div class="row">
+            <h4 class="-100" class="col-6 text-center">${this.name}</h4>
           </div>
           <img class="img-fluid border border-primary rounded w-70 h-70" src="${this.image}">
-          <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
         </a>
+        <div>
+        <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
+        </div>
       </div>
     `
   }
