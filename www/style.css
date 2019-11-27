@@ -10436,7 +10436,3 @@ main {
 .oi-zoom-out:before {
   content: '\e0de';
 }
-
-body {
-  background: linear-gradient(138deg, #4f5d2f, #c6e976);
-}
