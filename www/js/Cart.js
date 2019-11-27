@@ -2,11 +2,8 @@ class Cart {
 
 
   constructor() {
-    //skapa en array i localstorage
+    //skapa en array i localstorage om det inte redan finns en
     store.cartProducts = store.cartProducts || [];
-    store.cartCount = store.cartCount || 0;
-    
-    // 2 DO: hitta ett sätt att faktiskt spara i localstorage
     store.save();
   }
 
@@ -14,9 +11,8 @@ class Cart {
 
     //lägg till produkten som valts till arrayen i localstorage
     store.cartProducts.push(product)
-    store.cartCount++;
     store.save();
-    $('.oi-cart').html(" "+store.cartCount)
+    $('.oi-cart').html(" "+store.cartProducts.length)
 
 
 
@@ -37,18 +33,48 @@ class Cart {
     //   // remove all extra spaces after a new-line
     // `.replace(/\n\s*/g, '\n'))
   }
+  calculateSum(){
+    let sum = 0
+    for (let i=0;i<store.cartProducts.length;i++ ){
+      Object.assign(this,store.cartProducts[i])
+      sum+=this.price;
+    }
+    return sum;
+  }
+  calculateTotalWeight(){
+    let w = 0;
+    for (let i=0;i<store.cartProducts.length;i++ ){
+      Object.assign(this,store.cartProducts[i])
+      w+=this.weight;
+    }
+    return w;
 
+  }
+  calculateShippingCost(){
+    let cost = 0
+    for (let i=0;i<store.cartProducts.length;i++ ){
+      Object.assign(this,store.cartProducts[i])
+      cost+=this.weight;
+    }
+    cost=cost*40
+    return cost;
+  }
   render() {
-
+      //console.log(store.cartProducts[i])
+      let sum = this.calculateSum()
+      let shippingCost = this.calculateShippingCost()
+      let totalWeight = this.calculateTotalWeight()
     $('main').html(`
   <section class="row">
     <div class="col">
     <h1>Cart</h1>
-    <p> här ska vi lägga in en lista av valda produkter, t ex 
+    <p>Summan av dina valda produkter: ${sum}</p>
+    <p>Vikten av dina valda produkter: ${totalWeight}</p>
+    <p>Fraktkostnad för dina valda produkter: ${shippingCost}</p>
     </div>
     </section>
     `);
-  }
+  }0
 
 }
 
