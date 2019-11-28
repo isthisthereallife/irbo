@@ -16,24 +16,34 @@ class Product {
     this.cart = cart;
     // I add listeners to my buy-button(s)
     this.addBuyButtonListener();
+    this.addAddItemListener();
+    this.addRemoveItemListener();
   }
 
-  addBuyButtonListener() {
-    // this a delegated event handler:
-    // * when you click on the body
-    // * if you clicked inside something matching the css-selector
-    //   #buy-button-myId
-    // * then run the anonymous arrow function...
-    $("body").on("click", `#buy-button-${this.id}`, e => {
-      // e is the event object
-      // it has a preventDefault method
-      // when you call that method it prevents the browser
-      // from doing what it normally does on a certain element
-      // since the buy button is sometimes inside a a-tag
-      // in this case it prevents us from following the a-tag
+  //plusknappen på varukorgssidan
+  addAddItemListener() {
+    $('body').on('click', `#add-item-button-${this.id}`, e => {
       e.preventDefault();
-      // this.cart is an instance of Cart
-      // add me to that cart
+      this.cart.add(this);
+      this.cart.render();
+    });
+  }
+  //minusknappen på varukorgssidan
+  addRemoveItemListener() {
+    $('body').on('click', `#remove-item-button-${this.id}`, e => {
+      e.preventDefault();
+      console.log("You clicked to remove an item");
+      this.cart.remove(this);
+      this.cart.render();
+    });
+  }
+
+  // köpknappen på produktsidorna
+  addBuyButtonListener() {
+    $('body').on('click', `#buy-button-${this.id}`, e => {
+
+      e.preventDefault();
+
       this.cart.add(this);
     });
   }

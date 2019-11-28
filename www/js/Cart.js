@@ -8,6 +8,9 @@ class Cart {
     store.save();
   }
 
+
+
+
   add(product) {
     //bool för att se om valet är unikt/nytt
     let unique = true;
@@ -41,6 +44,18 @@ class Cart {
     //skriv om siffran vid bilden, utgå från antalet varor i kundvagnen
     $('.oi-cart').html(" " + store.cartQty)
   }
+
+  remove(product){
+    console.log("time to remove a "+product.name);
+    //om kvantiteten är mer än 0,
+    if (product.qty>0){
+      console.log("yes, got some quantity here");
+      product.qty--;
+      store.cartQty --;
+    }
+
+  }
+  
 
   /**räkna ut summan av */
   calculateSum() {
@@ -77,19 +92,40 @@ class Cart {
     let totalSum = sum + shippingCost
     let buy = store.cartProducts;
 
-    
+
     $('main').html(`
     <section class="container mt-4">
     <div class="row">
     <div class="col">
+    <h2 class="h1">Varukorg</h2>
+    <h4>Dina varor</h4>
+    <ul>
     `)
     //loopa store.cartProducts
-    for (let i= 0;i<store.cartProducts.length;i++){
+    for (let i = 0; i < store.cartProducts.length; i++) {
+      Object.assign(this, store.cartProducts[i])
+
+      console.log("this is this.id: " + this.id)
+      
+
+
+
+
       $('main .row .col').append(`
-      <div class="row"><p>${store.cartProducts[i].name} ${store.cartProducts[i].price} Kr/st ${store.cartProducts[i].qty} st ${store.cartProducts[i].price*store.cartProducts[i].qty} Kr
-        </p>
-      <div>
-      `)      
+      <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
+        <p><img src="${this.image}" alt="${this.name}" width="40px" class="rounded">
+        </img> ${this.name}</p>
+      <p><span>  ${this.price} Kr/st </span> 
+      <button id="remove-item-button-${this.id}" class="btn btn-primary data-btn-circle-xs"><span>
+      -
+      </span></button>
+      ${this.qty}
+      <button id="add-item-button-${this.id}" class="btn btn-primary data-btn-circle-xs"><span>
+      +
+      </span></button> 
+      <span>${this.price * this.qty} Kr</span>
+      </p></li>
+      `)
     }
     
     //skriv ut namn, pris per st, antal, pris total
@@ -97,7 +133,7 @@ class Cart {
 
 
     $('main').append(`
-    <h2>Varukorg</h2>
+    </ul>
     <p>Summan av dina valda produkter: ${Math.round(sum)} kr</p>
     <p>Vikten av dina valda produkter: ${Math.round(totalWeight)} kg</p>
     <p>Fraktkostnad för dina valda produkter: ${Math.round(shippingCost)} kr</p>
@@ -109,8 +145,9 @@ class Cart {
 
   }
 
-}
 
+
+}
 
 //        JS Animering HÄR UNDER
 //
