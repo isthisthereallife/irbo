@@ -75,16 +75,29 @@ class Cart {
     let shippingCost = this.calculateShippingCost()
     let totalWeight = this.calculateTotalWeight()
     let totalSum = sum + shippingCost
+    let buy = store.cartProducts;
 
-
-
-
-    console.log(store.cartProducts)
+    
     $('main').html(`
     <section class="container mt-4">
     <div class="row">
     <div class="col">
-    <h1>Cart</h1>
+    `)
+    //loopa store.cartProducts
+    for (let i= 0;i<store.cartProducts.length;i++){
+      $('main .row .col').append(`
+      <div class="row"><p>${store.cartProducts[i].name} ${store.cartProducts[i].price} Kr/st ${store.cartProducts[i].qty} st ${store.cartProducts[i].price*store.cartProducts[i].qty} Kr
+        </p>
+      <div>
+      `)      
+    }
+    
+    //skriv ut namn, pris per st, antal, pris total
+
+
+
+    $('main').append(`
+    <h2>Varukorg</h2>
     <p>Summan av dina valda produkter: ${Math.round(sum)} kr</p>
     <p>Vikten av dina valda produkter: ${Math.round(totalWeight)} kg</p>
     <p>Fraktkostnad för dina valda produkter: ${Math.round(shippingCost)} kr</p>
