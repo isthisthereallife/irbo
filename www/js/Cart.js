@@ -98,8 +98,8 @@ class Cart {
     let sum = this.calculateSum()
     let shippingCost = this.calculateShippingCost()
     let totalWeight = this.calculateTotalWeight()
-    let totalSum = sum + shippingCost
-    let buy = store.cartProducts;
+    let moms = sum*0.3
+    let grandTotalSum = sum + shippingCost +moms
 
 
     $('main').html(`
@@ -138,10 +138,12 @@ class Cart {
 
     $('main').append(`
     </ul>
-    <p>Summan av dina valda produkter: ${Math.round(sum)} kr</p>
+    <p>Pris utan moms: ${Math.round(sum)} kr</p>
+    <p>Moms: ${Math.round(moms)} kr</p>
+    <h4>Pris med moms: ${Math.round(sum+moms)} kr</h4>
     <p>Vikten av dina valda produkter: ${Math.round(totalWeight)} kg</p>
     <p>Fraktkostnad för dina valda produkter: ${Math.round(shippingCost)} kr</p>
-    <h4>Att betala: ${Math.round(totalSum)} kr</h4>
+    <h4>Att betala: ${Math.round(grandTotalSum)} kr</h4>
     </div>
     </div>
     </section>
