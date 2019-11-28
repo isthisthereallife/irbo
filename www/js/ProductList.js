@@ -17,9 +17,10 @@ class ProductList {
     <section class="container mt-4">
     <div class="row">
         <div class="col">
-          <h1>Våra produkter</h1>
+          <h1 class="text-center">Våra produkter</h1>
         </div>
-      <section class="row">
+      </section>
+      <section class="row text-center">
         <!-- Notice the "loop" using the array map method -->
         ${this.products.map(product => product.renderInList()).join('')}
       </section>
