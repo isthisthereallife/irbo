@@ -12,8 +12,10 @@ class ProductList {
   }
 
   render() {
+    $('main').attr('data-page','product-list-page');
     $('main').html(`
-      <section class="row">
+    <section class="container mt-4">
+    <div class="row">
         <div class="col">
           <h1 class="text-center">Våra produkter</h1>
         </div>
@@ -21,6 +23,7 @@ class ProductList {
       <section class="row text-center">
         <!-- Notice the "loop" using the array map method -->
         ${this.products.map(product => product.renderInList()).join('')}
+      </section>
       </section>
     `);
   }
