@@ -8,6 +8,8 @@ class Cart {
     store.save();
   }
 
+  
+
 
 
 
@@ -50,8 +52,11 @@ class Cart {
     //om kvantiteten är mer än 0,
     if (product.qty>0){
       console.log("yes, got some quantity here");
+      console.log("Used to be "+product.qty);
       product.qty--;
+      console.log("now it is "+product.qty);
       store.cartQty --;
+      store.save;
     }
 
   }

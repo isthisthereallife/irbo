@@ -31,6 +31,7 @@ class App {
     // Load the products from JSON
     this.loadProducts();
   }
+  
 
   changeRoute() {
 
