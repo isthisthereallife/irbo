@@ -9487,10 +9487,6 @@ main {
   flex: 1;
 }
 
-h4 {
-  font-size: 2vw;
-}
-
 .img-fluid {
   width: 100%;
   object-fit: cover;
@@ -10536,8 +10532,22 @@ h4 {
 }
 
 .snakebby-logo {
-  width: 25vw;
-  height: 12vh;
+  width: 200px;
+  height: 60px;
+}
+
+@media screen and (min-width: 600px) {
+  .snakebby-logo {
+    width: 250px;
+    height: 75px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .snakebby-logo {
+    width: 350px;
+    height: 90px;
+  }
 }
 
 [data-page="start-page"] .start-cover-bg {
@@ -10640,6 +10650,20 @@ h4 {
 }
 
 .snakebby-logo {
-  width: 25vw;
-  height: 12vh;
+  width: 200px;
+  height: 60px;
+}
+
+@media screen and (min-width: 600px) {
+  .snakebby-logo {
+    width: 250px;
+    height: 75px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .snakebby-logo {
+    width: 350px;
+    height: 90px;
+  }
 }
