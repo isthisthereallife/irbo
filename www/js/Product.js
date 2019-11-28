@@ -71,21 +71,21 @@ class Product {
     // This is how I render myself in a list of products
     // (this method is called from a ProductList)
     return `
-      <div class="col-12 col-md-6 col-lg-4 mt-3">
-        <a href="#${this.slug}">
-        <img class="img-fluid border border-primary rounded w-70 h-70" src="${this.image}">
-          <div class="row mb-3 ml-1">
-              <button id="buy-button-${this.id}" class="col-4 btn btn-primary mt-2">Köp</button>
-              <div class="col-8">
-                <div class="row">
-                  <h4 class="-100 col">${this.name}</h4>
-                  <h6 class="col-12">${this.price}:-</h6>
+        <div class="col-12 col-md-6 col-lg-4 mt-3">
+          <a href="#${this.slug}">
+          <img class="img-fluid border border-primary rounded w-70 h-70" src="${this.image}">
+            <div class="row mb-3 ml-1 mt-2">
+                <button id="buy-button-${this.id}" class="col-4 btn btn-primary mt-2">Köp</button>
+                <div class="col-8">
+                  <div class="row">
+                    <h4 class="-100 col">${this.name}</h4>
+                    <h6 class="col-12">${this.price}:-</h6>
+                  </div>
                 </div>
-              </div>
-          </div>
-          </div>
-        </a>
-      </div>
+            </div>
+            </div>
+          </a>
+        </div>
     `;
   }
 }
