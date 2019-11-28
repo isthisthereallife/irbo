@@ -9,32 +9,49 @@ class Product {
   */
 
   constructor(data, cart) {
-    // Object.assign is used to copy all properties from data to me
-    //Object.assign kopierar från source-objektet (eg. data) till target-objektet(eg. this)
+    console.log("cart", JSON.stringify(cart))
+    console.log("data", JSON.stringify(data))
+    // Object.assign is used to copy (ADD, NOT OVERWRITE) all properties from data to me
+    //Object.assign kopierar (LÄGGER TILL) från source-objektet (eg. data) till target-objektet(eg. this)
     Object.assign(this, data);
     // I also know who is my cart (the App sent me this info)
-    this.cart = cart;
+    
     // I add listeners to my buy-button(s)
-    this.addBuyButtonListener();
+    console.log("abc", this)
+    this.addBuyButtonListener(cart);
+    this.addAddItemListener(cart);
+    this.addRemoveItemListener(cart);
+    
+    console.log("end", this)
   }
 
-  addBuyButtonListener() {
-    // this a delegated event handler:
-    // * when you click on the body
-    // * if you clicked inside something matching the css-selector
-    //   #buy-button-myId
-    // * then run the anonymous arrow function...
-    $("body").on("click", `#buy-button-${this.id}`, e => {
-      // e is the event object
-      // it has a preventDefault method
-      // when you call that method it prevents the browser
-      // from doing what it normally does on a certain element
-      // since the buy button is sometimes inside a a-tag
-      // in this case it prevents us from following the a-tag
+  //plusknappen på varukorgssidan
+  addAddItemListener(cart) {
+    console.log("qinner", JSON.stringify(this))
+    $('body').on('click', `#add-item-button-${this.id}`, e => {
       e.preventDefault();
-      // this.cart is an instance of Cart
-      // add me to that cart
-      this.cart.add(this);
+      console.log("inner", JSON.stringify(this))
+      cart.add(this);
+      cart.render();
+    });
+  }
+  //minusknappen på varukorgssidan
+  addRemoveItemListener(cart) {
+    $('body').on('click', `#remove-item-button-${this.id}`, e => {
+      e.preventDefault();
+      console.log("You clicked to remove an item");
+      cart.remove(this);
+      cart.render();
+    });
+  }
+
+  // köpknappen på produktsidorna
+  addBuyButtonListener(cart) {
+    $('body').on('click', `#buy-button-${this.id}`, e => {
+
+      e.preventDefault();
+
+      cart.add(this);
     });
   }
 

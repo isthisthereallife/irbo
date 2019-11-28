@@ -31,6 +31,7 @@ class App {
     // Load the products from JSON
     this.loadProducts();
   }
+  
 
   changeRoute() {
 
@@ -48,6 +49,8 @@ class App {
     // (the css selector finds a-tags with matching hrefs)
     $('header nav a').removeClass('active');
     $(`header nav a[href="#${hashFirstPart}"]`).addClass('active');
+    //uppdatera kundvagnsikonen
+    $('.oi-cart').html(" " + store.cartQty)
     // Render content
     pageToShow.render();
   }
