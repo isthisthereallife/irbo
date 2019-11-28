@@ -15,15 +15,17 @@ class ProductList {
     $('main').attr('data-page','product-list-page');
     $('main').html(`
     <section class="container mt-4">
-    <div class="row">
-        <div class="col">
-          <h1 class="text-center">Våra produkter</h1>
-        </div>
-      </section>
-      <section class="row text-center">
-        <!-- Notice the "loop" using the array map method -->
-        ${this.products.map(product => product.renderInList()).join('')}
-      </section>
+      <div class="row">
+          <div class="col">
+            <h1 class="text-center">Våra Ormar</h1>
+          </div>
+        </section>
+        <section class="container">
+          <section class="row text-center ">
+            <!-- Notice the "loop" using the array map method -->
+            ${this.products.map(product => product.renderInList()).join('')}
+          </section>
+        </section>
       </section>
     `);
   }
