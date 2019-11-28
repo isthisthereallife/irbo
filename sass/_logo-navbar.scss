@@ -1,4 +1,17 @@
 .snakebby-logo{
-    width: 25vw;
-    height: 12vh;
+    width: 200px;
+    height:60px;
+}
+
+@media screen and (min-width:600px){
+    .snakebby-logo{
+        width: 250px;
+        height: 75px;
+    }
+}
+@media screen and (min-width:992px){
+    .snakebby-logo{
+        width: 350px;
+        height: 90px;
+    }
 }
