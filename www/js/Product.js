@@ -9,42 +9,49 @@ class Product {
   */
 
   constructor(data, cart) {
-    // Object.assign is used to copy all properties from data to me
-    //Object.assign kopierar från source-objektet (eg. data) till target-objektet(eg. this)
+    console.log("cart", JSON.stringify(cart))
+    console.log("data", JSON.stringify(data))
+    // Object.assign is used to copy (ADD, NOT OVERWRITE) all properties from data to me
+    //Object.assign kopierar (LÄGGER TILL) från source-objektet (eg. data) till target-objektet(eg. this)
     Object.assign(this, data);
     // I also know who is my cart (the App sent me this info)
-    this.cart = cart;
+    
     // I add listeners to my buy-button(s)
-    this.addBuyButtonListener();
-    this.addAddItemListener();
-    this.addRemoveItemListener();
+    console.log("abc", this)
+    this.addBuyButtonListener(cart);
+    this.addAddItemListener(cart);
+    this.addRemoveItemListener(cart);
+    
+    console.log("end", this)
   }
 
   //plusknappen på varukorgssidan
-  addAddItemListener() {
+  addAddItemListener(cart) {
+    console.log("qinner", JSON.stringify(this))
     $('body').on('click', `#add-item-button-${this.id}`, e => {
       e.preventDefault();
-      this.cart.add(this);
-      this.cart.render();
+      console.log("inner", JSON.stringify(this))
+      cart.add(this);
+      cart.render();
     });
   }
   //minusknappen på varukorgssidan
-  addRemoveItemListener() {
+  addRemoveItemListener(cart) {
     $('body').on('click', `#remove-item-button-${this.id}`, e => {
       e.preventDefault();
       console.log("You clicked to remove an item");
-      this.cart.remove(this);
-      this.cart.render();
+      cart.remove(this);
+      cart.render();
     });
   }
 
   // köpknappen på produktsidorna
-  addBuyButtonListener() {
+  addBuyButtonListener(cart) {
     $('body').on('click', `#buy-button-${this.id}`, e => {
 
       e.preventDefault();
 
-      this.cart.add(this);
+      cart.add(this);
     });
   }
 

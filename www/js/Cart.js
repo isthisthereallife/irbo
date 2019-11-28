@@ -5,6 +5,8 @@ class Cart {
     //skapa en array i localstorage om det inte redan finns en
     store.cartProducts = store.cartProducts || [];
     store.cartQty = store.cartQty || 0;
+    //to do, en map för kvantitet
+    //id som nycklar, kvantitet som värde
     store.save();
   }
 
@@ -36,11 +38,13 @@ class Cart {
     }
     //om det är ett unikt/nytt val
     if (unique) {
+      console.log("uniq", JSON.stringify(product))
+
       store.cartProducts.push(product)
     }
     //öka antalet varor i kundvagnen
     store.cartQty += 1;
-
+    console.log("products", JSON.stringify(store.cartProducts))
     //spara
     store.save();
     //skriv om siffran vid bilden, utgå från antalet varor i kundvagnen
@@ -48,17 +52,17 @@ class Cart {
   }
 
   remove(product){
-    console.log("time to remove a "+product.name);
-    //om kvantiteten är mer än 0,
-    if (product.qty>0){
-      console.log("yes, got some quantity here");
-      console.log("Used to be "+product.qty);
-      product.qty--;
-      console.log("now it is "+product.qty);
-      store.cartQty --;
-      store.save;
+    for (let i = 0; i<store.cartProducts.length;i++){
+      if (product.id == store.cartProducts[i].id){
+        if (store.cartProducts[i].qty > 0) {
+        store.cartProducts[i].qty -=1;
+        store.cartQty -=1;
+        break;
+        }
+      }
     }
-
+    store.save();
+    $('.oi-cart').html(" " + store.cartQty)
   }
   
 
@@ -108,9 +112,8 @@ class Cart {
     `)
     //loopa store.cartProducts
     for (let i = 0; i < store.cartProducts.length; i++) {
-      Object.assign(this, store.cartProducts[i])
+      let prod = store.cartProducts[i]
 
-      console.log("this is this.id: " + this.id)
       
 
 
@@ -118,17 +121,13 @@ class Cart {
 
       $('main .row .col').append(`
       <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
-        <p><img src="${this.image}" alt="${this.name}" width="40px" class="rounded">
-        </img> ${this.name}</p>
-      <p><span>  ${this.price} Kr/st </span> 
-      <button id="remove-item-button-${this.id}" class="btn btn-primary data-btn-circle-xs"><span>
-      -
-      </span></button>
-      ${this.qty}
-      <button id="add-item-button-${this.id}" class="btn btn-primary data-btn-circle-xs"><span>
-      +
-      </span></button> 
-      <span>${this.price * this.qty} Kr</span>
+        <p><img src="${prod.image}" alt="${prod.name}" width="40px" class="rounded">
+        </img> ${prod.name}</p>
+      <p><span>  ${prod.price} Kr/st </span> 
+      <span id="remove-item-button-${prod.id}" class="oi oi-minus"></span>
+      ${prod.qty}
+      <span id="add-item-button-${prod.id}" class="oi oi-plus"></span> 
+      <span>${prod.price * prod.qty} Kr</span>
       </p></li>
       `)
     }
