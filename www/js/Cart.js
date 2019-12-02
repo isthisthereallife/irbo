@@ -134,13 +134,17 @@ class Cart {
     //skriv ut namn, pris per st, antal, pris total
 
     $('main .container').append(`
-          </ul>
-          <p>Pris utan moms: ${Math.round(sum)} kr</p>
-          <p>Moms: ${Math.round(moms)} kr</p>
-          <h4>Pris med moms: ${Math.round(sum+moms)} kr</h4>
-          <p>Vikten av dina valda produkter: ${Math.round(totalWeight)} kg</p>
-          <p>Fraktkostnad för dina valda produkter: ${Math.round(shippingCost)} kr</p>
-          <h4>Att betala: ${Math.round(grandTotalSum)} kr</h4>
+            </ul>
+            <p>Pris utan moms: ${Math.round(sum)} kr</p>
+            <p>Moms: ${Math.round(moms)} kr</p>
+            <h4>Pris med moms: ${Math.round(sum+moms)} kr</h4>
+            <p>Vikten av dina valda produkter: ${Math.round(totalWeight)} kg</p>
+            <p>Fraktkostnad för dina valda produkter: ${Math.round(shippingCost)} kr</p>
+            <h4>Att betala: ${Math.round(grandTotalSum)} kr</h4>
+          </div>
+          <div>
+            <a class="nav-link ml-0 pl-0 mt-3 orderBtn" href="#orderHistory"><button type="button" 
+            class="btn btn-light startpage-btn order-sm-1 order-md-2">Beställ här</button>
           </div>
         </div>
       </section>
