@@ -66,11 +66,11 @@ class Cart {
   }
   
 
-  /**räkna ut summan av */
+  /**räkna ut summan av vald produkt */
   calculateSum() {
     let sum = 0
-    for (let i = 0; i < store.cartProducts.length; i++) {
-      sum += store.cartProducts[i].price * store.cartProducts[i].qty;
+    for (let item of store.cartProducts){
+      sum+= item.price * item.qty;
     }
     return sum;
   }
@@ -78,17 +78,16 @@ class Cart {
   /**räkna ut totalvikten */
   calculateTotalWeight() {
     let w = 0;
-    for (let i = 0; i < store.cartProducts.length; i++) {
-      w += store.cartProducts[i].weight * store.cartProducts[i].qty;
+    for (let item of store.cartProducts){
+      w+= item.weight * item.qty
     }
     return w;
 
   }
   calculateShippingCost() {
     let cost = 0
-    for (let i = 0; i < store.cartProducts.length; i++) {
-
-      cost += store.cartProducts[i].weight * store.cartProducts[i].qty;
+    for (let item of store.cartProducts){
+      cost+= item.weight * item.qty
     }
     cost = cost * 40
     return cost;
@@ -98,8 +97,8 @@ class Cart {
     let sum = this.calculateSum()
     let shippingCost = this.calculateShippingCost()
     let totalWeight = this.calculateTotalWeight()
-    let moms = sum*0.3
-    let grandTotalSum = sum + shippingCost +moms
+    let moms = sum/4
+    let grandTotalSum = sum + shippingCost
 
 
     $('main').html(`
@@ -111,21 +110,20 @@ class Cart {
           <ul>
     `)
     //loopa store.cartProducts
-    for (let i = 0; i < store.cartProducts.length; i++) {
-      let prod = store.cartProducts[i]
+    for (let item of store.cartProducts) {
 
       $('main .row .col').append(`
             <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
               <p>
-                <img src="${prod.image}" alt="${prod.name}" width="40px" class="rounded">
-                </img> ${prod.name}
+                <img src="${item.image}" alt="${item.name}" width="40px" class="rounded">
+                </img> ${item.name}
               </p>
               <p>
-                <span> ${prod.price} Kr/st </span> 
-                <span id="remove-item-button-${prod.id}" class="oi oi-minus"></span>
-                ${prod.qty}
-                <span id="add-item-button-${prod.id}" class="oi oi-plus"></span> 
-                <span>${prod.price * prod.qty} Kr</span>
+                <span> ${item.price} Kr/st </span> 
+                <span id="remove-item-button-${item.id}" class="oi oi-minus"></span>
+                ${item.qty}
+                <span id="add-item-button-${item.id}" class="oi oi-plus"></span> 
+                <span>${item.price * item.qty} Kr</span>
               </p>
             </li>
       `)
