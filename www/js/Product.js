@@ -59,6 +59,7 @@ class Product {
     // This is how I render myself on a product-detail page
     // there it only me
     $("main").html(/*html*/ `
+    <section class="container">
      <section class="row">
         <div class="col">
           <h2 class="h1">${this.name}</h2>
@@ -80,6 +81,7 @@ class Product {
       this.image
       }">
         </div>
+      </section>
       </section>
     `);
   }

@@ -104,55 +104,49 @@ class Cart {
 
     $('main').html(`
     <section class="container mt-4">
-    <div class="row">
-    <div class="col">
-    <h2 class="h1">Varukorg</h2>
-    <h4>Dina varor</h4>
-    <ul>
+      <div class="row">
+        <div class="col">
+          <h2 class="h1">Varukorg</h2>
+          <h4>Dina varor</h4>
+          <ul>
     `)
     //loopa store.cartProducts
     for (let i = 0; i < store.cartProducts.length; i++) {
       let prod = store.cartProducts[i]
 
-      
-
-
-
-
       $('main .row .col').append(`
-      <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
-        <p><img src="${prod.image}" alt="${prod.name}" width="40px" class="rounded">
-        </img> ${prod.name}</p>
-      <p><span>  ${prod.price} Kr/st </span> 
-      <span id="remove-item-button-${prod.id}" class="oi oi-minus"></span>
-      ${prod.qty}
-      <span id="add-item-button-${prod.id}" class="oi oi-plus"></span> 
-      <span>${prod.price * prod.qty} Kr</span>
-      </p></li>
+            <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
+              <p>
+                <img src="${prod.image}" alt="${prod.name}" width="40px" class="rounded">
+                </img> ${prod.name}
+              </p>
+              <p>
+                <span> ${prod.price} Kr/st </span> 
+                <span id="remove-item-button-${prod.id}" class="oi oi-minus"></span>
+                ${prod.qty}
+                <span id="add-item-button-${prod.id}" class="oi oi-plus"></span> 
+                <span>${prod.price * prod.qty} Kr</span>
+              </p>
+            </li>
       `)
     }
     
     //skriv ut namn, pris per st, antal, pris total
 
-
-
-    $('main').append(`
-    </ul>
-    <p>Pris utan moms: ${Math.round(sum)} kr</p>
-    <p>Moms: ${Math.round(moms)} kr</p>
-    <h4>Pris med moms: ${Math.round(sum+moms)} kr</h4>
-    <p>Vikten av dina valda produkter: ${Math.round(totalWeight)} kg</p>
-    <p>Fraktkostnad för dina valda produkter: ${Math.round(shippingCost)} kr</p>
-    <h4>Att betala: ${Math.round(grandTotalSum)} kr</h4>
-    </div>
-    </div>
+    $('main .container').append(`
+          </ul>
+          <p>Pris utan moms: ${Math.round(sum)} kr</p>
+          <p>Moms: ${Math.round(moms)} kr</p>
+          <h4>Pris med moms: ${Math.round(sum+moms)} kr</h4>
+          <p>Vikten av dina valda produkter: ${Math.round(totalWeight)} kg</p>
+          <p>Fraktkostnad för dina valda produkter: ${Math.round(shippingCost)} kr</p>
+          <h4>Att betala: ${Math.round(grandTotalSum)} kr</h4>
+          </div>
+        </div>
+      </section>
     </section>
     `);
-
   }
-
-
-
 }
 
 //        JS Animering HÄR UNDER

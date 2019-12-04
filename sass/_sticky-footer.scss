@@ -13,3 +13,8 @@ main {
     object-position: 50% 50%;
     max-height: 30vh;
 }
+@media only screen and (min-width: 992px) {
+    h4{
+        font-size: 2vw;
+    }
+  }

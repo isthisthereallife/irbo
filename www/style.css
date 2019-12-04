@@ -9494,6 +9494,12 @@ main {
   max-height: 30vh;
 }
 
+@media only screen and (min-width: 992px) {
+  h4 {
+    font-size: 2vw;
+  }
+}
+
 [data-page="start-page"] .start-cover-bg {
   background-image: url(/images/backgroundORM.jpg);
   background-position: center;
