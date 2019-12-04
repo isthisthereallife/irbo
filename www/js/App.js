@@ -23,7 +23,7 @@ class App {
     
     //this.cart är en ny instans av Cart
     this.cart = new Cart();
-    new NavAnimation();
+
     //(arrowfunktion för att inte byta vad som är "this")
     // denna kan reagera på 'hashchange' oavsett var i programmet körningen är. HUR?
     $(window).on('hashchange', () => this.changeRoute());

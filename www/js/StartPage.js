@@ -6,7 +6,7 @@ class StartPage {
   */
 
   render() {
-    $('main').attr('data-page','start-page');
+    $('body').attr('data-page','start-page');
     $('main').html(/*html*/`
       <section class="container-fluid start-cover-bg">
       <div class="row">
