@@ -76,7 +76,7 @@ class Cart {
    */
   delete(product){
     for (let i = 0;i<store.cartProducts.length;i++){
-      
+
       if(product.id == store.cartProducts[i].id){
         store.cartQty -= store.cartProducts[i].qty;
         store.cartProducts[i].qty = 1;
@@ -91,7 +91,12 @@ class Cart {
   calculateSum() {
     let sum = 0
     for (let item of store.cartProducts) {
+      if(!item.discount){
+
+      }
+      else{
       sum += item.price * item.qty;
+      }
     }
     return sum;
   }
@@ -113,6 +118,7 @@ class Cart {
     cost = cost * 40
     return cost;
   }
+
 
   render() {
     let sum = this.calculateSum()
