@@ -38,13 +38,11 @@ class Cart {
     }
     //om det är ett unikt/nytt val
     if (unique) {
-      console.log("uniq", JSON.stringify(product))
 
       store.cartProducts.push(product)
     }
     //öka antalet varor i kundvagnen
     store.cartQty += 1;
-    console.log("products", JSON.stringify(store.cartProducts))
     //spara
     store.save();
     //skriv om siffran vid bilden, utgå från antalet varor i kundvagnen
@@ -52,12 +50,12 @@ class Cart {
   }
 
   remove(product){
-    for (let i = 0; i<store.cartProducts.length;i++){
-      if (product.id == store.cartProducts[i].id){
-        if (store.cartProducts[i].qty > 0) {
-        store.cartProducts[i].qty -=1;
-        store.cartQty -=1;
-        break;
+    for( let item of store.cartProducts){
+      if(product.id == item.id){
+        if (item.qty>1){
+          item.qty--;
+          store.cartQty--;
+          break;
         }
       }
     }
@@ -130,14 +128,12 @@ class Cart {
     }
     
     //skriv ut namn, pris per st, antal, pris total
-
     $('main .container').append(`
           </ul>
-          <p>Pris utan moms: ${Math.round(sum)} kr</p>
-          <p>Moms: ${Math.round(moms)} kr</p>
-          <h4>Pris med moms: ${Math.round(sum+moms)} kr</h4>
-          <p>Vikten av dina valda produkter: ${Math.round(totalWeight)} kg</p>
-          <p>Fraktkostnad för dina valda produkter: ${Math.round(shippingCost)} kr</p>
+          <h4>Pris: ${Math.round(sum)} kr</h4>
+          <p>Varav moms: ${Math.round(moms)} kr</p>
+          <p>Vikt: ${Math.round(totalWeight)} kg</p>
+          <p>Fraktkostnad: ${Math.round(shippingCost)} kr</p>
           <h4>Att betala: ${Math.round(grandTotalSum)} kr</h4>
           </div>
         </div>
@@ -146,46 +142,3 @@ class Cart {
     `);
   }
 }
-
-//        JS Animering HÄR UNDER
-//
-/*
-$(this.id).on('click', function () {
-  var cart = $('.product-animation');
-  var imgtodrag = $(this).parent('.item').find("img").eq(0);
-  if (imgtodrag) {
-      var imgclone = imgtodrag.clone()
-          .offset({
-          top: imgtodrag.offset().top,
-          left: imgtodrag.offset().left
-      })
-          .css({
-          'opacity': '0.5',
-              'position': 'absolute',
-              'height': '150px',
-              'width': '150px',
-              'z-index': '100'
-      })
-          .appendTo($('body'))
-          .animate({
-          'top': cart.offset().top + 10,
-              'left': cart.offset().left + 10,
-              'width': 75,
-              'height': 75
-      }, 1000, 'easeInOutExpo');
-
-      setTimeout(function () {
-          cart.effect("shake", {
-              times: 2
-          }, 200);
-      }, 1500);
-
-      imgclone.animate({
-          'width': 0,
-              'height': 0
-      }, function () {
-          $(this).detach()
-      });
-  }
-});
-*/
