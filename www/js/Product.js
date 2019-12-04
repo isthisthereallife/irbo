@@ -48,10 +48,9 @@ class Product {
   // köpknappen på produktsidorna
   addBuyButtonListener(cart) {
     $('body').on('click', `#buy-button-${this.id}`, e => {
-
       e.preventDefault();
-
       cart.add(this);
+      new CartAnimation(e);
     });
   }
 
@@ -61,11 +60,11 @@ class Product {
     $("main").html(/*html*/ `
     <section class="container">
      <section class="row">
-        <div class="col">
+        <div class="col ">
           <h2 class="h1">${this.name}</h2>
         </div>
       </section>
-      <section class="row">
+      <section class="row product">
         <div class="col-12 col-lg-6">
           <p>${this.description}</p>
           <h5 class="pb-2">Orminformation</h5>
@@ -77,9 +76,7 @@ class Product {
           </div>
         </div>
         <div class="col-12 col-lg-6">
-          <img class="img-fluid border border-primary rounded" src="${
-      this.image
-      }">
+          <img class="img-fluid border border-primary rounded" src="${this.image}">
         </div>
       </section>
       </section>
@@ -90,11 +87,11 @@ class Product {
     // This is how I render myself in a list of products
     // (this method is called from a ProductList)
     return `
-        <div class="col-12 col-md-6 col-lg-4 mt-3">
+        <div class="col-12 col-md-6 col-lg-4 mt-3 product">
           <a href="#${this.slug}">
           <img class="img-fluid border border-primary rounded w-70 h-70" src="${this.image}">
             <div class="row mb-3 ml-1 mt-2">
-                <button id="buy-button-${this.id}" class="col-4 btn btn-primary mt-2">Köp</button>
+                <button id="buy-button-${this.id}" class="col-4 btn btn-primary mt-2 buy-btn">Köp</button>
                 <div class="col-8">
                   <div class="row">
                     <h4 class="-100 col">${this.name}</h4>

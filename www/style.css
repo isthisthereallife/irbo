@@ -9543,7 +9543,7 @@ main {
   text-align: center;
 }
 
-.hover-item {
+.navbar-item {
   display: table-cell;
   position: relative;
 }
@@ -10599,7 +10599,7 @@ main {
   text-align: center;
 }
 
-.hover-item {
+.navbar-item {
   display: table-cell;
   position: relative;
 }
