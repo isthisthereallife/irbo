@@ -10,11 +10,14 @@ class Cart {
     store.save();
   }
 
-  
 
 
 
 
+  /**
+   * lägga till produkter i kundvagnen
+   * @param {*} product produkten som ska läggas i kundvagnen
+   */
   add(product) {
     //bool för att se om valet är unikt/nytt
     let unique = true;
@@ -49,10 +52,14 @@ class Cart {
     $('.oi-cart').html(" " + store.cartQty)
   }
 
-  remove(product){
-    for( let item of store.cartProducts){
-      if(product.id == item.id){
-        if (item.qty>1){
+  /**
+   * minska antalet av en vara i kundvagnen
+   * @param {*} product produkten som ska minska i antal
+   */
+  remove(product) {
+    for (let item of store.cartProducts) {
+      if (product.id == item.id) {
+        if (item.qty > 1) {
           item.qty--;
           store.cartQty--;
           break;
@@ -62,13 +69,29 @@ class Cart {
     store.save();
     $('.oi-cart').html(" " + store.cartQty)
   }
-  
+
+  /**
+   * ta bort förekomsten av en viss produkt i kundvagnen
+   * @param {*} product 
+   */
+  delete(product){
+    for (let i = 0;i<store.cartProducts.length;i++){
+      
+      if(product.id == store.cartProducts[i].id){
+        store.cartQty -= product.qty;
+        product.qty = 1;
+        store.cartProducts.splice(i,i+1)
+      }
+    } 
+    store.save();
+    $('.oi-cart').html(" " + store.cartQty)
+  }
 
   /**räkna ut summan av vald produkt */
   calculateSum() {
     let sum = 0
-    for (let item of store.cartProducts){
-      sum+= item.price * item.qty;
+    for (let item of store.cartProducts) {
+      sum += item.price * item.qty;
     }
     return sum;
   }
@@ -76,16 +99,16 @@ class Cart {
   /**räkna ut totalvikten */
   calculateTotalWeight() {
     let w = 0;
-    for (let item of store.cartProducts){
-      w+= item.weight * item.qty
+    for (let item of store.cartProducts) {
+      w += item.weight * item.qty
     }
     return w;
 
   }
   calculateShippingCost() {
     let cost = 0
-    for (let item of store.cartProducts){
-      cost+= item.weight * item.qty
+    for (let item of store.cartProducts) {
+      cost += item.weight * item.qty
     }
     cost = cost * 40
     return cost;
@@ -95,7 +118,7 @@ class Cart {
     let sum = this.calculateSum()
     let shippingCost = this.calculateShippingCost()
     let totalWeight = this.calculateTotalWeight()
-    let moms = sum/4
+    let moms = sum / 4
     let grandTotalSum = sum + shippingCost
 
 
@@ -117,6 +140,7 @@ class Cart {
                 </img> ${item.name}
               </p>
               <p>
+              <span id="delete-item-button-${item.id}" class="oi oi-delete"></span>
                 <span> ${item.price} Kr/st </span> 
                 <span id="remove-item-button-${item.id}" class="oi oi-minus"></span>
                 ${item.qty}
@@ -126,7 +150,7 @@ class Cart {
             </li>
       `)
     }
-    
+
     //skriv ut namn, pris per st, antal, pris total
     $('main .container').append(`
           </ul>
