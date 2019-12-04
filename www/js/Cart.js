@@ -78,8 +78,8 @@ class Cart {
     for (let i = 0;i<store.cartProducts.length;i++){
       
       if(product.id == store.cartProducts[i].id){
-        store.cartQty -= product.qty;
-        product.qty = 1;
+        store.cartQty -= store.cartProducts[i].qty;
+        store.cartProducts[i].qty = 1;
         store.cartProducts.splice(i,i+1)
       }
     } 
