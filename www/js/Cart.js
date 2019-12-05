@@ -72,15 +72,15 @@ class Cart {
    * ta bort förekomsten av en viss produkt i kundvagnen
    * @param {*} product 
    */
-  delete(product){
-    for (let i = 0;i<store.cartProducts.length;i++){
+  delete(product) {
+    for (let i = 0; i < store.cartProducts.length; i++) {
 
-      if(product.id == store.cartProducts[i].id){
+      if (product.id == store.cartProducts[i].id) {
         store.cartQty -= store.cartProducts[i].qty;
         store.cartProducts[i].qty = 1;
-        store.cartProducts.splice(i,i+1)
+        store.cartProducts.splice(i, i + 1)
       }
-    } 
+    }
     store.save();
     $('.oi-cart').html(" " + store.cartQty)
   }
@@ -88,21 +88,12 @@ class Cart {
   /** räkna ut summan av vald produkt */
   calculateSum() {
     let sum = 0;
-    console.log('IN I LOOPEEEEEN')
     for (let item of store.cartProducts) {
-      console.log('hEJ?')
-      if(item.discount && item.qty >= 3){
-        console.log('hallå')
-        let amountOfDiscounts = Math.floor(item.qty / 3);
-        let discountSum = amountOfDiscounts * item.price * (3 - 2);
-        console.log('rabatt', amountOfDiscounts, discountSum)
-      } else{
       sum += item.price * item.qty;
-      }
     }
     return sum;
-  } 
-  
+  }
+
   /**räkna ut totalvikten */
   calculateTotalWeight() {
     let w = 0;
@@ -121,16 +112,21 @@ class Cart {
     return cost;
   }
 
+  // hur många produkter gratis?
+  discountNrs(qty) {
+    return Math.floor(qty / 3);
+  }
+
+  //priset av gratisprodukterna
+  calculateDiscount(discount, price, amountOfDiscounts) {
+    return discount ? amountOfDiscounts * price : 0
+  }
+
 
   render() {
-    let sum = this.calculateSum()
-    let shippingCost = this.calculateShippingCost()
-    let totalWeight = this.calculateTotalWeight()
-    let moms = sum / 4
-    let grandTotalSum = sum + shippingCost
-
-
-    $('main').html(`
+    if (store.cartProducts.length > 0) {
+      let sum = this.calculateSum()
+      $('main').html(`
     <section class="container mt-4">
       <div class="row">
         <div class="col">
@@ -138,10 +134,16 @@ class Cart {
           <h4>Dina varor</h4>
           <ul>
     `)
-    //loopa store.cartProducts
-    for (let item of store.cartProducts) {
+      //loopa store.cartProducts
+      for (let item of store.cartProducts) {
 
-      $('main .row .col').append(`
+        //kolla om det ska has discount
+        let amountOfDiscounts = this.discountNrs(item.qty)
+        let discountSum = this.calculateDiscount(item.discount, item.price, amountOfDiscounts)
+        sum -= discountSum
+        
+        if (discountSum>0) {
+          $('main .row .col').append(`
             <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
               <p>
                 <img src="${item.image}" alt="${item.name}" width="40px" class="rounded">
@@ -153,16 +155,35 @@ class Cart {
                 <span id="remove-item-button-${item.id}" class="oi oi-minus"></span>
                 ${item.qty}
                 <span id="add-item-button-${item.id}" class="oi oi-plus"></span> 
-                <span>${item.price * item.qty} Kr</span>
+                <span class="data-price">${item.price * item.qty} Kr</span><div></div>
+                <span >Du tjänar ${discountSum} kr, du får ${amountOfDiscounts} gratis!</span></p></li>`)
+        }
+        else {
+          $('main .row .col').append(`
+            <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
+              <p>
+                <img src="${item.image}" alt="${item.name}" width="40px" class="rounded">
+                </img> ${item.name}
               </p>
-            </li>
-      `)
-}
-    
-    //skriv ut namn, pris per st, antal, pris total
+              <p>
+              <span id="delete-item-button-${item.id}" class="oi oi-delete"></span>
+                <span> ${item.price} Kr/st </span> 
+                <span id="remove-item-button-${item.id}" class="oi oi-minus"></span>
+                ${item.qty}
+                <span id="add-item-button-${item.id}" class="oi oi-plus"></span> 
+                <span class="data-price">${item.price * item.qty} Kr</span></p></li>`)
+        }
+      }
 
-    //skriv ut namn, pris per st, antal, pris total
-    $('main .container').append(`
+
+
+      let shippingCost = this.calculateShippingCost()
+      let totalWeight = this.calculateTotalWeight()
+      let moms = sum / 4
+      let grandTotalSum = sum + shippingCost
+
+      //skriv ut namn, pris per st, antal, pris total
+      $('main .container').append(`
           </ul>
           <h4>Pris: ${Math.round(sum)} kr</h4>
           <p>Varav moms: ${Math.round(moms)} kr</p>
@@ -178,5 +199,22 @@ class Cart {
       </section>
     </section>
     `);
+    }
+
+    else {
+      $('main').html(`
+    <section class="container mt-4">
+      <div class="col">
+        <div class="row">
+          <h2 class="h1">Varukorg</h2>
+          <h4>Din varukorg är tom!</h4>
+          </div>
+          <div class="row"> 
+            <a class="nav-link" href="#produkter"><button type="button" class="btn btn-light btn-lg startpage-btn order-sm-1 order-md-2">Till butiken</button>
+          </div>
+          </div>
+      </section>
+    `)
+    }
   }
 }

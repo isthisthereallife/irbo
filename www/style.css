@@ -10554,66 +10554,6 @@ h4 {
   }
 }
 
-[data-page="start-page"] .start-cover-bg {
-  background-image: url(/images/backgroundORM.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  text-align: right;
-  margin-bottom: -40px;
-  color: #DFC3C6;
-}
-
-[data-page="start-page"] .start-text {
-  padding-right: 6%;
-  padding-top: 20%;
-}
-
-[data-page="start-page"] .start-text h1 {
-  font-size: 3.5rem;
-}
-
-[data-page="start-page"] .start-text p {
-  font-size: 1.2rem;
-}
-
-@media (max-width: 991.98px) {
-  .start-text h1 {
-    font-size: 3vw;
-    text-shadow: 3px 3px 5px rgba(122, 73, 73, 0.7);
-  }
-  .start-text p {
-    font-size: 4vw;
-  }
-  .start-text {
-    padding: 15%;
-  }
-}
-
-.ani-ul {
-  display: table;
-  width: 300px;
-  text-align: center;
-}
-
-.navbar-item {
-  display: table-cell;
-  position: relative;
-}
-
-
-.startpage-btn {
-  background-color: #434949;
-  color: white;
-  border: none;
-}
-
-.startpage-btn:hover {
-  background-color: #DFC3C6;
-  color: #434949;
-}
-
 .data-btn-circle-xs {
   width: 15px;
   height: 15px;
