@@ -32,13 +32,11 @@ class Cart {
     }
     //om det är ett unikt/nytt val
     if (unique) {
-      console.log("uniq", JSON.stringify(product))
 
       store.cartProducts.push(product)
     }
     //öka antalet varor i kundvagnen
     store.cartQty += 1;
-    console.log("products", JSON.stringify(store.cartProducts))
     //spara
     store.save();
     //skriv om siffran vid bilden, utgå från antalet varor i kundvagnen
@@ -62,9 +60,13 @@ class Cart {
 
   /**räkna ut summan av */
   calculateSum() {
-    let sum = 0
-    for (let i = 0; i < store.cartProducts.length; i++) {
-      sum += store.cartProducts[i].price * store.cartProducts[i].qty;
+    let sum = 0;
+    for (let item of store.cartProducts) {
+      if(!item.discount && this.item.qty <= 3){
+      
+      } else{
+      sum += item.price * item.qty;
+      }
     }
     return sum;
   }
