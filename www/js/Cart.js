@@ -152,7 +152,9 @@ class Cart {
               </p>
             </li>
       `)
-    }
+}
+    
+    //skriv ut namn, pris per st, antal, pris total
 
     //skriv ut namn, pris per st, antal, pris total
     $('main .container').append(`
