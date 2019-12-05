@@ -11,10 +11,18 @@ main {
     width: 100%;
     object-fit: cover;
     object-position: 50% 50%;
-    max-height: 30vh;
+    max-height: 25vh;
 }
-@media only screen and (min-width: 992px) {
+h4{
+    font-size: 20px;
+}
+@media only screen and (max-width: 765px) {
     h4{
-        font-size: 2vw;
+        font-size: 30px;
     }
+  }
+  @media only screen and (min-width: 992px){
+      h4{
+          font-size: 2vw;
+      }
   }

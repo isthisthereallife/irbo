@@ -9491,7 +9491,17 @@ main {
   width: 100%;
   object-fit: cover;
   object-position: 50% 50%;
-  max-height: 30vh;
+  max-height: 25vh;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 765px) {
+  h4 {
+    font-size: 30px;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -9543,12 +9553,12 @@ main {
   text-align: center;
 }
 
-.hover-item {
+.navbar-item {
   display: table-cell;
   position: relative;
 }
 
-.hover-link {
+.navbar-link {
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
@@ -9558,22 +9568,10 @@ main {
   position: relative;
 }
 
-.hover-link:after {
-  background: none repeat scroll 0 0 transparent;
-  bottom: 0;
-  content: "";
-  display: block;
-  height: 2px;
-  left: 50%;
+.underline {
+  height: 30px;
+  border-bottom: 3px solid #DFC3C6;
   position: absolute;
-  background: #fff;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  width: 0;
-}
-
-.hover-link:hover:after {
-  width: 100%;
-  left: 0;
 }
 
 .startpage-btn {
@@ -10599,38 +10597,11 @@ main {
   text-align: center;
 }
 
-.hover-item {
+.navbar-item {
   display: table-cell;
   position: relative;
 }
 
-.hover-link {
-  color: #fff;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.15em;
-  display: inline-block;
-  padding: 5px;
-  position: relative;
-}
-
-.hover-link:after {
-  background: none repeat scroll 0 0 transparent;
-  bottom: 0;
-  content: "";
-  display: block;
-  height: 2px;
-  left: 50%;
-  position: absolute;
-  background: #fff;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  width: 0;
-}
-
-.hover-link:hover:after {
-  width: 100%;
-  left: 0;
-}
 
 .startpage-btn {
   background-color: #434949;

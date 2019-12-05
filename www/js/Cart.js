@@ -1,6 +1,4 @@
 class Cart {
-
-
   constructor() {
     //skapa en array i localstorage om det inte redan finns en
     store.cartProducts = store.cartProducts || [];
@@ -89,12 +87,11 @@ class Cart {
 
   /**räkna ut summan av vald produkt */
   calculateSum() {
-    let sum = 0
+    let sum = 0;
     for (let item of store.cartProducts) {
-      if(!item.discount){
-
-      }
-      else{
+      if(!item.discount && this.item.qty <= 3){
+      
+      } else{
       sum += item.price * item.qty;
       }
     }
@@ -155,7 +152,9 @@ class Cart {
               </p>
             </li>
       `)
-    }
+}
+    
+    //skriv ut namn, pris per st, antal, pris total
 
     //skriv ut namn, pris per st, antal, pris total
     $('main .container').append(`
@@ -165,6 +164,10 @@ class Cart {
           <p>Vikt: ${Math.round(totalWeight)} kg</p>
           <p>Fraktkostnad: ${Math.round(shippingCost)} kr</p>
           <h4>Att betala: ${Math.round(grandTotalSum)} kr</h4>
+          </div>
+          <div>
+            <a class="nav-link ml-0 pl-0 mt-3 orderBtn" href="#orderHistory"><button type="button" 
+            class="btn btn-light startpage-btn order-sm-1 order-md-2">Beställ här</button>
           </div>
         </div>
       </section>

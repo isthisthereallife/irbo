@@ -18,12 +18,13 @@ class App {
       '': new StartPage(),
       'omoss': new AboutUs(),
       'page404': new Page404(),
-      'cart' : new Cart()
+      'cart' : new Cart(),
+      'orderHistory' : new orderHistory()
     };
     
     //this.cart är en ny instans av Cart
     this.cart = new Cart();
-
+    new NavAnimation();
     //(arrowfunktion för att inte byta vad som är "this")
     // denna kan reagera på 'hashchange' oavsett var i programmet körningen är. HUR?
     $(window).on('hashchange', () => this.changeRoute());
@@ -38,6 +39,7 @@ class App {
     //TODO
     //ignore-case
 
+    console.log(`Haajsan`);
     // Get the hash from the url - remove the #-sign
     let hash = location.hash.replace(/#/g, '');
     // The first part of the hash is everything before a '-' character
