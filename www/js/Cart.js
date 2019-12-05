@@ -20,8 +20,6 @@ class Cart {
     //bool för att se om valet är unikt/nytt
     let unique = true;
 
-    console.log("added one " + product.name)
-
     //om listan inte är tom
     if (store.cartProducts.length > 0) {
       //loopa igenom listan
@@ -40,10 +38,12 @@ class Cart {
     //om det är ett unikt/nytt val
     if (unique) {
 
+
       store.cartProducts.push(product)
     }
     //öka antalet varor i kundvagnen
     store.cartQty += 1;
+
     //spara
     store.save();
     //skriv om siffran vid bilden, utgå från antalet varor i kundvagnen
