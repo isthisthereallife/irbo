@@ -1,8 +1,10 @@
 class orderHistory{
     constructor(){
-        
+
     }
 
+
+    
     render(){ 
         $("main").html(`
             <section class="container">

@@ -6,6 +6,7 @@
     "name": "Taipan",
     "price": 439,
     "weight": 4.8,
+    "discount" : false,
     "image": "/images/snake1.jpg",
     "description": "En taipan med en brunaktig färg: utmärkta camouflagefärger mellan löv och grenar.<br>En äventyrlig orm med fin färgstruktur."
   },
@@ -16,6 +17,7 @@
     "name": "Röd Skallerorm",
     "price": 659,
     "weight": 5.7,
+    "discount" : false,
     "image": "/images/snake2.jpg",
     "description": "En röd skallerorm med bredrandiga mindre vita och svart delar.<br> En unik orm; vilda skallerormar brukar göra mycket ljud av sig med sin svans,<br>men inte tama ormar, de brukar vara tystare av sig." 
   },
@@ -26,6 +28,7 @@
     "name": "Musbebis",
     "price": 10,
     "weight": 0.2,
+    "discount" : true,
     "image": "/images/mousebaby.jpg",
     "description": "En liten, gullig mus. Den gillar ormar."
   },
@@ -36,6 +39,7 @@
     "name": "Filipinsk Kobra",
     "price": 2089,
     "weight": 9.9,
+    "discount" : false,
     "image": "/images/snake4.jpg",
     "description": "Ett väldigt sällsynt ormslag, med en helt unik färg.<br> Denna är väldigt människovänlig, men den är inte jätte glad över att vara instängd; förvänta dig att den försöker smita!"
   },
@@ -46,6 +50,7 @@
     "name": "Huggorm",
     "price": 249,
     "weight": 6.9,
+    "discount" : false,
     "image": "/images/snake5.jpg",
     "description": "En äventyrlig orm med en fascinerande typisk ormig färgstruktur!<br> Denna huggormen är svart med väldigt vaga bruna ränder."
   },
@@ -56,6 +61,7 @@
     "name": "Dödsorm",
     "price": 1099,
     "weight": 6.6,
+    "discount" : false,
     "image": "/images/snake6.jpg",
     "description": "Denna ormen kräver extra tillsyn då den äter mycket mer än en vanliga orm; dessutom äter de större volym per måltid. Denna ormen har förtjänat sitt namn och är därför ormen du söker!"
   },
@@ -66,6 +72,7 @@
     "name": "Svensk skallerorm",
     "price": 209,
     "weight": 7.2,
+    "discount" : false,
     "image": "/images/snake7.jpg",
     "description": "En grå skallerorm med bruna prickar.<br> En unik orm av sitt slag. Vilda skallerormar brukar göra mycket ljud av sig med sin svans,<br>men inte tama ormar, de brukar vara tystare av sig."
   },
@@ -76,6 +83,7 @@
     "name": "Amazon Viper",
     "price": 548,
     "weight": 12.2,
+    "discount" : false,
     "image": "/images/snake8.jpg",
     "description": "Detta är en grön huggorm från Amazonas, en väldigt sällsynt ormart.<br> Denna ormarten är giftig och kräver därför lite mer uppmärksamhet i hushållet."
   },
@@ -86,6 +94,7 @@
     "name": "Svensk Huggorm",
     "price": 234,
     "weight": 4.3,
+    "discount" : false,
     "image": "/images/snake9.jpg",
     "description": "Denna ormen kommer direkt från mellersta Sverige, de brukar inte bli så stora och är inte alls farliga på något vis."
   },
@@ -96,6 +105,7 @@
     "name": "Amazon Huggorm",
     "price": 2699,
     "weight": 8.5,
+    "discount" : false,
     "image": "/images/snake10.jpg",
     "description": "Denna huggorm kommer direkt från Amazonas, och är väldigt sällsynt. Med sin turkos-blå färg med en undersida av ljusgrönt syns på flera meters avstånd. "
   },
@@ -106,6 +116,7 @@
     "name": "Spansk Skallerorm",
     "price": 385,
     "weight": 3.6,
+    "discount" : false,
     "image": "/images/snake11.jpg",
     "description": "En grågul-randing skallerorm från Kina. <br> En unik orm av sitt slag. Vilda skallerormar brukar göra mycket ljud av sig med sin svans,<br>men inte tama ormar; de brukar vara tystare av sig."
   },
@@ -116,6 +127,7 @@
     "name": "Svart Viper",
     "price": 579,
     "weight": 4.4,
+    "discount" : false,
     "image": "/images/snake12.jpg",
     "description": "Detta är en svart huggorm från Amazonas; en väldigt sällsynt ormart.<br> Denna ormarten är giftig och kräver därför lite mer uppmärksamhet i hushållet."
   },
@@ -126,6 +138,7 @@
     "name": "Yellow Anaconda",
     "price": 1299,
     "weight": 20.7,
+    "discount" : false,
     "image": "/images/snake13.jpg",
     "description": "En vädligt fin gul anaconda som är mycket stor! Vi rekommenderar därför att du har ett lite större och kraftigare terrarium."
   },
@@ -136,6 +149,7 @@
     "name": "Brasiliansk Viper",
     "price": 149,
     "weight": 5.3,
+    "discount" : false,
     "image": "/images/snake14.jpg",
     "description": "Detta är en mörkgrön huggorm med små svarta fläckar, från Brasilien, en väldigt sällsynt ormart.<br> Denna ormarten är giftig och kräver därför lite mer uppmärksamhet i hushållet."
   },
@@ -146,6 +160,7 @@
     "name": "Kubansk Viper",
     "price": 348,
     "weight": 12,
+    "discount" : false,
     "image": "/images/snake15.jpg",
     "description": "Detta är en mörkgrön huggorm med små svarta fläckar, som är från Kuba. En väldigt sällsynt ormart.<br> Denna ormarten är giftig och kräver därför lite mer uppmärksamhet i hushållet."
   }
