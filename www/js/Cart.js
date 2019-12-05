@@ -20,6 +20,8 @@ class Cart {
     //bool för att se om valet är unikt/nytt
     let unique = true;
 
+    console.log("added one " + product.name)
+
     //om listan inte är tom
     if (store.cartProducts.length > 0) {
       //loopa igenom listan
@@ -38,12 +40,10 @@ class Cart {
     //om det är ett unikt/nytt val
     if (unique) {
 
-
       store.cartProducts.push(product)
     }
     //öka antalet varor i kundvagnen
     store.cartQty += 1;
-
     //spara
     store.save();
     //skriv om siffran vid bilden, utgå från antalet varor i kundvagnen
@@ -85,19 +85,24 @@ class Cart {
     $('.oi-cart').html(" " + store.cartQty)
   }
 
-  /**räkna ut summan av vald produkt */
+  /** räkna ut summan av vald produkt */
   calculateSum() {
     let sum = 0;
+    console.log('IN I LOOPEEEEEN')
     for (let item of store.cartProducts) {
-      if(!item.discount && this.item.qty <= 3){
-      
+      console.log('hEJ?')
+      if(item.discount && item.qty >= 3){
+        console.log('hallå')
+        let amountOfDiscounts = Math.floor(item.qty / 3);
+        let discountSum = amountOfDiscounts * item.price * (3 - 2);
+        console.log('rabatt', amountOfDiscounts, discountSum)
       } else{
       sum += item.price * item.qty;
       }
     }
     return sum;
-  }
-
+  } 
+  
   /**räkna ut totalvikten */
   calculateTotalWeight() {
     let w = 0;
