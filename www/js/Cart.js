@@ -87,12 +87,11 @@ class Cart {
 
   /**räkna ut summan av vald produkt */
   calculateSum() {
-    let sum = 0
+    let sum = 0;
     for (let item of store.cartProducts) {
-      if(!item.discount){
-
-      }
-      else{
+      if(!item.discount && this.item.qty <= 3){
+      
+      } else{
       sum += item.price * item.qty;
       }
     }
