@@ -193,7 +193,7 @@ class Cart {
           </div>
           <div>
             <a class="nav-link ml-0 pl-0 mt-3 orderBtn" href="#orderHistory"><button type="button" 
-            class="btn btn-light startpage-btn order-sm-1 order-md-2">Beställ här</button>
+            class="btn btn-light productpage-btn order-sm-1 order-md-2">Beställ här</button>
           </div>
         </div>
       </section>
@@ -207,6 +207,8 @@ class Cart {
       <div class="col">
         <div class="row">
           <h2 class="h1">Varukorg</h2>
+          </div>
+          <div class="row">
           <h4>Din varukorg är tom!</h4>
           </div>
           <div class="row"> 
