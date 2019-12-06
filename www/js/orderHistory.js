@@ -1,4 +1,4 @@
-class orderHistory{
+class OrderHistory{
     constructor(){
 
     }
