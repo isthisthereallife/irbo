@@ -89,7 +89,7 @@ class Cart {
   calculateSum() {
     let sum = 0;
     for (let item of store.cartProducts) {
-      if(!item.discount && this.item.qty <= 3){
+      if(!item.discount && item.qty <= 3){
       
       } else{
       sum += item.price * item.qty;
