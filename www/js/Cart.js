@@ -75,10 +75,10 @@ class Cart {
   delete(product) {
     for (let i = 0; i < store.cartProducts.length; i++) {
 
-      if (product.id == store.cartProducts[i].id) {
+      if (product.id === store.cartProducts[i].id) {
         store.cartQty -= store.cartProducts[i].qty;
         store.cartProducts[i].qty = 1;
-        store.cartProducts.splice(i, i + 1)
+        store.cartProducts.splice(i,1)
       }
     }
     store.save();
