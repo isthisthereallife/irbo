@@ -6,8 +6,16 @@
 // The whole Bootstrap library
 @import 'bootstrap/bootstrap';
 
-// My own CSS (as little as possible)
-@import 'sticky-footer';
+// Our own CSS (as little as possible)
+@import '_sticky-footer';
+@import 'background-styles';
+@import 'navbar-animation';
+@import 'startpage-button';
 @import 'open-iconic-bootstrap.scss';
+@import 'logo-navbar';
+@import 'cart-list-design';
+@import 'product-list';
+@import 'logo-navbar';
 @import 'about-us-page';
 @import 'background-color';
+@import 'navbar-style';

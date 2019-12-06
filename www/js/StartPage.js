@@ -6,12 +6,15 @@ class StartPage {
   */
 
   render() {
+    $('main').attr('data-page','start-page');
     $('main').html(/*html*/`
-      <section class="row">
-        <div class="col">
-          <h1>Välkommen!</h1>
-          <p>Välkommen till vår fina webbsida!</p>
-        </div>
+      <section class="container-fluid start-cover-bg">
+      <div class="row">
+        <div class="col start-text">
+            <h1>Skaffa dig en ny vän</h1>
+            <p>En orm är lojalare än en hund och fäller ingen päls.</p>
+            <a class="nav-link" href="#produkter"><button type="button" class="btn btn-light btn-lg startpage-btn order-sm-1 order-md-2">KÖP ORM NU</button>
+        </div></div>
       </section>
     `);
   }

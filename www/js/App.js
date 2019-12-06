@@ -13,24 +13,18 @@ class App {
   */
 
   constructor() {
-    // These are some routes:
-    // * the keys are url hashes
-    // * the values are instances of classes
-    // (we will add more routes when we have read
-    //  the products from JSON)
     // pekar på instanser av andra klasser
     this.routes = {
       '': new StartPage(),
       'omoss': new AboutUs(),
       'page404': new Page404(),
-      'cart' : new Cart()
+      'cart' : new Cart(),
+      'orderHistory' : new orderHistory()
     };
     
-    // A shop should always have a cart
     //this.cart är en ny instans av Cart
     this.cart = new Cart();
-
-    // Listen to hash changes - rerender...
+    new NavAnimation();
     //(arrowfunktion för att inte byta vad som är "this")
     // denna kan reagera på 'hashchange' oavsett var i programmet körningen är. HUR?
     $(window).on('hashchange', () => this.changeRoute());
@@ -38,6 +32,7 @@ class App {
     // Load the products from JSON
     this.loadProducts();
   }
+  
 
   changeRoute() {
 
@@ -55,6 +50,8 @@ class App {
     // (the css selector finds a-tags with matching hrefs)
     $('header nav a').removeClass('active');
     $(`header nav a[href="#${hashFirstPart}"]`).addClass('active');
+    //uppdatera kundvagnsikonen
+    $('.oi-cart').html(" " + store.cartQty)
     // Render content
     pageToShow.render();
   }
@@ -63,7 +60,6 @@ class App {
   // Loading data from JSON takes time
   // await "pauses" until we have have a result
   async loadProducts() {
-    // Load the products from JSON
     // await väntar med att gå vidare tills t ex laddat klart
     let productsData = await $.getJSON('/json/products.json');
 
