@@ -1,9 +1,22 @@
 class OrderHistory{
     constructor(){
+        store.oldOrders = store.oldOrders || [];
+    
+    $('body').on('click', '.confirmOrder-btn', e =>{
+        e.preventDefault();
+        store.oldOrders.push(store.cartProducts);
+        console.log("Stored contents of store.cartProducts to store.oldOrders")
+        store.cartProducts = []
+        console.log("Emptied store.cartProducts")
 
+    })
+
+
+}
+    
+    addToOldOrders(){
+        store.oldOrders.push(store.cartProducts)
     }
-
-
     
     render(){ 
         $("main").html(`
