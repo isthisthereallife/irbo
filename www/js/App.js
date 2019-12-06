@@ -39,7 +39,6 @@ class App {
     //TODO
     //ignore-case
 
-    console.log(`Haajsan`);
     // Get the hash from the url - remove the #-sign
     let hash = location.hash.replace(/#/g, '');
     // The first part of the hash is everything before a '-' character
