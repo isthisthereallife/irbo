@@ -1,25 +1,11 @@
 class Checkoutpage{
-    constructor(){
-        console.log('HEJJJEJJEHEJEJ')
-    }
+  
     render(){
     $('main').html(/*html*/`
-    <section class="container mt-5">
-    <h1>Betalning</h1>
+    <section class="container-fluid mt-5">
+        <h1>Betalning</h1>
 		<div class="tab_container">
-			<input id="tab1" type="radio" name="tabs">
-      <label for="tab1"><span class="numberCircle">1</span><span>Cart</span></label>
-
-			<input id="tab2" type="radio" name="tabs">
-			<label for="tab2"><span class="numberCircle">2</span><span>Customer Information</span></label>
-
-			<input id="tab3" type="radio" name="tabs" >
-			<label for="tab3"><span class="numberCircle">3</span><span>Shipping</span></label>
-
-			<input id="tab4" type="radio" name="tabs" checked>
-			<label for="tab4"><span class="numberCircle">4</span><span>Payment</span></label>
-
-
+	
 			<section id="content1" class="tab-content">
 				<h3>Cart Items</h3>
 		      	<p></p>
@@ -153,14 +139,20 @@ class Checkoutpage{
       </div>    
             
     </div>
-    <div class="button-master-container">
-      <div class="button-container"><a href="#">Return to Shipping</a>
-      </div>
-      <div class="button-container button-finish"><a href="#">Finish Order</a>
-      </div>
+
+    <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <a class="nav-link" href="#orderhistory"><button type="button" class="btn btn-primary text-nowrap">Slutför köp</button></a>
+    </div>
+    <div class="col-4">
+        <a class="nav-link" href="#cart"><button type="button" class="btn btn-secondary text-nowrap">Tillbaks till kundvagnen</button></a>
+        </div>
+    </div></div>
+      
     </div>
     </form>
-			</section>
+			
 		</div>
 
 </section>
