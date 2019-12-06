@@ -13,10 +13,21 @@ class StartPage {
         <div class="col start-text">
             <h1>Skaffa dig en ny vän</h1>
             <p>En orm är lojalare än en hund och fäller ingen päls.</p>
-            <a class="nav-link" href="#produkter"><button type="button" class="btn btn-light btn-lg startpage-btn order-sm-1 order-md-2">KÖP ORM NU</button>
+            <a class="nav-link" href="#produkter"><button type="button" class="btn btn-light btn-lg productpage-btn order-sm-1 order-md-2">KÖP ORM NU</button>
         </div></div>
       </section>
     `);
-  }
 
+    $('body').on('click', '.productpage-btn', function () { 
+      $('.underline').animate(
+        {
+          left: $('.product-link').offset().left + 8,
+          width: $('.product-link').width()
+        },
+        500
+      );
+    })
+  
+  }
 }
+
