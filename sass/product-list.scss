@@ -2,18 +2,8 @@
     width: 100%;
     object-fit: cover;
     object-position: 50% 50%;
-    max-height: 25vh;
+    height: 38vh;
 }
 .produktListaRubrik{
     font-size: 20px;
 }
-@media only screen and (max-width: 765px) {
-    .produktListaRubrik{
-        font-size: 30px;
-    }
-  }
-  @media only screen and (min-width: 992px){
-      .produktListaRubrik{
-          font-size: 2vw;
-      }
-  }

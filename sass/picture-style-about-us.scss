@@ -1,0 +1,17 @@
+.aboutUsPic{
+    object-fit: cover;
+    object-position: 50% 50%;
+    min-width: 100%;
+    border-radius: 15px;
+    margin-top: 11vh;
+    align-content: center;
+}
+@media only screen and (max-width: 992px) {
+    .aboutUsPic{
+        max-width: 20vw;
+        min-height: 30vh;
+    }
+    .container{
+        width: 100%;
+    }
+  }
