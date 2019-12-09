@@ -73,6 +73,6 @@ class AboutUs {
           </article>
         </section>
       </section>
-      `);
+    `);
   }
 }
