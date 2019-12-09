@@ -81,16 +81,16 @@ render() {
 `);
 
 $('body').on('click', '.yes-btn', function () { 
-    $('body').removeClass('modal-open');
-    let info = {
-  
-    firstname: $('#firstname').val(),
-    surname:  $('#surname').val(),
-    email: $('#email').val(),
-    adress: $('#address').val(),
-    city: $('#city').val(),
-    date: new Date()
-    }
+  $('body').removeClass('modal-open');
+  let info = {
+
+  firstname: $('#firstname').val(),
+  surname:  $('#surname').val(),
+  email: $('#email').val(),
+  adress: $('#address').val(),
+  city: $('#city').val(),
+  date: new Date()
+  }
 
 store.customerInfo.push(info)
 store.save()
