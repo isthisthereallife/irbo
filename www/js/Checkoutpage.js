@@ -146,7 +146,7 @@ class Checkoutpage{
         <a class="nav-link" href="#orderhistory"><button type="button" class="btn btn-primary text-nowrap">Slutför köp</button></a>
     </div>
     <div class="col-4">
-        <a class="nav-link" href="#cart"><button type="button" class="btn btn-secondary text-nowrap">Tillbaks till kundvagnen</button></a>
+        <a class="nav-link" href="#cart"><button type="button" class="btn btn-secondary text-nowrap goback-btn">Tillbaks till kundvagnen</button></a>
         </div>
     </div></div>
       

@@ -20,7 +20,7 @@ class App {
       'page404': new Page404(),
       'cart' : new Cart(),
       'orderhistory' : new OrderHistory(),
-      'order': new Order(),
+      'orderpage': new Orderpage(),
       'checkoutpage': new Checkoutpage()
     };
     
@@ -41,7 +41,6 @@ class App {
     //TODO
     //ignore-case
 
-    console.log(`Haajsan`);
     // Get the hash from the url - remove the #-sign
     let hash = location.hash.replace(/#/g, '');
     // The first part of the hash is everything before a '-' character

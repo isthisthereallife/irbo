@@ -1,4 +1,5 @@
 class Cart {
+
   constructor() {
     //skapa en array i localstorage om det inte redan finns en
     store.cartProducts = store.cartProducts || [];
@@ -7,10 +8,6 @@ class Cart {
     //id som nycklar, kvantitet som värde
     store.save();
   }
-
-
-
-
 
   /**
    * lägga till produkter i kundvagnen
@@ -166,7 +163,7 @@ class Cart {
           <h4>Att betala: ${Math.round(grandTotalSum)} kr</h4>
           </div>
           <div>
-            <a class="nav-link ml-0 pl-0 mt-3 orderBtn" href="#order"><button type="button" 
+            <a class="nav-link ml-0 pl-0 mt-3 orderBtn" href="#orderpage"><button type="button" 
             class="btn btn-light startpage-btn order-sm-1 order-md-2">Beställ här</button>
           </div>
         </div>
