@@ -10614,12 +10614,14 @@ main {
   border-radius: 15px;
   margin-top: 11vh;
   align-content: center;
+  max-width: 30vw;
 }
 
 @media only screen and (max-width: 992px) {
   .aboutUsPic {
-    max-width: 20vw;
-    min-height: 30vh;
+    width: 20vw;
+    height: 48vh;
+    margin-bottom: 20px;
   }
   .container {
     width: 100%;
@@ -10630,10 +10632,4 @@ main {
   border: #434949 solid;
   border-radius: 6px;
   background-color: lightgrey;
-}
-
-.aboutUsPic {
-  object-fit: contain;
-  object-position: 50% 50%;
-  width: 50vw;
 }
