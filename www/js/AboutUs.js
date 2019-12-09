@@ -8,7 +8,7 @@ class AboutUs {
   render() {
     $('main').attr('data-page','about-us-page');
     $('main').html(/*html*/`
-      <section class="container mt-3 mb-3 data-aboutUs">
+      <section class="container mt-2 data-aboutUs">
         <section class="row w-100">
           <article class="col-lg-5 col-sm-12">
             <img class="aboutUsPic" src="../images/homeSnake2.jpg">  
@@ -20,22 +20,21 @@ class AboutUs {
               Sortimentet är brett och prisvärt och du hittar välkända ormar av högsta kvalitet. 
               Förutom ett stort antal fysiska butiker från norr till söder har vi en gedigen e-handel. 
               I e-handeln får du samma goda service, lika brett sortiment och samma kunskap som i våra butiker. 
-              Ett besök hos oss ska ge dig en härlig upplevelse fylld av glädje och inspiration.
+              Ett besök hos oss ska ge dig en härlig upplevelse fylld av inspiration.
             </p>
           </article>
         </section>
         <section class="row w-100">
-          <article class="col-lg-4 col-sm-12">
+          <article class="col-lg-5 col-sm-12">
             <img class="aboutUsPic" src="../images/homeSnake1.jpg">  
           </article>
-          <article class="col-lg-8 col-sm-12">
+          <article class="col-lg-7 col-sm-12">
             <h3>
               <span>Full service, trygghet & goda råd</span>
             </h3>
             <p>
-              Snakebaby grundades 1987 och har alltså över 30 års erfarenhet i branschen. 2						Därför kan du alltid vara säker på att vi erbjuder det bästa till dig och ditt terrarium.
-            </p>
-            <p>
+              Snakebaby grundades 1987 och har alltså över 30 års erfarenhet i branschen.					
+              Därför kan du alltid vara säker på att vi erbjuder det bästa till dig och ditt terrarium.
               Det är viktigt att du som kund känner dig trygg när du handlar hos oss. 
               Genom rätt kunskap och bra service kan du lita på att du får det du förväntar dig av oss. 
               Du är alltid varmt välkommen att kontakta vår kunniga kundservice om du har frågor eller behöver rådgivning.
@@ -47,7 +46,7 @@ class AboutUs {
         </section>
 
         <section class="row w-100">
-          <article class="quickTip col-lg-4 col-sm-12 mt-2">
+          <article class="quickTip col-lg-5 col-sm-12 mt-2">
           <h5 class="text-center mt-2">
             Att tänka på som ormägare
           </h5>
@@ -60,7 +59,7 @@ class AboutUs {
               </li>
             </ul>
           </article>
-          <article class="col-lg-8 col-sm-12 mt-3">
+          <article class="col-lg-7 col-sm-12">
             <p>
               Vårt mål är att det ska vara roligt för dig som kund att besöka Snakebaby. 
               Våra medarbetare har spetskompetenser inom olika områden och brinner för att få dela sin kunskap med dig. 

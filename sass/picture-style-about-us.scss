@@ -5,11 +5,13 @@
     border-radius: 15px;
     margin-top: 11vh;
     align-content: center;
+    max-width: 30vw;
 }
 @media only screen and (max-width: 992px) {
     .aboutUsPic{
-        max-width: 20vw;
-        min-height: 30vh;
+        width: 20vw;
+        height: 48vh;
+        margin-bottom: 30px;
     }
     .container{
         width: 100%;
