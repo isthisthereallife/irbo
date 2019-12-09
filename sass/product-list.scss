@@ -7,3 +7,17 @@
 .produktListaRubrik{
     font-size: 20px;
 }
+@media only screen and (min-width: 768px) {
+    .snakebby.logo{
+        max-width: 10vw;
+    }
+    li{
+        margin-top: -50px;
+    }
+  .navbar-toggler{
+    font-size: 0.85em;
+  }
+  .nav-link{
+      padding: 0;
+  }
+}
