@@ -1,4 +1,5 @@
 class Cart {
+
   constructor() {
     //skapa en array i localstorage om det inte redan finns en
     store.cartProducts = store.cartProducts || [];
@@ -9,10 +10,6 @@ class Cart {
 
     
   }
-
-
-
-
 
   /**
    * lägga till produkter i kundvagnen

@@ -19,7 +19,9 @@ class App {
       'omoss': new AboutUs(),
       'page404': new Page404(),
       'cart' : new Cart(),
-      'orderHistory' : new orderHistory()
+      'orderhistory' : new OrderHistory(),
+      'orderpage': new Orderpage(),
+      'checkoutpage': new Checkoutpage()
     };
     
     //this.cart är en ny instans av Cart
