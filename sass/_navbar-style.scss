@@ -1,0 +1,37 @@
+
+.ani-ul { 
+  display: table;
+  width: 300px;
+  text-align: center;
+}
+
+.navbar-item { 
+  display: table-cell; 
+  position: relative; 
+}
+
+.navbar-link {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.underline{
+  height: 40px;
+  border-bottom: 3px solid #DFC3C6;
+  position: absolute;
+}   
+
+@media only screen and (max-width: 992px){
+  .navbar-item { 
+    display: flex; 
+  }
+}
+
+
+
