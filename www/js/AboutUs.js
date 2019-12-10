@@ -32,7 +32,7 @@ class AboutUs {
           </article>
           <article class="col-lg-7 col-sm-12">
             <h2 class="quickTipRubrik text-center">
-              Full service, trygghet och goda råd
+              Full service, trygghet<br>och goda råd
             </h2>
             <p>
               Snakebaby grundades 1987 och har alltså över 30 års erfarenhet i branschen.					

@@ -10618,12 +10618,8 @@ main {
 
 @media only screen and (max-width: 992px) {
   .aboutUsPic {
-    width: auto;
-    height: 33vh;
+    height: 29vh;
     margin-bottom: 20px;
-  }
-  .container {
-    width: 100%;
   }
 }
 
