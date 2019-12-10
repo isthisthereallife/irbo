@@ -19,6 +19,14 @@ class Product {
     this.addAddItemListener(cart);
     this.addRemoveItemListener(cart);
     this.addDeleteItemListener(cart);
+    this.addClearCartListener(cart);
+  }
+
+  addClearCartListener(cart) {
+    $('body').on('click', `#clear-cart-button`, e => {
+      e.preventDefault();
+      cart.clearCart();
+    })
   }
   
   //deleteknappen på varukorgssidan
