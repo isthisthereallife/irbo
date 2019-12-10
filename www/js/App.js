@@ -33,6 +33,19 @@ class App {
     
     // Load the products from JSON
     this.loadProducts();
+
+    $('body').on('click', '.productpage-btn', function () { 
+      $('.underline').animate(
+        {
+          left: $('.product-link').offset().left + 8,
+          width: $('.product-link').width()
+        },
+        500
+      );
+    })
+    $('body').on('click', '#nav-item-logo', function () { 
+      $('#nav-item-start').click();
+    })
   }
   
 

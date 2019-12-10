@@ -4,6 +4,8 @@ class NavAnimation {
     $('nav').append('<div class="underline d-none d-lg-block"/>');
     $('nav .navbar-link').on('click', e => this.underlineSlider(e));
   }
+
+  
   
   
   underlineSlider(e) {

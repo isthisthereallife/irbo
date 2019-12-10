@@ -224,7 +224,7 @@ class Cart {
           <h4>Din varukorg är tom!</h4>
           </div>
           <div class="row"> 
-            <a class="nav-link" href="#produkter"><button type="button" class="btn btn-light btn-lg startpage-btn order-sm-1 order-md-2">Till butiken</button>
+            <a class="nav-link" href="#produkter"><button type="button" class="btn btn-light btn-lg productpage-btn order-sm-1 order-md-2">Till butiken</button></a>
           </div>
           </div>
       </section>

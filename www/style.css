@@ -10595,12 +10595,6 @@ main {
   margin-top: 20px;
 }
 
-.underline {
-  height: 40px;
-  border-bottom: 3px solid #DFC3C6;
-  position: absolute;
-}
-
 @media only screen and (max-width: 992px) {
   .navbar-item {
     display: flex;
