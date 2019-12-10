@@ -1,15 +1,21 @@
 
 .ani-ul { 
-  display: table;
-  width: 300px;
+  display: flex;
   text-align: center;
+  justify-content: right;
+  align-items: flex-end;
+  flex-grow: 1;
 }
-
+.navbar-toggler#data-burgarn{
+  padding: 0;
+}
+#data-cart-item{
+  margin:0;
+}
 .navbar-item { 
   display: table-cell; 
   position: relative; 
 }
-
 .navbar-link {
   color: #fff;
   text-transform: uppercase;
