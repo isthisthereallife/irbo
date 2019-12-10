@@ -8,13 +8,15 @@ class AboutUs {
   render() {
     $('main').attr('data-page','about-us-page');
     $('main').html(/*html*/`
-      <section class="container mt-2 data-aboutUs">
+      <section class="container mt-3 data-aboutUs text-center">
         <section class="row w-100">
           <article class="col-lg-5 col-sm-12">
             <img class="aboutUsPic" src="../images/homeSnake2.jpg">  
           </article>
           <article class="col-lg-7 col-sm-12">
-            <h2>Om Snakebaby</h2>  
+            <h2 class="quickTipRubrik text-center">
+              Om Snakebaby
+            </h2>  
             <p>Snakebaby är Sveriges största, rikstäckade ormkedja som erbjuder de bästa djuren. 
               Vårt sortiment är noga utvalt och innehåller alla ormar du kan tänkas behöva. 
               Sortimentet är brett och prisvärt och du hittar välkända ormar av högsta kvalitet. 
@@ -29,9 +31,9 @@ class AboutUs {
             <img class="aboutUsPic" src="../images/homeSnake1.jpg">  
           </article>
           <article class="col-lg-7 col-sm-12">
-            <h3>
-              <span>Full service, trygghet & goda råd</span>
-            </h3>
+            <h2 class="quickTipRubrik text-center">
+              Full service, trygghet och goda råd
+            </h2>
             <p>
               Snakebaby grundades 1987 och har alltså över 30 års erfarenhet i branschen.					
               Därför kan du alltid vara säker på att vi erbjuder det bästa till dig och ditt terrarium.
@@ -45,7 +47,7 @@ class AboutUs {
           </article>
         </section>
 
-        <section class="row w-100">
+        <section class="row text-center">
           <article class="quickTip col-lg-5 col-sm-12 mt-2">
           <h5 class="text-center mt-2">
             Att tänka på som ormägare
