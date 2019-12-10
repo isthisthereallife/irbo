@@ -43,6 +43,7 @@ class App {
         500
       );
     })
+    //simulate a click on "start" when the logo is clicked
     $('body').on('click', '#nav-item-logo', function () { 
       $('#nav-item-start').click();
     })
@@ -50,12 +51,10 @@ class App {
   
 
   changeRoute() {
-
-    //TODO
-    //ignore-case
-
     // Get the hash from the url - remove the #-sign
     let hash = location.hash.replace(/#/g, '');
+    //make it lower case
+    hash = hash.toLowerCase();
     // The first part of the hash is everything before a '-' character
     let hashFirstPart = hash.split('-')[0];
     // Look up the "page to show" - the instance to call render on
