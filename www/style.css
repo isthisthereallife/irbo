@@ -9487,29 +9487,6 @@ main {
   flex: 1;
 }
 
-.img-fluid {
-  width: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  max-height: 25vh;
-}
-
-h4 {
-  font-size: 20px;
-}
-
-@media only screen and (max-width: 765px) {
-  h4 {
-    font-size: 30px;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  h4 {
-    font-size: 2vw;
-  }
-}
-
 [data-page="start-page"] .start-cover-bg {
   background-image: url(/images/backgroundORM.jpg);
   background-position: center;
@@ -10566,6 +10543,17 @@ h4 {
   align-self: center;
 }
 
+.img-fluid {
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  height: 38vh;
+}
+
+.produktListaRubrik {
+  font-size: 20px;
+}
+
 .snakebby-logo {
   width: 200px;
   height: 60px;
@@ -10583,4 +10571,65 @@ h4 {
     width: 350px;
     height: 90px;
   }
+}
+
+.ani-ul {
+  display: table;
+  width: 300px;
+  text-align: center;
+}
+
+.navbar-item {
+  display: table-cell;
+  position: relative;
+}
+
+.navbar-link {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.underline {
+  height: 40px;
+  border-bottom: 3px solid #DFC3C6;
+  position: absolute;
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar-item {
+    display: flex;
+  }
+}
+
+.aboutUsPic {
+  object-fit: cover;
+  object-position: 50% 50%;
+  min-width: 100%;
+  border-radius: 15px;
+  margin-top: 11vh;
+  align-content: center;
+  max-width: 30vw;
+}
+
+@media only screen and (max-width: 992px) {
+  .aboutUsPic {
+    width: 20vw;
+    height: 48vh;
+    margin-bottom: 20px;
+  }
+  .container {
+    width: 100%;
+  }
+}
+
+.quickTip {
+  border: #434949 solid;
+  border-radius: 6px;
+  background-color: lightgrey;
 }
