@@ -1,4 +1,5 @@
 class Cart {
+
   constructor() {
     //skapa en array i localstorage om det inte redan finns en
     store.cartProducts = store.cartProducts || [];
@@ -6,11 +7,9 @@ class Cart {
     //to do, en map för kvantitet
     //id som nycklar, kvantitet som värde
     store.save();
+
+    
   }
-
-
-
-
 
   /**
    * lägga till produkter i kundvagnen
@@ -66,6 +65,16 @@ class Cart {
     }
     store.save();
     $('.oi-cart').html(" " + store.cartQty)
+  }
+  //töm kundvagnen helt
+  clearCart() {
+    for (let item of store.cartProducts){
+      this.delete(item)
+    }
+    store.cartQty = 0
+    store.save();
+    $('.oi-cart').html(" " + store.cartQty)
+    this.render()
   }
 
   /**
@@ -192,9 +201,12 @@ class Cart {
           <h4>Att betala: ${Math.round(grandTotalSum)} kr</h4>
           </div>
           <div>
-            <a class="nav-link ml-0 pl-0 mt-3 orderBtn" href="#orderHistory"><button type="button" 
-            class="btn btn-light productpage-btn order-sm-1 order-md-2">Beställ här</button>
-          </div>
+            <a class="nav-link ml-0 pl-0 mt-3" href="#orderpage"><button type="button"
+            class="btn btn-light startpage-btn order-sm-1 orderBtn order-md-2">Beställ här</button>
+          </div><div>
+          <a class="nav-link ml-0 pl-0"><button type="button" 
+          class="btn btn-danger order-sm-1 order-md-2" id="clear-cart-button">Töm varukorgen</button>
+        </div>
         </div>
       </section>
     </section>
@@ -212,7 +224,7 @@ class Cart {
           <h4>Din varukorg är tom!</h4>
           </div>
           <div class="row"> 
-            <a class="nav-link" href="#produkter"><button type="button" class="btn btn-light btn-lg startpage-btn order-sm-1 order-md-2">Till butiken</button>
+            <a class="nav-link" href="#produkter"><button type="button" class="btn btn-light btn-lg productpage-btn order-sm-1 order-md-2">Till butiken</button></a>
           </div>
           </div>
       </section>

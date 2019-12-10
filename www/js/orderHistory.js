@@ -4,20 +4,24 @@ class OrderHistory{
     
     $('body').on('click', '.confirmOrder-btn', e =>{
         e.preventDefault();
-        store.oldOrders.push(store.cartProducts);
-        console.log("Stored contents of store.cartProducts to store.oldOrders")
-        store.cartProducts = []
-        console.log("Emptied store.cartProducts")
-
+        this.addToOldOrders()
+        this.emptyCart()
     })
 
 
 }
-    
     addToOldOrders(){
         store.oldOrders.push(store.cartProducts)
+        console.log("Stored contents of store.cartProducts to store.oldOrders")
+    }
+    emptyCart(){
+        store.cartProducts = []
+        store.cartQty = 0
+        $('.oi-cart').html(" " + store.cartQty)
+        console.log("Emptied store.cartProducts")
     }
     
+            
     render(){ 
         $("main").html(`
             <section class="container">

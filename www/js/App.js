@@ -1,46 +1,45 @@
 class App {
-  
-
-  /*
-  
-    I am an App.
-
-    I am a router... I display the correct page content.
-    I also read all the products from json
-    and create routes for them too.
-    All routes will replace the content
-    in the main-tag :)
-  */
 
   constructor() {
-    // pekar på instanser av andra klasser
+    
     this.routes = {
       '': new StartPage(),
       'omoss': new AboutUs(),
       'page404': new Page404(),
       'cart' : new Cart(),
-      'orderHistory' : new OrderHistory()
+      'orderhistory' : new OrderHistory(),
+      'orderpage': new Orderpage(),
+      'checkoutpage': new Checkoutpage()
     };
     
-    //this.cart är en ny instans av Cart
     this.cart = new Cart();
     new NavAnimation();
-    //(arrowfunktion för att inte byta vad som är "this")
-    // denna kan reagera på 'hashchange' oavsett var i programmet körningen är. HUR?
+    
     $(window).on('hashchange', () => this.changeRoute());
     
-    // Load the products from JSON
     this.loadProducts();
+
+    $('body').on('click', '.productpage-btn', function () { 
+      $('.underline').animate(
+        {
+          left: $('.product-link').offset().left + 8,
+          width: $('.product-link').width()
+        },
+        500
+      );
+    })
+    //simulate a click on "start" when the logo is clicked
+    $('body').on('click', '#nav-item-logo', function () { 
+      $('#nav-item-start').click();
+    })
   }
   
 
   changeRoute() {
-
-    //TODO
-    //ignore-case
-
     // Get the hash from the url - remove the #-sign
     let hash = location.hash.replace(/#/g, '');
+    //make it lower case
+    hash = hash.toLowerCase();
     // The first part of the hash is everything before a '-' character
     let hashFirstPart = hash.split('-')[0];
     // Look up the "page to show" - the instance to call render on
