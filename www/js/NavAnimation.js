@@ -5,7 +5,7 @@ class NavAnimation {
     $('nav .navbar-link').on('click', e => this.underlineSlider(e));
 
     // fejka ett klick på hamburgaren efter val från dropdown-naven
-    $('#navbarSupportedContent').on('click', '.navbar-link', function () {
+    $('nav').on('click', '.nav-item', function () {
       if ($('#navbarSupportedContent').hasClass('show')) {
         $('#data-burgarn').click();
       }
