@@ -13,6 +13,7 @@ class App {
     };
     
     this.cart = new Cart();
+    new CartSelection();
     new NavAnimation();
     
     $(window).on('hashchange', () => this.changeRoute());

@@ -6,10 +6,11 @@ class OrderHistory {
     })
     $('body').on('click', '#sort-btn', e => {
       console.log(JSON.stringify(store.order))
-
+      if (store.order>0){
       store.order.reverse();
       console.log(store.order)
       this.render()
+      }
     })
   }
 

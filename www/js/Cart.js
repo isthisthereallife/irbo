@@ -4,20 +4,50 @@ class Cart {
     //skapa en array i localstorage om det inte redan finns en
     store.cartProducts = store.cartProducts || [];
     store.cartQty = store.cartQty || 0;
-    new CartSelection()
     //to do, en map för kvantitet
     //id som nycklar, kvantitet som värde
     store.save();
 
-    $('main').on('click', '#addCartBtn', () =>{
+    //2DO jag har skapat nya problem
+    // största problemet: events som kickar 2 ggr
+    //
+    // andra problem:
+    // allt räknas inte om när jag byter cart
+    // updateknappen: redundant? aktuell cart (ska) sparas automatiskt när en byter till en annan
+    // se till att store.cartQty aldrig kan bli negativ
+
+
+    // 2 DO --------- this fires twice!! why?? this fires twice!! why??
+    $('main').on('click', '#add-cart-btn', (e) => {
+      console.log(e)
       console.log("cartlist innan = ", store.cartlist)
       this.addCart()
       console.log("cartlist efter = ", store.cartlist)
-
+    })
+    // ett sätt att skriva över aktuell cart med ny information
+    $('main').on('click', '#btn-update-cart', (e) => {
+      this.updateCart()
     })
 
-    
+    //byt kundvagn
+    $('main').on('click', '.dropdown-item', (e) => {
+      console.log(e)
+      let listplats = $(e.currentTarget).attr('data-cartnumber')
+      store.currentCart = listplats
+      console.log("listplats = " + listplats)
+      //spara över från cartlistan till aktuell cart
+      store.cartProducts = store.cartlist[listplats].products
+      //spara mängden till store.cartQty
+      store.cartQty = store.cartlist[listplats].cartQty
+      $('.oi-cart').html(" " + store.cartQty)
+      store.save()
+      this.render()
+    })
+    //$('#data-cart-dropdown').append(`<a class="dropdown-item" id="cart-number-${i}>${store.cartlist[i].nameOfCart}</a>
+
+
   }
+
 
   /**
    * lägga till produkter i kundvagnen
@@ -27,7 +57,6 @@ class Cart {
     //bool för att se om valet är unikt/nytt
     let unique = true;
 
-    console.log("added one " + product.name)
 
     //om listan inte är tom
     if (store.cartProducts.length > 0) {
@@ -76,7 +105,7 @@ class Cart {
   }
   //töm kundvagnen helt
   clearCart() {
-    for (let item of store.cartProducts){
+    for (let item of store.cartProducts) {
       this.delete(item)
     }
     store.cartQty = 0
@@ -95,7 +124,7 @@ class Cart {
       if (product.id === store.cartProducts[i].id) {
         store.cartQty -= store.cartProducts[i].qty;
         store.cartProducts[i].qty = 1;
-        store.cartProducts.splice(i,1)
+        store.cartProducts.splice(i, 1)
       }
     }
     store.save();
@@ -139,22 +168,75 @@ class Cart {
     return discount ? amountOfDiscounts * price : 0
   }
 
-  addCart(){
-    store.cartlist.push(store.cartProducts)
-    store.cartProducts = []
-    store.save()
+  // 2 DO  -- - JAG HAR LAGT TILL arrayen och dess namn och cartQty till ett objekt
+  // 2 DO  -- - måste ändra på upppackningen, som tidigare utgick från att det endast var en array
+  addCart() {
+    store.currentCart=0;
+    // if (store.cartProducts.length > 0) {
+      let cartName = $("#data-newcartname").val() || "kundvagn " + (store.cartlist.length + 1)
+      let cartInfo = {
+        products: store.cartProducts,
+        nameOfCart: cartName,
+        cartQty: store.cartQty
+      }
+      //pusha ny cart till cartlist
+      store.cartlist.push(cartInfo)
+      //sätt currentcart till sista elementet i cartlist
+      store.currentCart = store.cartlist.length-1
+      
+      store.save()
+      this.render()
+      $('.oi-cart').html(" " + store.cartQty)
+      $('#add-cart-btn').text('Sparat som ny kundvagn')
+    // }
+    // else {
+    //   $("#data-newcartname").val("Lägg något i korgen först")
+    // }
   }
+
+  updateCart() {
+    let cartName = store.cartlist[store.currentCart].nameOfCart
+    let cartInfo = {
+      products: store.cartProducts,
+      nameOfCart: cartName,
+      cartQty: store.cartQty
+    }
+    store.cartlist[store.currentCart] = cartInfo
+    store.save()
+    this.render()
+    $('#btn-update-cart').text(`${store.cartlist[store.currentCart].nameOfCart} uppdaterad`)
+  }
+
   render() {
-   
-    
+    $('main').html(/*html*/`
+    <input type="text" name="newcartname" id="data-newcartname" placeholder="Namnge kundvagn" value=""></input> <button type="button" id="add-cart-btn" class="btn btn-secondary">Spara som ny kundvagn</button>
+    `)
+    //om cartlist har innehåll
+    if (store.cartlist.length > 0) {
+      $('main').append(/*html*/`
+      <button type="button" class="btn btn-primary" id="btn-update-cart">Uppdatera ${store.cartlist[store.currentCart].nameOfCart}</button>
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Välj kundvagn
+  </button>
+  <div class="dropdown-menu" id="data-cart-dropdown">
+  `)
+      for (let i = 0; i < store.cartlist.length; i++) {
+        console.log("hmm")
+        $('#data-cart-dropdown').append(`<a class="dropdown-item" data-cartnumber="${i}">${store.cartlist[i].nameOfCart}</a>
+    `)
+      }
+      $('#data-cart').append(`
+  </div>
+</div>`)
+    }
+
+
     if (store.cartProducts.length > 0) {
       let sum = this.calculateSum()
-      $('main').html(/*html*/`
+      $('main').append(/*html*/`
     <section class="container mt-4">
       <div class="row">
         <div class="col">
-        <span><button id="addCartBtn" type="button">BUTTON</button>
-      </span>
           <h2 class="h1">Varukorg</h2>
           <h4>Dina varor</h4>
           <ul>
@@ -166,8 +248,8 @@ class Cart {
         let amountOfDiscounts = this.discountNrs(item.qty)
         let discountSum = this.calculateDiscount(item.discount, item.price, amountOfDiscounts)
         sum -= discountSum
-        
-        if (discountSum>0) {
+
+        if (discountSum > 0) {
           $('main .row .col').append(`
             <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
               <p>
@@ -206,7 +288,7 @@ class Cart {
       let totalWeight = this.calculateTotalWeight()
       let moms = sum / 4
       let grandTotalSum = sum + shippingCost
-      
+
       store.grandTotalSum = grandTotalSum
       store.save()
 
@@ -233,12 +315,10 @@ class Cart {
     }
 
     else {
-      $('main').html(/*html*/`
+      $('main').append(/*html*/`
     <section class="container mt-4">
       <div class="col">
         <div class="row">
-        <span><button id="addCartBtn" type="button">BUTTON</button>
-        </span> 
           <h2 class="h1">Varukorg</h2>
           </div>
           <div class="row">
