@@ -8,9 +8,7 @@ class OrderHistory{
     
             
     render(){ 
-       
-        
-        $("main").html(`
+        $("main").html(/*html*/`
             <section class="container">
                 <h1 class="text-center">Din order historik</h1>
                 <h4 class="float-right">Sortera efter datum <button class=" btn-primary btn">senaste</button>
