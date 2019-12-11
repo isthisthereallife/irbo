@@ -7,7 +7,7 @@
 @import 'bootstrap/bootstrap';
 
 // Our own CSS (as little as possible)
-@import '_sticky-footer';
+@import 'sticky-footer';
 @import 'background-styles';
 @import 'navbar-animation';
 @import 'startpage-button';
@@ -16,6 +16,7 @@
 @import 'cart-list-design';
 @import 'product-list';
 @import 'logo-navbar';
-@import 'about-us-page';
 @import 'background-color';
 @import 'navbar-style';
+@import 'picture-style-about-us';
+@import 'quickTip-about-us';

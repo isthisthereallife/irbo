@@ -19,6 +19,14 @@ class Product {
     this.addAddItemListener(cart);
     this.addRemoveItemListener(cart);
     this.addDeleteItemListener(cart);
+    this.addClearCartListener(cart);
+  }
+
+  addClearCartListener(cart) {
+    $('body').on('click', `#clear-cart-button`, e => {
+      e.preventDefault();
+      cart.clearCart();
+    })
   }
   
   //deleteknappen på varukorgssidan
@@ -96,7 +104,7 @@ class Product {
                 <button id="buy-button-${this.id}" class="col-4 btn btn-primary mt-2 buy-btn">Köp</button>
                 <div class="col-8">
                   <div class="row">
-                    <h4 class="-100 col">${this.name}</h4>
+                    <h4 class="-100 col produktListaRubrik">${this.name}</h4>
                     <h6 class="col-12">${this.price}:-</h6>
                   </div>
                 </div>
