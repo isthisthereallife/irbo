@@ -4,9 +4,17 @@ class Cart {
     //skapa en array i localstorage om det inte redan finns en
     store.cartProducts = store.cartProducts || [];
     store.cartQty = store.cartQty || 0;
+    new CartSelection()
     //to do, en map för kvantitet
     //id som nycklar, kvantitet som värde
     store.save();
+
+    $('main').on('click', '#addCartBtn', () =>{
+      console.log("cartlist innan = ", store.cartlist)
+      this.addCart()
+      console.log("cartlist efter = ", store.cartlist)
+
+    })
 
     
   }
@@ -131,14 +139,22 @@ class Cart {
     return discount ? amountOfDiscounts * price : 0
   }
 
-
+  addCart(){
+    store.cartlist.push(store.cartProducts)
+    store.cartProducts = []
+    store.save()
+  }
   render() {
+   
+    
     if (store.cartProducts.length > 0) {
       let sum = this.calculateSum()
-      $('main').html(`
+      $('main').html(/*html*/`
     <section class="container mt-4">
       <div class="row">
         <div class="col">
+        <span><button id="addCartBtn" type="button">BUTTON</button>
+      </span>
           <h2 class="h1">Varukorg</h2>
           <h4>Dina varor</h4>
           <ul>
@@ -217,10 +233,12 @@ class Cart {
     }
 
     else {
-      $('main').html(`
+      $('main').html(/*html*/`
     <section class="container mt-4">
       <div class="col">
         <div class="row">
+        <span><button id="addCartBtn" type="button">BUTTON</button>
+        </span> 
           <h2 class="h1">Varukorg</h2>
           </div>
           <div class="row">
