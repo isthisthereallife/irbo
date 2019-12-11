@@ -1,11 +1,11 @@
 class Order {
-
+  
   constructor(obj) {
    
-    store.obj = store.obj || []    
-    store.obj.push(obj)
+    store.order = store.order || []    
+    store.order.push(obj)
     store.save()
-    console.log('yep', store.obj)
+    console.log('yep', store.order)
   }
   
 

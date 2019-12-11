@@ -16,6 +16,7 @@ $('body').on('click', '.yes-btn', function () {
   city: $('#city').val(),
   date: new Date(),
   order: store.cartProducts,
+  price: store.grandTotalSum
 });
 
 //store.order.push(info)
