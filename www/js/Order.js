@@ -1,8 +1,12 @@
 class Order {
 
-  constructor() {
-    
-    
+  constructor(obj) {
+   
+    $.extend(this, obj);
+    store.obj;
+    console.log('yep', store.obj)
   }
+  
+
 }
 

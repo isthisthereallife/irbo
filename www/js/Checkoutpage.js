@@ -1,16 +1,19 @@
 class Checkoutpage{
   
     render(){
+
+      //for (let order of store.order){
     $('main').html(/*html*/`
-    <section class="container-fluid mt-5">
+    <section class="container-fluid mt-5 pl-5">
         <h1>Betalning</h1>
 		<div class="tab_container">
 	
 			<section id="content1" class="tab-content">
 				<h3>Cart Items</h3>
-		      	<p></p>
+        <img src="" width="20px" class="rounded">
+        <p></p>
 			</section>
-
+      
 			<section id="content2" class="tab-content">
 				<h3>Customer Information</h3>
 		      	<p></p>
@@ -143,7 +146,7 @@ class Checkoutpage{
     <div class="container">
     <div class="row">
       <div class="col-4">
-        <a class="nav-link" href="#orderhistory"><button type="button" class="btn btn-primary text-nowrap">Slutför köp</button></a>
+        <a class="nav-link" href="#orderhistory"><button type="button" class="btn btn-primary text-nowrap confirm">Slutför köp</button></a>
     </div>
     <div class="col-4">
         <a class="nav-link" href="#cart"><button type="button" class="btn btn-secondary text-nowrap goback-btn">Tillbaks till kundvagnen</button></a>
@@ -156,7 +159,8 @@ class Checkoutpage{
 		</div>
 
 </section>
-
+      }
 
 `)}
     }
+    

@@ -2,8 +2,8 @@ class Orderpage{
 
     constructor(){
         console.log('hallå')
-        store.customerInfo = store.customerInfo || [];
-        store.save()
+        //store.order = [];
+      
     }
         
 
@@ -82,19 +82,21 @@ render() {
 
 $('body').on('click', '.yes-btn', function () { 
   $('body').removeClass('modal-open');
-  let info = {
+  
+  new Order({
 
   firstname: $('#firstname').val(),
   surname:  $('#surname').val(),
   email: $('#email').val(),
   adress: $('#address').val(),
   city: $('#city').val(),
-  date: new Date()
-  }
+  date: new Date(),
+  order: store.cartProducts,
+});
 
-store.customerInfo.push(info)
-store.save()
-console.log('japp här e det', store.customerInfo);
+//store.order.push(info)
+
+//console.log('ordern', store.order)
 
   });
 }
