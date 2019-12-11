@@ -10,12 +10,12 @@ class Checkoutpage{
 
 		
 			<section id="content3" class="tab-content">
-				<h3>Totalpris: ${store.grandTotalSum}</h3>
-		      	<p></p>
+				<h3>Totalpris:</h3>
+		      	<h4>${store.grandTotalSum}:-</h4>
 			</section>
 
 			<section id="content4" class="tab-content">
-				<h4 class="payment-title">Choose your payment method</h4>
+				<h3 class="payment-title mt-5">Välj hur du vill betala</h3>
 		      	<form action="" method="post">
       <div class="pymt-radio">
       
@@ -26,11 +26,11 @@ class Checkoutpage{
         <label for="radio1"></label>
       </div>
       <div class="select-txt">
-        <p class="pymt-type-name">Paypal</p>
-        <p class="pymt-type-desc">Safe payment online. Credit card needed. PayPal account is not necessary.</p>
+        <p class="pymt-type-name">Klarna</p>
+        <p class="pymt-type-desc">Betala smooooooth.</p>
       </div>
       <div class="select-logo">
-        <img src="https://www.dropbox.com/s/pycofx0gngss4ef/logo-paypal.png?raw=1" alt="PayPal"/>
+        <img src="https://www.vegaoo.se/images/rep_cms/images/klarna%20logga.JPG" alt="Klarna" class=""/>
       </div>
       
     </div>
@@ -70,18 +70,13 @@ class Checkoutpage{
           <div class="cc-title">Expiry Date
           </div>
           <select class="input cc-ddl">
-            <option selected>01</option>
-            <option>02</option>
-            <option>03</option>
-            <option>04</option>
-            <option>05</option>
-            <option>06</option>
-            <option>07</option>
-            <option>08</option>
-            <option>09</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>          
+            <option selected>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>        
           </select>
           <select class="input cc-ddl">
             <option>01</option>
