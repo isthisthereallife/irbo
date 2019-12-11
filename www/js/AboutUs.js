@@ -2,9 +2,9 @@ class AboutUs {
 
   /*
     I am an About Us page.
-    I display info about us.
+    I display info about us.cv
   */
-
+ 
   render() {
     $('main').attr('data-page','about-us-page');
     $('main').html(/*html*/`
