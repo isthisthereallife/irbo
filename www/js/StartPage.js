@@ -18,15 +18,6 @@ class StartPage {
       </section>
     `);
 
-    $('body').on('click', '.productpage-btn', function () { 
-      $('.underline').animate(
-        {
-          left: $('.product-link').offset().left + 8,
-          width: $('.product-link').width()
-        },
-        500
-      );
-    })
   
   }
 }

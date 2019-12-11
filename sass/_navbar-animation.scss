@@ -1,27 +1,5 @@
-
-.ani-ul { 
-  display: table;
-  width: 300px;
-  text-align: center;
-}
-
-.navbar-item { 
-  display: table-cell; 
-  position: relative; 
-}
-.navbar-link {
-  color: #fff;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.15em;
-  
-  display: inline-block;
-  padding: 5px;
-  position: relative;
-}
-
 .underline{
-  height: 30px;
+  top: 76px;
   border-bottom: 3px solid #DFC3C6;
   position: absolute;
 }   

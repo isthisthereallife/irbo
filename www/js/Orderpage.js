@@ -90,8 +90,8 @@ render() {
         Är du redo att lägga din beställning?
       </div>
       <div class="modal-footer">
-      <a class="nav-link" href="#checkoutpage"><button type="button" class="btn btn-primary yes-btn">jaaa!</button></a>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">nej</button>
+      <a class="nav-link" href="#checkoutpage"><button type="button" class="btn btn-primary yes-btn">Ja!</button></a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Nej</button>
       </div>
     </div>
   </div>
