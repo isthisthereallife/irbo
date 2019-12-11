@@ -25,9 +25,9 @@ class OrderHistory {
                 <div class="row">
                   <div class="col-8">
                     <h3 class="text-center mt-5 ">Din orderhistorik</h3></div>
-                  <div class="col-4">
+                  <div class="col-4 text-center">
                     <button type="button" class="btn btn-primary" id="sort-btn">Sortera</button></div>
-                  <div>
+                  </div>
                 <div class="row">
                 <div class="col-10">
                   
@@ -44,7 +44,8 @@ class OrderHistory {
       $('main ul').append(/*html*/`
       <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
         <p>Beställningsdatum: ${item.date}</p>
-        <p>Beställare: ${item.surname}</p>
+        <p>Beställare: ${item.firstname} ${item.surname}</p>
+        <p>Leveransaddress: ${item.address}</p>
         `)
 
       for (let i = 0; i < item.order.length; i++) {
