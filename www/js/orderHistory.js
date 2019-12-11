@@ -1,24 +1,10 @@
 class OrderHistory{
+
     constructor(){
-        store.oldOrders = store.oldOrders || [];
-    
-    $('body').on('click', '.confirmOrder-btn', e =>{
+    $('body').on('click', '.confirm-buy-btn', e =>{
         e.preventDefault();
-        this.addToOldOrders()
         this.emptyCart()
     })
-
-
-}
-    addToOldOrders(){
-        store.oldOrders.push(store.cartProducts)
-        console.log("Stored contents of store.cartProducts to store.oldOrders")
-    }
-    emptyCart(){
-        store.cartProducts = []
-        store.cartQty = 0
-        $('.oi-cart').html(" " + store.cartQty)
-        console.log("Emptied store.cartProducts")
     }
     
             
@@ -35,4 +21,13 @@ class OrderHistory{
             </section>
         `);
     }
+
+    emptyCart(){
+        store.cartProducts = []
+        store.cartQty = 0
+        $('.oi-cart').html(" " + store.cartQty)
+        console.log("Emptied store.cartProducts")
+    }
+    
+    
 };

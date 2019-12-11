@@ -190,6 +190,9 @@ class Cart {
       let totalWeight = this.calculateTotalWeight()
       let moms = sum / 4
       let grandTotalSum = sum + shippingCost
+      
+      store.grandTotalSum = grandTotalSum
+      store.save()
 
       //skriv ut namn, pris per st, antal, pris total
       $('main .container').append(`
