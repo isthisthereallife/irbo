@@ -12,21 +12,21 @@ class Checkoutpage {
 				</section>
 				<section class="form-group">
 					<label for="cardNumber">Kortnummer</label>
-					<input type="text" class="form-control" id="cardNumber" placeholder="xxxx xxxx xxxx xxxx" required />
+					<input type="text" class="form-control" id="cardNumber" placeholder="xxxx xxxx xxxx xxxx"/>
 				</section>
 				<section class="form-row">
 					<section class="form-group col-md-6">
 						<label for="dateOut">Utgångsdatum</label>
-						<input type="text" class="form-control" id="dateOut" placeholder="månad/år" required />
+						<input type="text" class="form-control" id="dateOut" placeholder="månad/år"/>
 					</section>
 					<section class="form-group col-md-6">
 						<label for="cvc">CVC</label>
-						<input type="text" class="form-control" id="cvc" placeholder="xxx" required />
+						<input type="text" class="form-control" id="cvc" placeholder="xxx"/>
 					</section>
 				</section>
 				<section class="form-group">
 					<section class="form-check">
-						<input class="form-check-input" type="checkbox" id="gridCheck" required />
+						<input class="form-check-input" type="checkbox" id="gridCheck"/>
 						<label class="form-check-label" for="gridCheck">
 							Acceptera användarvilkoren
 						</label>
@@ -36,7 +36,8 @@ class Checkoutpage {
 					Bekräfta betalning
 				</button>
 				<button type="cancel" class="formPageBtn btn btn-danger" disableValidation="true" formaction="#produkter">
-				Avbryt beställning</button>
+					Avbryt beställning
+				</button>
 			</section>
 		</form>
   `)

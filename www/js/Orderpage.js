@@ -17,9 +17,9 @@ class Orderpage{
         order: store.cartProducts,
         price: store.grandTotalSum
       });
-//store.order.push(info)
-//console.log('ordern', store.order)
-  });
+	//store.order.push(info)
+	//console.log('ordern', store.order)
+});
 }
 
 render() {
@@ -66,12 +66,14 @@ render() {
 							Acceptera användarvillkor
 						</label>
 					</section>
+					<button type="button" class="btn btn-success confirmOrder-btn" data-toggle="modal" data-target="#confirmationModal">
+						Lägg beställning
+					</button>
+					<button type="cancel" class="formPageBtn btn btn-danger" disableValidation="true" formaction="#produkter">
+						Avbryt beställning
+					</button>
 				</section>
 			</form>
-			<button type="button" class="btn btn-success confirmOrder-btn" data-toggle="modal" data-target="#confirmationModal">
-				Lägg beställning
-			</button>
-			<button type="button" class="ml-3 btn btn-danger" href="#productlist">Avbryt beställning</button>
 
 			<section class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true" data-backdrop="false">
 				<section class="modal-dialog" role="document">
@@ -92,12 +94,7 @@ render() {
 					</section>
 				</section>
 			</section>
-
-
 `)};
-
-
-
 
 }
 
