@@ -6,6 +6,7 @@ class Cart {
     store.cartQty = store.cartQty || 0;
     //to do, en map för kvantitet
     //id som nycklar, kvantitet som värde
+    store.notthebestsolutionbutAsolution = 1
     store.save();
 
     //2DO jag har skapat nya problem
@@ -17,36 +18,103 @@ class Cart {
     // se till att store.cartQty aldrig kan bli negativ
 
 
-    // 2 DO --------- this fires twice!! why?? this fires twice!! why??
-    $('main').on('click', '#add-cart-btn', (e) => {
-      console.log(e)
-      console.log("cartlist innan = ", store.cartlist)
-      this.addCart()
-      console.log("cartlist efter = ", store.cartlist)
-    })
+   
     // ett sätt att skriva över aktuell cart med ny information
     $('main').on('click', '#btn-update-cart', (e) => {
       this.updateCart()
     })
 
-    //byt kundvagn
-    $('main').on('click', '.dropdown-item', (e) => {
-      console.log(e)
-      let listplats = $(e.currentTarget).attr('data-cartnumber')
-      store.currentCart = listplats
-      console.log("listplats = " + listplats)
-      //spara över från cartlistan till aktuell cart
-      store.cartProducts = store.cartlist[listplats].products
-      //spara mängden till store.cartQty
-      store.cartQty = store.cartlist[listplats].cartQty
-      $('.oi-cart').html(" " + store.cartQty)
+    
+    //$('#data-cart-dropdown').append(`<a class="dropdown-item" id="cart-number-${i}>${store.cartlist[i].nameOfCart}</a>
+  }
+
+  updateCart() {
+    let cartName = store.cartlist[store.currentCart].nameOfCart
+    let cartInfo = {
+      products: store.cartProducts,
+      nameOfCart: cartName,
+      cartQty: store.cartQty
+    }
+    store.cartlist[store.currentCart] = cartInfo
+    store.save()
+    $('#btn-update-cart').text(`${store.cartlist[store.currentCart].nameOfCart} uppdaterad`)
+  }
+
+
+  addCart() {
+    // store.currentCart=0;
+    // if (store.cartProducts.length > 0) {
+
+    //första gången en ny kundvagn skapas
+    let cartInfo = {}
+    let cartName = ""
+    if (store.cartlist.length === 0) {
+      cartInfo = {
+        products: store.cartProducts,
+        nameOfCart: "Första Kundvagnen",
+        cartQty: store.cartQty
+      }
+      store.cartlist.push(cartInfo)
+      //töm aktuell vagn
+      store.cartProducts = []
+      store.cartQty = 0
+      //spara nya vagnen till nästa plats
+      cartName = $("#data-newcartname").val() || "kundvagn " + (store.cartlist.length)
+      cartInfo = {
+        products: store.cartProducts,
+        nameOfCart: cartName,
+        cartQty: store.cartQty
+      }
+      store.cartlist.push(cartInfo)
+      store.currentCart = store.cartlist.length-1
       store.save()
       this.render()
-    })
-    //$('#data-cart-dropdown').append(`<a class="dropdown-item" id="cart-number-${i}>${store.cartlist[i].nameOfCart}</a>
+      $('oi oi-cart').html(" " + store.cartQty)
+      $('#add-cart-btn').text(`Aktuell kundvagn: ${cartName}`)
+    }
+    //gång n+1, uppdatera store.cartlist[store.currentcart] med aktuell cartinfo, sedan skapa en ny tom vagn
+    else{
+      let cartName = store.cartlist[store.currentCart].nameOfCart
+      cartInfo = {
+        products: store.cartProducts,
+        nameOfCart: cartName,
+        cartQty: store.cartQty
+      }
+    
 
+    //fräscha upp currentcart
+    store.cartlist[store.currentCart] = cartInfo
+    //töm aktuell vagn
+    store.cartProducts = []
+    store.cartQty = 0
 
+    //spara nya vagnen till nästa plats, med valt namn eller inte
+    cartName = $("#data-newcartname").val() || "Kundvagn " + (store.cartlist.length)
+    cartInfo = {
+      products: store.cartProducts,
+      nameOfCart: cartName,
+      cartQty: store.cartQty
+    }
+    store.cartlist.push(cartInfo)
+    //nu är vi i den nya (tomma) carten
+    store.currentCart = store.cartlist.length-1
+    
+    store.save()
+    this.render()
+    $('oi oi-cart').html(" " + store.cartQty)
+    // $('#add-cart-btn').text(`Aktuell kundvagn: ${store.cartlist[store.currentCart].nameOfCart}`)
   }
+
+    // }
+    // else {
+    //   $("#data-newcartname").val("Lägg något i korgen först")
+    // }
+  }
+
+
+
+
+
 
 
   /**
@@ -168,53 +236,14 @@ class Cart {
     return discount ? amountOfDiscounts * price : 0
   }
 
-  // 2 DO  -- - JAG HAR LAGT TILL arrayen och dess namn och cartQty till ett objekt
-  // 2 DO  -- - måste ändra på upppackningen, som tidigare utgick från att det endast var en array
-  addCart() {
-    store.currentCart=0;
-    // if (store.cartProducts.length > 0) {
-      let cartName = $("#data-newcartname").val() || "kundvagn " + (store.cartlist.length + 1)
-      let cartInfo = {
-        products: store.cartProducts,
-        nameOfCart: cartName,
-        cartQty: store.cartQty
-      }
-      //pusha ny cart till cartlist
-      store.cartlist.push(cartInfo)
-      //sätt currentcart till sista elementet i cartlist
-      store.currentCart = store.cartlist.length-1
-      
-      store.save()
-      this.render()
-      $('.oi-cart').html(" " + store.cartQty)
-      $('#add-cart-btn').text('Sparat som ny kundvagn')
-    // }
-    // else {
-    //   $("#data-newcartname").val("Lägg något i korgen först")
-    // }
-  }
-
-  updateCart() {
-    let cartName = store.cartlist[store.currentCart].nameOfCart
-    let cartInfo = {
-      products: store.cartProducts,
-      nameOfCart: cartName,
-      cartQty: store.cartQty
-    }
-    store.cartlist[store.currentCart] = cartInfo
-    store.save()
-    this.render()
-    $('#btn-update-cart').text(`${store.cartlist[store.currentCart].nameOfCart} uppdaterad`)
-  }
-
   render() {
     $('main').html(/*html*/`
-    <input type="text" name="newcartname" id="data-newcartname" placeholder="Namnge kundvagn" value=""></input> <button type="button" id="add-cart-btn" class="btn btn-secondary">Spara som ny kundvagn</button>
+    <input type="text" name="newcartname" id="data-newcartname" placeholder="Namnge kundvagn" value=""></input> <button type="button" id="add-cart-btn" class="btn btn-secondary">Skapa ny kundvagn</button>
     `)
     //om cartlist har innehåll
     if (store.cartlist.length > 0) {
       $('main').append(/*html*/`
-      <button type="button" class="btn btn-primary" id="btn-update-cart">Uppdatera ${store.cartlist[store.currentCart].nameOfCart}</button>
+      <button type="button" class="btn btn-primary" id="btn-update-cart">Aktuell vagn: ${store.cartlist[store.currentCart].nameOfCart}</button>
   <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   Välj kundvagn
   </button>

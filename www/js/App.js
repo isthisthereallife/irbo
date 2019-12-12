@@ -33,6 +33,47 @@ class App {
     $('body').on('click', '#nav-item-logo', function () { 
       $('#nav-item-start').click();
     })
+
+    // idk men lägger lyssnarna här
+
+     // 2 DO --------- it fires twice!! why?? this fires twice!! why??
+     $('main').on('click', '#add-cart-btn', (e) => {
+      store.notthebestsolutionbutAsolution++
+      console.log(e)
+      store.save()
+      
+      this.cart.addCart(this)
+      
+    })
+    
+    //byt kundvagn
+    //spara över aktuell vagn också! se till att aktuell cart alltid är på cart ((((((store.currentCart))))))
+    $('main').on('click', '.dropdown-item', (e) => {
+      //spara från aktuell cart till listplatsen för den carten
+      this.cart.updateCart()
+
+      //hitta vilken cart som ska bytas till
+      let listplats = $(e.currentTarget).attr('data-cartnumber')
+      //nu är den nya current
+      store.currentCart = listplats
+      console.log("store.currentcart = " + listplats)
+
+      //spara över från cartlistan till aktuell cart
+      store.cartProducts = store.cartlist[listplats].products
+      //spara mängden till store.cartQty
+      store.cartQty = store.cartlist[listplats].cartQty
+      $('.oi-cart').html(" " + store.cartQty)
+      store.save()
+      this.cart.render()
+    })
+
+
+
+
+
+
+
+
   }
   
 
