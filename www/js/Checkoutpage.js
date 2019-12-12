@@ -8,7 +8,7 @@ class Checkoutpage {
 			<section class="container">
 				<h1 class="text-center mt-3">Kortbetalning</h1>
 				<section>
-					<h5>Total beställnings kostnad ${store.grandTotalSum}kr</h5>
+					<h5>Totalpris: ${store.grandTotalSum}:-</h5>
 				</section>
 				<section class="form-group">
 					<label for="cardNumber">Kortnummer</label>
@@ -17,26 +17,33 @@ class Checkoutpage {
 				<section class="form-row">
 					<section class="form-group col-md-6">
 						<label for="dateOut">Utgångsdatum</label>
-						<input type="text" class="form-control" id="dateOut" placeholder="månad/år"/>
+					<div class="form-row">
+						<select class="custom-select col-6" id="inlineFormCustomSelect">
+							<option value="">Månad</option>
+							<option value="1">01</option>
+							<option value="2">02</option>
+							<option value="3">03</option>
+							<option value="3">04</option>
+						  </select>		
+						<select class="custom-select col-6" id="inlineFormCustomSelect">
+							<option value="">År</option>
+							<option value="1">20</option>
+							<option value="2">21</option>
+							<option value="3">22</option>
+							<option value="3">23</option>
+					  </select>	
+					 </div>
 					</section>
 					<section class="form-group col-md-6">
 						<label for="cvc">CVC</label>
 						<input type="text" class="form-control" id="cvc" placeholder="xxx"/>
 					</section>
 				</section>
-				<section class="form-group">
-					<section class="form-check">
-						<input class="form-check-input" type="checkbox" id="gridCheck"/>
-						<label class="form-check-label" for="gridCheck">
-							Acceptera användarvilkoren
-						</label>
-					</section>
-				</section>
-				<button type="submit" class="formPageBtn btn btn-success" formaction="#orderhistory">
+				<button type="submit" class="formPageBtn btn btn-primary" formaction="#orderhistory">
 					Bekräfta betalning
 				</button>
-				<button type="cancel" class="formPageBtn btn btn-danger" disableValidation="true" formaction="#cart">
-					Avbryt beställning
+				<button type="cancel" class="formPageBtn btn btn-secondary" disableValidation="true" formaction="#cart">
+					Avbryt
 				</button>
 			</section>
 		</form>

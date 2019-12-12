@@ -12,7 +12,7 @@ class Orderpage{
         email: $('#email').val(),
         adress: $('#address').val(),
         city: $('#city').val(),
-        date: new Date(),
+        date: new Date().toLocaleString('SV'),
         order: store.cartProducts,
         price: store.grandTotalSum
       });
@@ -24,7 +24,7 @@ class Orderpage{
 render() {
     $("main").html(/*html*/ `
     <section class="container mt-3">
-    <h1 class="text-center">Personlig information</h1>
+    <h1 class="text-center">Dina uppgifter</h1>
 			<form>
 				<section class="form-row">
 					<section class="form-group col-md-6">
@@ -65,28 +65,28 @@ render() {
 							Acceptera användarvillkor
 						</label>
 					</section>
-					<button type="button" class="btn btn-success confirmOrder-btn" data-toggle="modal" data-target="#confirmationModal">
-						Lägg beställning
+					<button type="button" class="btn btn-primary confirmOrder-btn mt-3" data-toggle="modal" data-target="#confirmationModal">
+						Bekräfta beställning
 					</button>
-					<button type="cancel" class="formPageBtn btn btn-danger" disableValidation="true" formaction="#cart">
-						Avbryt beställning
+					<button type="cancel" class="formPageBtn btn btn-secondary mt-3" disableValidation="true" formaction="#cart">
+						Avbryt 
 					</button>
 				</section>
 			</form>
 
 			<section class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true" data-backdrop="false">
 				<section class="modal-dialog" role="document">
-					<section class="modal-content">
-						<section class="modal-header">
-							<h5 class="modal-title" id="confirmationModalLabel">Varukorg</h5>
+					<section class="modal-content cool-modal">
+						<section class="modal-header cool-modal">
+							<h5 class="modal-title" id="confirmationModalLabel">Beställningsbekräftelse</h5>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</section>
 						<section class="modal-body">
-							Är du redo att lägga din beställning?
+              Är du redo att lägga din beställning?
 						</section>
-						<section class="modal-footer">
+						<section class="modal-footer cool-modal-footer">
 							<a class="nav-link" href="#checkoutpage"><button type="button" class="btn btn-primary yes-btn">Ja!</button></a>
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Nej</button>
 						</section>
