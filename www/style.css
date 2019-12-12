@@ -10534,6 +10534,10 @@ main {
   display: flex;
 }
 
+.border-top-it-is-toppen {
+  border-top: 1px solid black;
+}
+
 .img-fluid {
   width: 100%;
   object-fit: cover;
@@ -10624,15 +10628,6 @@ main {
   background-color: lightgrey;
 }
 
-.cool-modal {
-  background-color: #7a937a;
-  border-bottom: none;
-}
-
-.cool-modal-footer {
-  border-top: 1px solid #434949;
-}
-
 @media only screen and (max-width: 496px) {
   .quickTip {
     margin-left: 15px;
@@ -10643,4 +10638,13 @@ main {
     font-size: 35px;
     align-content: center;
   }
+}
+
+.cool-modal {
+  background-color: #7a937a;
+  border-bottom: none;
+}
+
+.cool-modal-footer {
+  border-top: 1px solid #434949;
 }

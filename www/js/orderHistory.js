@@ -5,7 +5,6 @@ class OrderHistory {
       this.emptyCart()
     })
     $('body').on('click', '#sort-btn', e => {
-      console.log(JSON.stringify(store.order))
 
       store.order.reverse();
       console.log(store.order)
@@ -38,23 +37,25 @@ class OrderHistory {
 
 
     store.order.forEach(lillaRender)
+    console.log("efter lilla render")
     function lillaRender(item, index) {
-      console.log(item.surname, " index: ", index)
-
-      $('main ul').append(/*html*/`
-      <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
+      console.log("innuti lillaRender är item: " + item)
+      console.log("item.surname: "+item.surname, " index: ", index)
+      $('main').append(/*html*/`
+      <div class="border-top-it-is-toppen">
         <p>Beställningsdatum: ${item.date}</p>
         <p>Beställare: ${item.firstname} ${item.surname}</p>
         <p>Leveransaddress: ${item.address}</p>
         `)
 
       for (let i = 0; i < item.order.length; i++) {
-        $('main li').append(/*html*/`<p>${item.order[i].name}, ${item.order[i].qty} st</p>
-                    `)
-      }
-      $('main li').append(/*html*/`<p>Totalpris: ${item.price} kr</p>
-      </li></ul>
-      `)
+        console.log("i: ", i, "item.order: ", item.order)
+        $('main').append(/*html*/`<p>${item.order[i].name}, ${item.order[i].qty} st</p>
+                    `)}
+      console.log("item.price: ", item.price)
+      $("main").append(/*html*/`<p>Totalpris: ${item.price} kr</p>
+      </div>`)
+      
     }
       $('main').append(/*html*/`<span><a class="nav-link" href="#produkter"><button type="button" class="btn btn-light btn-lg productpage-btn order-sm-1 order-md-2">Till butiken</button></a>
       </span>`)
