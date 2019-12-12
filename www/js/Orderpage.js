@@ -1,7 +1,6 @@
 class Orderpage{
 
   constructor(){
-    console.log('hallå')
     //store.order = [];
         
     $('body').on('click', '.yes-btn', function () { 

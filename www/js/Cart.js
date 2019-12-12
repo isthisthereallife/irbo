@@ -153,7 +153,7 @@ class Cart {
                         <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
                         <p>
                             <img src="${item.image}" alt="${item.name}" width="40px" class="rounded">
-                            </img> ${item.name}
+                             ${item.name}
                         </p>
                         <p>
                             <span id="delete-item-button-${item.id}" class="oi oi-delete"></span>
