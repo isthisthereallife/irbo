@@ -1,5 +1,17 @@
 .quickTip{
     border: $primary solid;
     border-radius: 6px;
-    background-color: lightgrey;
+    background-color: lightgrey;;
+}
+
+@media only screen and (max-width: 496px) {
+    .quickTip{
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 20px;;
+    }
+    .quickTipRubrik{
+        font-size: 35px;
+        align-content: center;
+    }
 }
