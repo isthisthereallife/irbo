@@ -35,7 +35,7 @@ class Checkoutpage {
 				<button type="submit" class="formPageBtn btn btn-success" formaction="#orderhistory">
 					Bekräfta betalning
 				</button>
-				<button type="cancel" class="formPageBtn btn btn-danger" disableValidation="true" formaction="#produkter">
+				<button type="cancel" class="formPageBtn btn btn-danger" disableValidation="true" formaction="#cart">
 					Avbryt beställning
 				</button>
 			</section>
