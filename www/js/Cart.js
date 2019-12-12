@@ -8,24 +8,6 @@ class Cart {
     //id som nycklar, kvantitet som värde
     store.notthebestsolutionbutAsolution = 1
     store.save();
-
-    //2DO jag har skapat nya problem
-    // största problemet: events som kickar 2 ggr
-    //
-    // andra problem:
-    // allt räknas inte om när jag byter cart
-    // updateknappen: redundant? aktuell cart (ska) sparas automatiskt när en byter till en annan
-    // se till att store.cartQty aldrig kan bli negativ
-
-
-   
-    // ett sätt att skriva över aktuell cart med ny information
-    $('main').on('click', '#btn-update-cart', (e) => {
-      this.updateCart()
-    })
-
-    
-    //$('#data-cart-dropdown').append(`<a class="dropdown-item" id="cart-number-${i}>${store.cartlist[i].nameOfCart}</a>
   }
 
   updateCart() {
@@ -42,12 +24,9 @@ class Cart {
 
 
   addCart() {
-    // store.currentCart=0;
-    // if (store.cartProducts.length > 0) {
-
-    //första gången en ny kundvagn skapas
     let cartInfo = {}
     let cartName = ""
+    //första gången en ny kundvagn skapas
     if (store.cartlist.length === 0) {
       cartInfo = {
         products: store.cartProducts,
@@ -72,9 +51,10 @@ class Cart {
       $('oi oi-cart').html(" " + store.cartQty)
       $('#add-cart-btn').text(`Aktuell kundvagn: ${cartName}`)
     }
+
     //gång n+1, uppdatera store.cartlist[store.currentcart] med aktuell cartinfo, sedan skapa en ny tom vagn
     else{
-      let cartName = store.cartlist[store.currentCart].nameOfCart
+      cartName = store.cartlist[store.currentCart].nameOfCart
       cartInfo = {
         products: store.cartProducts,
         nameOfCart: cartName,
@@ -243,10 +223,10 @@ class Cart {
     //om cartlist har innehåll
     if (store.cartlist.length > 0) {
       $('main').append(/*html*/`
-      <button type="button" class="btn btn-primary" id="btn-update-cart">Aktuell vagn: ${store.cartlist[store.currentCart].nameOfCart}</button>
-  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  Välj kundvagn
-  </button>
+      <button type="button" class="btn btn-secondary dropdown-toggle mt-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Välj kundvagn
+      </button>
+      <span class="badge badge-pill badge-success" id="btn-update-cart">Aktuell vagn: ${store.cartlist[store.currentCart].nameOfCart}</span>
   <div class="dropdown-menu" id="data-cart-dropdown">
   `)
       for (let i = 0; i < store.cartlist.length; i++) {

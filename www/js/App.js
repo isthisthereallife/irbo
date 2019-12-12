@@ -35,11 +35,8 @@ class App {
     })
 
     // idk men lägger lyssnarna här
-
-     // 2 DO --------- it fires twice!! why?? this fires twice!! why??
-     $('main').on('click', '#add-cart-btn', (e) => {
-      store.notthebestsolutionbutAsolution++
-      console.log(e)
+    
+     $('main').on('click', '#add-cart-btn', () => {
       store.save()
       
       this.cart.addCart(this)
