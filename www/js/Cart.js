@@ -1,4 +1,5 @@
 class Cart {
+
   constructor() {
     //skapa en array i localstorage om det inte redan finns en
     store.cartProducts = store.cartProducts || [];
@@ -8,13 +9,10 @@ class Cart {
     store.save();
   }
 
-
-
-
-
   /**
    * lägga till produkter i kundvagnen
-   * @param {*} product produkten som ska läggas i kundvagnen
+   * @param {*} product;
+   * produkten som ska läggas i kundvagnen
    */
   add(product) {
     //bool för att se om valet är unikt/nytt
@@ -39,15 +37,14 @@ class Cart {
     }
     //om det är ett unikt/nytt val
     if (unique) {
-
-      store.cartProducts.push(product)
+      store.cartProducts.push(product);
     }
     //öka antalet varor i kundvagnen
     store.cartQty += 1;
     //spara
     store.save();
     //skriv om siffran vid bilden, utgå från antalet varor i kundvagnen
-    $('.oi-cart').html(" " + store.cartQty)
+    $('.oi-cart').html(" " + store.cartQty);
   }
 
   /**
@@ -65,24 +62,33 @@ class Cart {
       }
     }
     store.save();
-    $('.oi-cart').html(" " + store.cartQty)
+    $('.oi-cart').html(" " + store.cartQty);
+  }
+  //töm kundvagnen helt
+  clearCart() {
+    for (let item of store.cartProducts){
+      this.delete(item);
+    }
+    store.cartQty = 0;
+    store.save();
+    $('.oi-cart').html(" " + store.cartQty);
+    this.render();
   }
 
   /**
    * ta bort förekomsten av en viss produkt i kundvagnen
-   * @param {*} product 
+   * @param {*} product ;
    */
   delete(product) {
     for (let i = 0; i < store.cartProducts.length; i++) {
-
       if (product.id === store.cartProducts[i].id) {
         store.cartQty -= store.cartProducts[i].qty;
         store.cartProducts[i].qty = 1;
-        store.cartProducts.splice(i,1)
+        store.cartProducts.splice(i,1);
       }
     }
     store.save();
-    $('.oi-cart').html(" " + store.cartQty)
+    $('.oi-cart').html(" " + store.cartQty);
   }
 
   /** räkna ut summan av vald produkt */
@@ -98,7 +104,7 @@ class Cart {
   calculateTotalWeight() {
     let w = 0;
     for (let item of store.cartProducts) {
-      w += item.weight * item.qty
+      w += item.weight * item.qty;
     }
     return w;
 
@@ -106,9 +112,9 @@ class Cart {
   calculateShippingCost() {
     let cost = 0
     for (let item of store.cartProducts) {
-      cost += item.weight * item.qty
+      cost += item.weight * item.qty;
     }
-    cost = cost * 40
+    cost = cost * 40;
     return cost;
   }
 
@@ -119,7 +125,7 @@ class Cart {
 
   //priset av gratisprodukterna
   calculateDiscount(discount, price, amountOfDiscounts) {
-    return discount ? amountOfDiscounts * price : 0
+    return discount ? amountOfDiscounts * price : 0;
   }
 
 
@@ -127,95 +133,107 @@ class Cart {
     if (store.cartProducts.length > 0) {
       let sum = this.calculateSum()
       $('main').html(`
-    <section class="container mt-4">
-      <div class="row">
-        <div class="col">
-          <h2 class="h1">Varukorg</h2>
-          <h4>Dina varor</h4>
-          <ul>
+      <section class="container mt-4">
+			<section class="row">
+				<section class="col">
+					<h2 class="h1 text-center">Varukorg</h2>
+					<h4>Dina varor</h4>
+					<ul>
     `)
       //loopa store.cartProducts
       for (let item of store.cartProducts) {
 
         //kolla om det ska has discount
-        let amountOfDiscounts = this.discountNrs(item.qty)
-        let discountSum = this.calculateDiscount(item.discount, item.price, amountOfDiscounts)
-        sum -= discountSum
+        let amountOfDiscounts = this.discountNrs(item.qty);
+        let discountSum = this.calculateDiscount(item.discount, item.price, amountOfDiscounts);
+        sum -= discountSum;
         
         if (discountSum>0) {
           $('main .row .col').append(`
-            <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
-              <p>
-                <img src="${item.image}" alt="${item.name}" width="40px" class="rounded">
-                </img> ${item.name}
-              </p>
-              <p>
-              <span id="delete-item-button-${item.id}" class="oi oi-delete"></span>
-                <span> ${item.price} Kr/st </span> 
-                <span id="remove-item-button-${item.id}" class="oi oi-minus"></span>
-                ${item.qty}
-                <span id="add-item-button-${item.id}" class="oi oi-plus"></span> 
-                <span class="data-price">${item.price * item.qty} Kr</span><div></div>
-                <span >Du tjänar ${discountSum} kr, du får ${amountOfDiscounts} gratis!</span></p></li>`)
+                        <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
+                        <p>
+                            <img src="${item.image}" alt="${item.name}" width="40px" class="rounded">
+                             ${item.name}
+                        </p>
+                        <p>
+                            <span id="delete-item-button-${item.id}" class="oi oi-delete"></span>
+                            <span> ${item.price} Kr/st </span> 
+                            <span id="remove-item-button-${item.id}" class="oi oi-minus"></span>
+                            ${item.qty}
+                            <span id="add-item-button-${item.id}" class="oi oi-plus"></span> 
+                            <span class="data-price">${item.price * item.qty} Kr</span><div></div>
+                            <span >Du tjänar ${discountSum} kr, du får ${amountOfDiscounts} gratis!</span></p></li>`)
         }
         else {
           $('main .row .col').append(`
-            <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
-              <p>
-                <img src="${item.image}" alt="${item.name}" width="40px" class="rounded">
-                </img> ${item.name}
-              </p>
-              <p>
-              <span id="delete-item-button-${item.id}" class="oi oi-delete"></span>
-                <span> ${item.price} Kr/st </span> 
-                <span id="remove-item-button-${item.id}" class="oi oi-minus"></span>
-                ${item.qty}
-                <span id="add-item-button-${item.id}" class="oi oi-plus"></span> 
-                <span class="data-price">${item.price * item.qty} Kr</span></p></li>`)
+                    <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
+                        <p>
+                            <img src="${item.image}" alt="${item.name}" width="40px" class="rounded">
+                            ${item.name}
+                        </p>
+                        <p>
+                            <span id="delete-item-button-${item.id}" class="oi oi-delete"></span>
+                            <span> ${item.price} Kr/st</span> 
+                            <span id="remove-item-button-${item.id}" class="oi oi-minus"></span>
+                            ${item.qty}
+                            <span id="add-item-button-${item.id}" class="oi oi-plus"></span> 
+                            <span class="data-price">${item.price * item.qty} Kr</span>
+                        </p>
+                    </li>
+          `)
         }
       }
 
-
-
-      let shippingCost = this.calculateShippingCost()
-      let totalWeight = this.calculateTotalWeight()
-      let moms = sum / 4
-      let grandTotalSum = sum + shippingCost
+      let shippingCost = this.calculateShippingCost();
+      let totalWeight = this.calculateTotalWeight();
+      let moms = sum / 4;
+      let grandTotalSum = sum + shippingCost;
+      store.grandTotalSum = grandTotalSum;
+      store.save();
 
       //skriv ut namn, pris per st, antal, pris total
       $('main .container').append(`
-          </ul>
-          <h4>Pris: ${Math.round(sum)} kr</h4>
-          <p>Varav moms: ${Math.round(moms)} kr</p>
-          <p>Vikt: ${Math.round(totalWeight)} kg</p>
-          <p>Fraktkostnad: ${Math.round(shippingCost)} kr</p>
-          <h4>Att betala: ${Math.round(grandTotalSum)} kr</h4>
-          </div>
-          <div>
-            <a class="nav-link ml-0 pl-0 mt-3 orderBtn" href="#orderHistory"><button type="button" 
-            class="btn btn-light productpage-btn order-sm-1 order-md-2">Beställ här</button>
-          </div>
-        </div>
-      </section>
-    </section>
+                        </ul>
+                        <h4 class="cartText">Pris: ${Math.round(sum)} kr</h4>
+                        <p class="cartText">Varav moms: ${Math.round(moms)} kr</p>
+                        <p class="cartText">Vikt: ${Math.round(totalWeight)} kg</p>
+                        <p class="cartText">Fraktkostnad: ${Math.round(shippingCost)} kr</p>
+                        <h4 class="cartText">Att betala: ${Math.round(grandTotalSum)} kr</h4>
+                    </section>
+                    <section>
+                        <a class="nav-link ml-0 pl-0 mt-2 mb-3" href="#orderpage">
+                            <button type="button" class="btn btn-primary">Beställ här</button>
+                        </a>
+                    </section>
+                    <section>
+                        <a class="nav-link ml-0 pl-0">
+                            <button type="button" class="btn btn-danger" id="clear-cart-button">Töm varukorgen</button>
+                        </a>
+                    </section>
+                </section>
+            </section>
     `);
     }
 
     else {
       $('main').html(`
-    <section class="container mt-4">
-      <div class="col">
-        <div class="row">
-          <h2 class="h1">Varukorg</h2>
-          </div>
-          <div class="row">
-          <h4>Din varukorg är tom!</h4>
-          </div>
-          <div class="row"> 
-            <a class="nav-link" href="#produkter"><button type="button" class="btn btn-light btn-lg startpage-btn order-sm-1 order-md-2">Till butiken</button>
-          </div>
-          </div>
-      </section>
+        <section class="container mt-4 ml-5">
+            <div class="row">
+                <div class="col">
+                    <div class="row ml-1">
+                        <h2 class="h1">Varukorg</h2>
+                    </div>
+                    <div class="row ml-1">
+                        <h4>Din varukorg är tom!</h4>
+                    </div>
+                    <div class="row"> 
+                        <a class="nav-link" href="#produkter">
+                            <button type="button" class="btn btn-primary btn-lg productpage-btn">Till butiken</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     `)
     }
   }
