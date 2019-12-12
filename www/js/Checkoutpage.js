@@ -18,14 +18,14 @@ class Checkoutpage {
 					<section class="form-group col-md-6">
 						<label for="dateOut">Utgångsdatum</label>
 					<div class="form-row">
-						<select class="custom-select col-6" id="inlineFormCustomSelect">
+						<select class="form-control col-5 mr-auto" id="inlineFormCustomSelect">
 							<option value="">Månad</option>
 							<option value="1">01</option>
 							<option value="2">02</option>
 							<option value="3">03</option>
 							<option value="3">04</option>
 						  </select>		
-						<select class="custom-select col-6" id="inlineFormCustomSelect">
+						<select class="form-control col-5 mr-auto" id="inlineFormCustomSelect">
 							<option value="">År</option>
 							<option value="1">20</option>
 							<option value="2">21</option>
