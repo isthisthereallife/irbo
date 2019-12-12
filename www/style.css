@@ -10610,6 +10610,10 @@ main {
   }
 }
 
+li a.nav-link.navbar-link {
+  margin: 0;
+}
+
 .aboutUsPic {
   object-fit: cover;
   object-position: 50% 50%;
@@ -10651,4 +10655,8 @@ main {
 
 .cool-modal-footer {
   border-top: 1px solid #434949;
+}
+
+html {
+  overflow-y: scroll;
 }
