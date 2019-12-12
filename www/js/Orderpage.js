@@ -69,7 +69,7 @@ render() {
 					<button type="button" class="btn btn-success confirmOrder-btn" data-toggle="modal" data-target="#confirmationModal">
 						Lägg beställning
 					</button>
-					<button type="cancel" class="formPageBtn btn btn-danger" disableValidation="true" formaction="#produkter">
+					<button type="cancel" class="formPageBtn btn btn-danger" disableValidation="true" formaction="#cart">
 						Avbryt beställning
 					</button>
 				</section>
