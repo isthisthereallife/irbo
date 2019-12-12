@@ -25,10 +25,10 @@ class OrderHistory {
                 <div class="col">
                   <h1 class="text-center mt-5">Tack för att du handlar hos oss!</h1>
                 <div class="row">
-                  <div class="col-8">
+                  <div class="col-12 col-md-8">
                     <h3 class="text-center mt-5 ">Din orderhistorik</h3></div>
-                  <div class="col-4 text-center">
-                    <button type="button" class="btn btn-primary" id="sort-btn">Sortera</button></div>
+                  <div class="col-12 col-md-4 text-center">
+                    <button type="button" class="btn btn-primary mt-5" id="sort-btn">Sortera</button></div>
                   </div>
                 <div class="row">
                 <div class="col-10">
