@@ -136,12 +136,12 @@ class Cart {
     if (store.cartProducts.length > 0) {
       let sum = this.calculateSum()
       $('main').html(`
-    <section class="container mt-4">
-      <div class="row">
-        <div class="col">
-          <h2 class="h1">Varukorg</h2>
-          <h4>Dina varor</h4>
-          <ul>
+      <section class="container mt-4">
+			<section class="row">
+				<section class="col">
+					<h2 class="h1">Varukorg</h2>
+					<h4>Dina varor</h4>
+					<ul>
     `)
       //loopa store.cartProducts
       for (let item of store.cartProducts) {
@@ -169,18 +169,21 @@ class Cart {
         }
         else {
           $('main .row .col').append(`
-            <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
-              <p>
-                <img src="${item.image}" alt="${item.name}" width="40px" class="rounded">
-                </img> ${item.name}
-              </p>
-              <p>
-              <span id="delete-item-button-${item.id}" class="oi oi-delete"></span>
-                <span> ${item.price} Kr/st </span> 
-                <span id="remove-item-button-${item.id}" class="oi oi-minus"></span>
-                ${item.qty}
-                <span id="add-item-button-${item.id}" class="oi oi-plus"></span> 
-                <span class="data-price">${item.price * item.qty} Kr</span></p></li>`)
+          <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
+					<p>
+						<img src="${item.image}" alt="${item.name}" width="40px" class="rounded">
+						${item.name}
+					</p>
+					<p>
+						<span id="delete-item-button-${item.id}" class="oi oi-delete"></span>
+						<span> ${item.price} Kr/st</span> 
+						<span id="remove-item-button-${item.id}" class="oi oi-minus"></span>
+						${item.qty}
+						<span id="add-item-button-${item.id}" class="oi oi-plus"></span> 
+						<span class="data-price">${item.price * item.qty} Kr</span>
+					</p>
+				</li>
+          `)
         }
       }
 
@@ -196,23 +199,25 @@ class Cart {
 
       //skriv ut namn, pris per st, antal, pris total
       $('main .container').append(`
-          </ul>
-          <h4>Pris: ${Math.round(sum)} kr</h4>
-          <p>Varav moms: ${Math.round(moms)} kr</p>
-          <p>Vikt: ${Math.round(totalWeight)} kg</p>
-          <p>Fraktkostnad: ${Math.round(shippingCost)} kr</p>
-          <h4>Att betala: ${Math.round(grandTotalSum)} kr</h4>
-          </div>
-          <div>
-            <a class="nav-link ml-0 pl-0 mt-3" href="#orderpage"><button type="button"
-            class="btn btn-light startpage-btn order-sm-1 orderBtn order-md-2">Beställ här</button>
-          </div><div>
-          <a class="nav-link ml-0 pl-0"><button type="button" 
-          class="btn btn-danger order-sm-1 order-md-2" id="clear-cart-button">Töm varukorgen</button>
-        </div>
-        </div>
-      </section>
-    </section>
+      </ul>
+				<h4>Pris: ${Math.round(sum)} kr</h4>
+				<p>Varav moms: ${Math.round(moms)} kr</p>
+				<p>Vikt: ${Math.round(totalWeight)} kg</p>
+				<p>Fraktkostnad: ${Math.round(shippingCost)} kr</p>
+				<h4>Att betala: ${Math.round(grandTotalSum)} kr</h4>
+			</section>
+			<section>
+				<a class="nav-link ml-0 pl-0 mt-3" href="#orderpage">
+					<button type="button" class="btn btn-light startpage-btn order-sm-1 orderBtn order-md-2">Beställ här</button>
+				</a>
+			</section>
+			<section>
+				<a class="nav-link ml-0 pl-0">
+					<button type="button" class="btn btn-danger order-sm-1 order-md-2" id="clear-cart-button">Töm varukorgen</button>
+				</a>
+			</section>
+		</section>
+	</section>
     `);
     }
 
