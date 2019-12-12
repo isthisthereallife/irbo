@@ -1,15 +1,18 @@
 class OrderHistory {
 
   constructor() {
-    $('body').on('click', '.confirm-buy-btn', e => {
+    $('body').on('click', '#confirm-buy-btn', e => {
+      new Order(store.newOrder)
+      store.newOrder = {}
       this.emptyCart()
     })
     $('body').on('click', '#sort-btn', e => {
 
       store.order.reverse();
-      console.log(store.order)
       this.render()
     })
+
+
   }
 
 
@@ -37,27 +40,22 @@ class OrderHistory {
 
 
     store.order.forEach(lillaRender)
-    console.log("efter lilla render")
     function lillaRender(item, index) {
-      console.log("innuti lillaRender är item: " + item)
-      console.log("item.surname: "+item.surname, " index: ", index)
       $('main').append(/*html*/`
       <div class="border-top-it-is-toppen">
-        <p>Beställningsdatum: ${item.date}</p>
-        <p>Beställare: ${item.firstname} ${item.surname}</p>
-        <p>Leveransaddress: ${item.address}</p>
+        <p class="orderhistory-item-info h5">Beställningsdatum: ${item.date}</p>
+        <p class="orderhistory-item-info">Beställare: ${item.firstname} ${item.surname}</p>
+        <p class="orderhistory-item-info">Leveransaddress: ${item.address}</p>
         `)
 
       for (let i = 0; i < item.order.length; i++) {
-        console.log("i: ", i, "item.order: ", item.order)
-        $('main').append(/*html*/`<p>${item.order[i].name}, ${item.order[i].qty} st</p>
-                    `)}
-      console.log("item.price: ", item.price)
-      $("main").append(/*html*/`<p>Totalpris: ${item.price} kr</p>
+        $('main').append(/*html*/`<p class="orderhistory-item-info">${item.order[i].name}, ${item.order[i].qty} st</p>`)
+      }
+      $("main").append(/*html*/`<p class="orderhistory-item-info h5">Totalpris: ${item.price} kr</p>
       </div>`)
-      
+
     }
-      $('main').append(/*html*/`<span><a class="nav-link" href="#produkter"><button type="button" class="btn btn-light btn-lg productpage-btn order-sm-1 order-md-2">Till butiken</button></a>
+    $('main').append(/*html*/`<span><a class="nav-link" href="#produkter"><button type="button" class="btn  btn-primary btn-lg productpage-btn order-sm-1 order-md-2">Till butiken</button></a>
       </span>`)
   }
 
@@ -66,7 +64,6 @@ class OrderHistory {
     store.cartQty = 0
     store.save()
     $('.oi-cart').html(" " + store.cartQty)
-    console.log("Emptied store.cartProducts")
   }
 
 

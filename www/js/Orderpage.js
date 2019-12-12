@@ -4,9 +4,9 @@ class Orderpage{
     //store.order = [];
         
     $('body').on('click', '.yes-btn', function () { 
-      $('body').removeClass('modal-open');
-      
-      new Order({
+			$('body').removeClass('modal-open');
+			//sparas tills köpet gått igenom
+      store.newOrder = {
         firstname: $('#firstname').val(),
         surname:  $('#surname').val(),
         email: $('#email').val(),
@@ -15,10 +15,8 @@ class Orderpage{
         date: new Date().toLocaleString('SV'),
         order: store.cartProducts,
         price: store.grandTotalSum
-      });
-	//store.order.push(info)
-	//console.log('ordern', store.order)
-});
+			}
+})
 }
 
 render() {
@@ -29,38 +27,38 @@ render() {
 				<section class="form-row">
 					<section class="form-group col-md-6">
 						<label for="firstName">Förnamn</label>
-						<input type="firstName" class="form-control" id="firstname" placeholder="ex: Alexander">
+						<input type="firstName" class="form-control" id="firstname" placeholder="ex: Alexander" required>
 					</section>
 					<section class="form-group col-md-6">
 						<label for="inputSurname">Efternamn</label>
-						<input type="surname" class="form-control" id="surname" placeholder="ex: Svensson">
+						<input type="surname" class="form-control" id="surname" placeholder="ex: Svensson" required>
 					</section>
 				</section>
 				<section class="form-group">
 					<label for="inputEmail">Email</label>
-					<input type="text" class="form-control" id="email" placeholder="ex: alexaxander@hotmail.com">
+					<input type="text" class="form-control" id="email" placeholder="ex: alexaxander@hotmail.com" required>
 				</section>
 				<section class="form-group">
 					<label for="inputAddress">Address</label>
-					<input type="text" class="form-control" id="address" placeholder="ex: Mjaugatan 1337">
+					<input type="text" class="form-control" id="address" placeholder="ex: Mjaugatan 1337" required>
 				</section>
 				<section class="form-row">
 					<section class="form-group col-md-6">
 						<label for="inputCity">Stad</label>
-						<input type="text" class="form-control" id="city" placeholder="ex: Stockholm">
+						<input type="text" class="form-control" id="city" placeholder="ex: Orminge" required>
 					</section>
 					<section class="form-group col-md-2">
 						<label for="inputZip">Postkod</label>
-						<input type="text" class="form-control" id="zip" placeholder="ex: 123 45">
+						<input type="text" class="form-control" id="zip" placeholder="ex: 123 45" required>
 					</section>
 					<section class="form-group col-md-4">
 						<label for="inputZip">Personnummer</label>
-						<input type="text" class="form-control" id="personNr" placeholder="xxxxxx-xxxx">
+						<input type="text" class="form-control" id="personNr" placeholder="xxxxxx-xxxx" required>
 					</section>
 				</section>
 				<section class="form-group">
 					<section class="form-check">
-						<input class="form-check-input" type="checkbox" id="gridCheck">
+						<input class="form-check-input" type="checkbox" id="gridCheck" required>
 						<label class="form-check-label" for="gridCheck">
 							Acceptera användarvillkor
 						</label>
@@ -68,7 +66,7 @@ render() {
 					<button type="button" class="btn btn-primary confirmOrder-btn mt-3" data-toggle="modal" data-target="#confirmationModal">
 						Bekräfta beställning
 					</button>
-					<button type="cancel" class="formPageBtn btn btn-secondary mt-3" disableValidation="true" formaction="#cart">
+					<button type="cancel" class="formPageBtn btn btn-secondary mt-3" formnovalidate formaction="#cart">
 						Avbryt 
 					</button>
 				</section>

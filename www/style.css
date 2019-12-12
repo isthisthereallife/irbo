@@ -10538,6 +10538,10 @@ main {
   border-top: 1px solid black;
 }
 
+.orderhistory-item-info {
+  margin-bottom: 0px;
+}
+
 .img-fluid {
   width: 100%;
   object-fit: cover;
