@@ -18,8 +18,6 @@ class Cart {
     //bool för att se om valet är unikt/nytt
     let unique = true;
 
-    console.log("added one " + product.name)
-
     //om listan inte är tom
     if (store.cartProducts.length > 0) {
       //loopa igenom listan
