@@ -10522,6 +10522,18 @@ main {
   align-self: center;
 }
 
+.sectionAdjustment {
+  padding-left: 0;
+}
+
+.cartText {
+  margin-bottom: 8px;
+}
+
+.heyYou {
+  display: flex;
+}
+
 .img-fluid {
   width: 100%;
   object-fit: cover;
