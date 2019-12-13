@@ -15,7 +15,7 @@ class Orderpage{
         date: new Date().toLocaleString('SV'),
         order: store.cartProducts,
         price: store.grandTotalSum
-			}
+		}
 })
 }
 

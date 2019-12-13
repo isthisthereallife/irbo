@@ -32,7 +32,7 @@ class Checkoutpage {
 							<option value="3">22</option>
 							<option value="3">23</option>
 					  </select>	
-					 </div>
+					 </section>
 					</section>
 					<section class="form-group col-md-6">
 						<label for="cvc">CVC</label>

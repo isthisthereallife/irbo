@@ -159,7 +159,7 @@ class Cart {
                             <span id="remove-item-button-${item.id}" class="oi oi-minus"></span>
                             ${item.qty}
                             <span id="add-item-button-${item.id}" class="oi oi-plus"></span> 
-                            <span class="data-price">${item.price * item.qty} Kr</span><div></div>
+                            <span class="data-price">${item.price * item.qty} Kr</span><section></section>
                             <span >Du tjänar ${discountSum} kr, du får ${amountOfDiscounts} gratis!</span></p></li>`)
         }
         else {
@@ -216,21 +216,21 @@ class Cart {
     else {
       $('main').html(`
         <section class="container mt-4 ml-5">
-            <div class="row">
-                <div class="col">
-                    <div class="row ml-1">
+            <section class="row">
+                <section class="col">
+                    <section class="row ml-1">
                         <h2 class="h1">Varukorg</h2>
-                    </div>
-                    <div class="row ml-1">
+                    </section>
+                    <section class="row ml-1">
                         <h4>Din varukorg är tom!</h4>
-                    </div>
-                    <div class="row"> 
+                    </section>
+                    <section class="row"> 
                         <a class="nav-link" href="#produkter">
                             <button type="button" class="btn btn-primary btn-lg productpage-btn">Till butiken</button>
                         </a>
-                    </div>
-                </div>
-            </div>
+                    </section>
+                </section>
+            </section>
         </section>
     `)
     }
