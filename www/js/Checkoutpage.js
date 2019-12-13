@@ -17,7 +17,7 @@ class Checkoutpage {
 				<section class="form-row">
 					<section class="form-group col-md-6">
 						<label for="dateOut">Utgångsdatum</label>
-					<div class="form-row">
+					<section class="form-row">
 						<select class="form-control col-5 mr-auto" id="inlineFormCustomSelect" required>
 							<option value="">Månad</option>
 							<option value="1">01</option>
@@ -32,7 +32,7 @@ class Checkoutpage {
 							<option value="3">22</option>
 							<option value="3">23</option>
 					  </select>	
-					 </div>
+					 </section>
 					</section>
 					<section class="form-group col-md-6">
 						<label for="cvc">CVC</label>

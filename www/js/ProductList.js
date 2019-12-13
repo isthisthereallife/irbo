@@ -15,10 +15,10 @@ class ProductList {
     $('main').attr('data-page','product-list-page');
     $('main').html(`
     <section class="container mt-4">
-      <div class="row">
-          <div class="col">
+      <section class="row">
+          <section class="col">
             <h1 class="text-center">Våra Ormar</h1>
-          </div>
+          </section>
         </section>
         <section class="container">
           <section class="row text-center ">

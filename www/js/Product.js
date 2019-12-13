@@ -70,24 +70,24 @@ class Product {
     $("main").html(/*html*/ `
     <section class="container">
      <section class="row">
-        <section class="col ">
+        <div class="col ">
           <h2 class="h1">${this.name}</h2>
-        </section>
+        </div>
       </section>
       <section class="row product">
-        <section class="col-12 col-lg-6">
+        <div class="col-12 col-lg-6">
           <p>${this.description}</p>
-          <h4 class="pb-2">Orminformation</h4>
-          <section class="row pb-4 align-items-center">
-              <h6 class="col-7">Pris ${this.price} kr</h6>
-              <h6 class="col-5">Vikt ${this.weight} kg</h6>
-              <h6 class="col-7">Fraktpris ${this.weight * 40} kr</h6>
-              <button id="buy-button-${this.id}" class="buy-button ml-3 btn btn-primary my-2 col-5">Köp</button>
-          </section>
-        </section>
-        <section class="col-12 col-lg-6">
+          <h5 class="pb-2">Orminformation</h5>
+          <div class="row pb-4">
+              <h6 class="col-3">Pris ${this.price} kr</h6>
+              <h6 class="col-3">Vikt ${this.weight} kg</h6>
+              <h6 class="col-3">Fraktpris ${this.weight * 40} kr</h6>
+              <button id="buy-button-${this.id}" class="btn btn-primary my-2 col-3">Köp</button>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
           <img class="img-fluid border border-primary rounded" src="${this.image}">
-        </section>
+        </div>
       </section>
       </section>
     `);
@@ -97,21 +97,21 @@ class Product {
     // This is how I render myself in a list of products
     // (this method is called from a ProductList)
     return `
-        <section class="col-12 col-md-6 col-lg-4 mt-3 product">
+        <div class="col-12 col-md-6 col-lg-4 mt-3 product">
           <a href="#${this.slug}">
           <img class="img-fluid border border-primary rounded w-70 h-70" src="${this.image}">
-            <section class="row mb-3 ml-1 mt-2">
+            <div class="row mb-3 ml-1 mt-2">
                 <button id="buy-button-${this.id}" class="col-4 btn btn-primary mt-2 buy-btn">Köp</button>
-                <section class="col-8">
-                  <section class="row">
+                <div class="col-8">
+                  <div class="row">
                     <h4 class="-100 col produktListaRubrik">${this.name}</h4>
                     <h6 class="col-12">${this.price}:-</h6>
-                  </section>
-                </section>
-            </section>
-            </section>
+                  </div>
+                </div>
+            </div>
+            </div>
           </a>
-        </section>
+        </div>
     `;
   }
 }
