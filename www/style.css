@@ -10553,6 +10553,10 @@ main {
   font-size: 20px;
 }
 
+.buy-button {
+  max-width: 100px;
+}
+
 .snakebby-logo {
   width: 200px;
   height: 60px;
