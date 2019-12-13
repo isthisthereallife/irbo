@@ -24,9 +24,18 @@ class Checkoutpage {
 							<option value="2">02</option>
 							<option value="3">03</option>
 							<option value="3">04</option>
+							<option value="3">05</option>
+							<option value="3">06</option>
+							<option value="3">07</option>
+							<option value="3">08</option>
+							<option value="3">09</option>
+							<option value="3">10</option>
+							<option value="3">11</option>
+							<option value="3">12</option>
 						  </select>		
 						<select class="form-control col-5 mr-auto" id="inlineFormCustomSelect">
 							<option value="">År</option>
+							<option value="1">19</option>
 							<option value="1">20</option>
 							<option value="2">21</option>
 							<option value="3">22</option>
