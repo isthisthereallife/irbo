@@ -10664,3 +10664,7 @@ li a.nav-link.navbar-link {
 html {
   overflow-y: scroll;
 }
+
+.nav-till-butik {
+  padding-left: 0;
+}
