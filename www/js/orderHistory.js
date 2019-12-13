@@ -19,7 +19,7 @@ class OrderHistory {
             <section class="container">
               <section class="row">
                 <section class="col">
-                  <h1 class="text-center mt-4">Tack för att du handlar hos oss!</h1>
+                  <h2 class="text-center mt-4">Tack för att du handlar hos oss!</h2>
                 <section class="row">
                   <section class="col-8">
                     <h3 class="mt-3 ">Din orderhistorik</h3></section>
