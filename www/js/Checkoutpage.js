@@ -12,20 +12,20 @@ class Checkoutpage {
 				</section>
 				<section class="form-group">
 					<label for="cardNumber">Kortnummer</label>
-					<input type="text" class="form-control" id="cardNumber" placeholder="xxxx xxxx xxxx xxxx" required/>
+					<input type="text" class="form-control" id="cardNumber" placeholder="xxxx xxxx xxxx xxxx"/>
 				</section>
 				<section class="form-row">
 					<section class="form-group col-md-6">
 						<label for="dateOut">Utgångsdatum</label>
-					<section class="form-row">
-						<select class="form-control col-5 mr-auto" id="inlineFormCustomSelect" required>
+					<div class="form-row">
+						<select class="form-control col-5 mr-auto" id="inlineFormCustomSelect">
 							<option value="">Månad</option>
 							<option value="1">01</option>
 							<option value="2">02</option>
 							<option value="3">03</option>
 							<option value="3">04</option>
 						  </select>		
-						<select class="form-control col-5 mr-auto" id="inlineFormCustomSelect" required>
+						<select class="form-control col-5 mr-auto" id="inlineFormCustomSelect">
 							<option value="">År</option>
 							<option value="1">20</option>
 							<option value="2">21</option>
@@ -36,7 +36,7 @@ class Checkoutpage {
 					</section>
 					<section class="form-group col-md-6">
 						<label for="cvc">CVC</label>
-						<input type="text" class="form-control" id="cvc" placeholder="xxx" required/>
+						<input type="text" class="form-control" id="cvc" placeholder="xxx"/>
 					</section>
 				</section>
 				<button type="submit" class="formPageBtn btn btn-primary" id="confirm-buy-btn" formaction="#orderhistory">

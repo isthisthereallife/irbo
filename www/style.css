@@ -10579,7 +10579,7 @@ main {
 .ani-ul {
   display: flex;
   text-align: center;
-  justify-content: right;
+  justify-content: flex-end;
   align-items: flex-end;
   flex-grow: 1;
 }
