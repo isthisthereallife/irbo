@@ -17,7 +17,7 @@ class Orderpage {
         firstname: $('#firstname').val(),
         surname: $('#surname').val(),
         email: $('#email').val(),
-        adress: $('#address').val(),
+        address: $('#address').val(),
         city: $('#city').val(),
         date: new Date().toLocaleString('SV'),
         order: store.cartProducts,
