@@ -205,7 +205,7 @@ class Cart {
                     </section>
                     <section>
                         <a class="nav-link ml-0 pl-0">
-                            <button type="button" class="btn btn-danger" id="clear-cart-button">Töm varukorgen</button>
+                            <button type="button" class="btn btn-secondary" id="clear-cart-button">Töm varukorgen</button>
                         </a>
                     </section>
                 </section>
