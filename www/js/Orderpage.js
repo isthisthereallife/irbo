@@ -9,7 +9,9 @@ class Orderpage {
     $('body').on('click', '.yes-btn', () => {
       $('body')
         .removeClass('modal-open')
-        .css({ padding: 0 });
+				.css({ padding: 0 });
+		$('.modal').remove();
+		$('.modal-backdrop').remove();
       //sparas tills köpet gått igenom
       store.newOrder = {
         firstname: $('#firstname').val(),
