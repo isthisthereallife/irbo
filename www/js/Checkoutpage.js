@@ -3,10 +3,10 @@ class Checkoutpage {
   render() {
 
     //for (let order of store.order){
-    $('main').html(/*html*/`
-		<form id="paymentForm">
+  $('main').html(/*html*/`
 			<section class="container">
-				<h1 class="text-center mt-3">Kortbetalning</h1>
+				<form id="paymentForm">
+					<h1 class="text-center mt-3">Kortbetalning</h1>
 				<section>
 					<h5>Totalpris: ${store.grandTotalSum}:-</h5>
 				</section>
@@ -33,7 +33,7 @@ class Checkoutpage {
 							<option value="3">11</option>
 							<option value="3">12</option>
 						  </select>		
-						<select class="form-control col-5 mr-auto" id="inlineFormCustomSelect">
+						<select class="form-control col-5 mr-auto" id="inlineFormCustomSelect" required>
 							<option value="">År</option>
 							<option value="1">19</option>
 							<option value="1">20</option>
@@ -54,8 +54,9 @@ class Checkoutpage {
 				<button type="cancel" class=" btn btn-secondary" formnovalidate formaction="#cart">
 					Avbryt
 				</button>
-			</section>
-		</form>
+			</form>
+		</section>
+		
   `)
   }
 }

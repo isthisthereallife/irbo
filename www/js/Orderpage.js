@@ -1,25 +1,32 @@
-class Orderpage{
+class Orderpage {
+  constructor() {
+	//store.order = [];
+	
+	$('body').on('click', '.confirmOrder-btn', () => {
+		setTimeout(() => $('body').css({padding:0}), 0);
+	});
 
-  constructor(){
-    //store.order = [];
-        
-    $('body').on('click', '.yes-btn', function () { 
-			$('body').removeClass('modal-open');
-			//sparas tills köpet gått igenom
+    $('body').on('click', '.yes-btn', () => {
+      $('body')
+        .removeClass('modal-open')
+				.css({ padding: 0 });
+		$('.modal').remove();
+		$('.modal-backdrop').remove();
+      //sparas tills köpet gått igenom
       store.newOrder = {
         firstname: $('#firstname').val(),
-        surname:  $('#surname').val(),
+        surname: $('#surname').val(),
         email: $('#email').val(),
         adress: $('#address').val(),
         city: $('#city').val(),
         date: new Date().toLocaleString('SV'),
         order: store.cartProducts,
         price: store.grandTotalSum
-		}
-})
-}
+      };
+    });
+  }
 
-render() {
+  render() {
     $("main").html(/*html*/ `
     <section class="container mt-3">
     <h1 class="text-center">Dina uppgifter</h1>
@@ -72,7 +79,7 @@ render() {
 				</section>
 			</form>
 
-			<section class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true" data-backdrop="false">
+			<section class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true" data-backdrop="true">
 				<section class="modal-dialog" role="document">
 					<section class="modal-content cool-modal">
 						<section class="modal-header cool-modal">
@@ -91,10 +98,6 @@ render() {
 					</section>
 				</section>
 			</section>
-`)};
-
+`);
+  }
 }
-
-
-
-
