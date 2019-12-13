@@ -71,18 +71,18 @@ class Product {
     <section class="container">
      <section class="row">
         <div class="col ">
-          <h2 class="h1">${this.name}</h2>
+          <h2 class="h1 mt-3">${this.name}</h2>
         </div>
       </section>
       <section class="row product">
         <div class="col-12 col-lg-6">
           <p>${this.description}</p>
-          <h5 class="pb-2">Orminformation</h5>
-          <div class="row pb-4">
-              <h6 class="col-3">Pris ${this.price} kr</h6>
-              <h6 class="col-3">Vikt ${this.weight} kg</h6>
-              <h6 class="col-3">Fraktpris ${this.weight * 40} kr</h6>
-              <button id="buy-button-${this.id}" class="btn btn-primary my-2 col-3">Köp</button>
+          <h4 class="mb-2">Orminformation</h4>
+          <div class="row pb-4 align-items-center">
+              <h6 class="col-7">Pris ${this.price} kr</h6>
+              <h6 class="col-5">Vikt ${this.weight} kg</h6>
+              <h6 class="col-7">Fraktpris ${this.weight * 40} kr</h6>
+              <button id="buy-button-${this.id}" class="buy-button btn btn-primary my-2 col-5">Köp</button>
           </div>
         </div>
         <div class="col-12 col-lg-6">
