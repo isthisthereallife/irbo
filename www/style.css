@@ -10668,3 +10668,12 @@ html {
 .nav-till-butik {
   padding-left: 0;
 }
+
+.cool-modal {
+  background-color: white !important;
+  border-bottom: none;
+}
+
+.cool-modal-footer {
+  border-top: 1px solid #434949;
+}
