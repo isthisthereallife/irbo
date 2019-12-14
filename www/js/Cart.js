@@ -191,21 +191,21 @@ class Cart {
 
       //skriv ut namn, pris per st, antal, pris total
       $('main .container').append(`
-                        </ul>
-                        <h4 class="cartText">Pris: ${Math.round(sum)} kr</h4>
-                        <p class="cartText">Varav moms: ${Math.round(moms)} kr</p>
-                        <p class="cartText">Vikt: ${Math.round(totalWeight)} kg</p>
-                        <p class="cartText">Fraktkostnad: ${Math.round(shippingCost)} kr</p>
-                        <h4 class="cartText">Att betala: ${Math.round(grandTotalSum)} kr</h4>
+                      </ul>
+                      <h4 class="cartText">Pris: ${Math.round(sum)} kr</h4>
+                      <p class="cartText">Varav moms: ${Math.round(moms)} kr</p>
+                      <p class="cartText">Vikt: ${Math.round(totalWeight)} kg</p>
+                      <p class="cartText">Fraktkostnad: ${Math.round(shippingCost)} kr</p>
+                      <h4 class="cartText">Att betala: ${Math.round(grandTotalSum)} kr</h4>
                     </section>
                     <section>
                         <a class="nav-link ml-0 pl-0 mt-2 mb-3" href="#orderpage">
-                            <button type="button" class="btn btn-primary">Beställ här</button>
+                          <button type="button" class="btn btn-primary">Beställ här</button>
                         </a>
                     </section>
                     <section>
                         <a class="nav-link ml-0 pl-0">
-                            <button type="button" class="btn btn-secondary" id="clear-cart-button">Töm varukorgen</button>
+                          <button type="button" class="btn btn-secondary" id="clear-cart-button">Töm varukorgen</button>
                         </a>
                     </section>
                 </section>
@@ -215,22 +215,22 @@ class Cart {
 
     else {
       $('main').html(`
-        <section class="container mt-4 ml-5">
-            <section class="row">
-                <section class="col">
-                    <section class="row ml-1">
-                        <h2 class="h1">Varukorg</h2>
-                    </section>
-                    <section class="row ml-1">
-                        <h4>Din varukorg är tom!</h4>
-                    </section>
-                    <section class="row"> 
-                        <a class="nav-link" href="#produkter">
-                            <button type="button" class="btn btn-primary btn-lg productpage-btn">Till butiken</button>
-                        </a>
-                    </section>
-                </section>
+        <section class="container">
+          <section class="row">
+            <section class="col">
+              <section class="row ml-1">
+                <h2 class="h1">Varukorg</h2>
+              </section>
+              <section class="row ml-1">
+                <h4>Din varukorg är tom!</h4>
+              </section>
+              <section class="row"> 
+                <a class="nav-link" href="#produkter">
+                  <button type="button" class="btn btn-primary btn-lg productpage-btn">Till butiken</button>
+                </a>
+              </section>
             </section>
+          </section>
         </section>
     `)
     }
