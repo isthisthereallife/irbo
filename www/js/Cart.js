@@ -64,7 +64,7 @@ class Cart {
   }
   //töm kundvagnen helt
   clearCart() {
-    for (let item of store.cartProducts){
+    for (let item of store.cartProducts) {
       this.delete(item);
     }
     store.cartQty = 0;
@@ -82,7 +82,7 @@ class Cart {
       if (product.id === store.cartProducts[i].id) {
         store.cartQty -= store.cartProducts[i].qty;
         store.cartProducts[i].qty = 1;
-        store.cartProducts.splice(i,1);
+        store.cartProducts.splice(i, 1);
       }
     }
     store.save();
@@ -145,8 +145,8 @@ class Cart {
         let amountOfDiscounts = this.discountNrs(item.qty);
         let discountSum = this.calculateDiscount(item.discount, item.price, amountOfDiscounts);
         sum -= discountSum;
-        
-        if (discountSum>0) {
+
+        if (discountSum > 0) {
           $('main .row .col').append(`
                         <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
                         <p>
@@ -211,6 +211,14 @@ class Cart {
                 </section>
             </section>
     `);
+      if (store.order) {
+        $('main .container').append(`
+      <section>
+        <a class="nav-link ml-0 pl-0 mt-2" href="#orderhistory">
+          <button type="button" class="btn btn-primary">Din orderhistorik</button>
+        </a>
+      </section>`)
+      }
     }
 
     else {
@@ -233,6 +241,15 @@ class Cart {
           </section>
         </section>
     `)
+
+      if (store.order) {
+        $('main').append(`
+      <section>
+        <a class="nav-link ml-5 pl-0 mt-2 mb-3" href="#orderhistory">
+          <button type="button" class="btn btn-primary">Din orderhistorik</button>
+        </a>
+      </section>`)
+      }
     }
   }
 }
