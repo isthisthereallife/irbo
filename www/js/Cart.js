@@ -221,39 +221,56 @@ class Cart {
                     </section>
                     <section>
                         <a class="nav-link ml-0 pl-0 mt-2 mb-3" href="#orderpage">
-                            <button type="button" class="btn btn-primary">Beställ här</button>
+                          <button type="button" class="btn btn-primary">Beställ här</button>
                         </a>
                     </section>
                     <section>
                         <a class="nav-link ml-0 pl-0">
-                            <button type="button" class="btn btn-secondary" id="clear-cart-button">Töm varukorgen</button>
+                          <button type="button" class="btn btn-secondary" id="clear-cart-button">Töm varukorgen</button>
                         </a>
                     </section>
                 </section>
             </section>
     `);
+      if (store.order) {
+        $('main .container').append(`
+      <section>
+        <a class="nav-link ml-0 pl-0 mt-2" href="#orderhistory">
+          <button type="button" class="btn btn-primary">Din orderhistorik</button>
+        </a>
+      </section>`)
+      }
     }
 
     else {
       $('main').html(`
-        <section class="container mt-4 ml-5">
-            <section class="row">
-                <section class="col">
-                    <section class="row ml-1">
-                        <h2 class="h1">Varukorg</h2>
-                    </section>
-                    <section class="row ml-1">
-                        <h4>Din varukorg är tom!</h4>
-                    </section>
-                    <section class="row"> 
-                        <a class="nav-link" href="#produkter">
-                            <button type="button" class="btn btn-primary btn-lg productpage-btn">Till butiken</button>
-                        </a>
-                    </section>
-                </section>
+        <section class="container">
+          <section class="row">
+            <section class="col">
+              <section class="row ml-1">
+                <h2 class="h1">Varukorg</h2>
+              </section>
+              <section class="row ml-1">
+                <h4>Din varukorg är tom!</h4>
+              </section>
+              <section class="row"> 
+                <a class="nav-link" href="#produkter">
+                  <button type="button" class="btn btn-primary btn-lg productpage-btn">Till butiken</button>
+                </a>
+              </section>
             </section>
+          </section>
         </section>
     `)
+
+      if (store.order) {
+        $('main').append(`
+      <section>
+        <a class="nav-link ml-5 pl-0 mt-2 mb-3" href="#orderhistory">
+          <button type="button" class="btn btn-primary">Din orderhistorik</button>
+        </a>
+      </section>`)
+      }
     }
   }
 }
