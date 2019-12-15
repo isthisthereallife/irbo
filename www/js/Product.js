@@ -64,7 +64,24 @@ class Product {
     });
   }
 
+  tusentalsavskiljare(siffror){
+    //loopa igenom talet
+    siffror = siffror.toString()
+    let sifArr = siffror.split("")
+    if (sifArr.length >3){
+        for (let i = sifArr.length-1; i>0;i=i-3){
+                    if ((i-3) >= 0){
+            sifArr.splice(i-2,0," ")
+                    }
+        }
+    }
+    siffror = sifArr.toString()
+    siffror = siffror.replace(/,/g, "")
+    return siffror
+}
+
   render() {
+    let pris = this.tusentalsavskiljare(this.price)
     // This is how I render myself on a product-detail page
     // there it only me
     $("main").html(/*html*/ `
@@ -79,7 +96,7 @@ class Product {
           <p>${this.description}</p>
           <h4 class="mb-2">Orminformation</h4>
           <div class="row pb-4 align-items-center">
-              <h6 class="col-7">Pris ${this.price} kr</h6>
+              <h6 class="col-7">Pris ${pris} kr</h6>
               <h6 class="col-5">Vikt ${this.weight} kg</h6>
               <h6 class="col-7">Fraktpris ${this.weight * 40} kr</h6>
               <button id="buy-button-${this.id}" class="buy-button btn btn-primary my-2 col-5">Köp</button>
@@ -94,6 +111,7 @@ class Product {
   }
 
   renderInList() {
+    let pris = this.tusentalsavskiljare(this.price)
     // This is how I render myself in a list of products
     // (this method is called from a ProductList)
     return `
@@ -105,7 +123,7 @@ class Product {
                 <div class="col-8">
                   <div class="row">
                     <h4 class="-100 col produktListaRubrik">${this.name}</h4>
-                    <h6 class="col-12">${this.price}:-</h6>
+                    <h6 class="col-12">${pris}:-</h6>
                   </div>
                 </div>
             </div>

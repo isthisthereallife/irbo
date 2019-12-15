@@ -9,6 +9,21 @@ class Cart {
     store.save();
   }
 
+  tusentalsavskiljare(siffror){
+    //loopa igenom talet
+    siffror = siffror.toString()
+    let sifArr = siffror.split("")
+    if (sifArr.length >3){
+        for (let i = sifArr.length-1; i>0;i=i-3){
+                    if ((i-3) >= 0){
+            sifArr.splice(i-2,0," ")
+                    }
+        }
+    }
+    siffror = sifArr.toString()
+    siffror = siffror.replace(/,/g, "")
+    return siffror
+}
   /**
    * lägga till produkter i kundvagnen
    * @param {*} product;
@@ -146,6 +161,8 @@ class Cart {
         let discountSum = this.calculateDiscount(item.discount, item.price, amountOfDiscounts);
         sum -= discountSum;
         
+        let itemprice = this.tusentalsavskiljare(item.price)
+        let itemsum = this.tusentalsavskiljare(item.price * item.qty)
         if (discountSum>0) {
           $('main .row .col').append(`
                         <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
@@ -155,11 +172,11 @@ class Cart {
                         </p>
                         <p>
                             <span id="delete-item-button-${item.id}" class="oi oi-delete"></span>
-                            <span> ${item.price} Kr/st </span> 
+                            <span> ${itemprice} Kr/st </span> 
                             <span id="remove-item-button-${item.id}" class="oi oi-minus"></span>
                             ${item.qty}
                             <span id="add-item-button-${item.id}" class="oi oi-plus"></span> 
-                            <span class="data-price">${item.price * item.qty} Kr</span><section></section>
+                            <span class="data-price">${itemsum} Kr</span><section></section>
                             <span >Du tjänar ${discountSum} kr, du får ${amountOfDiscounts} gratis!</span></p></li>`)
         }
         else {
@@ -171,32 +188,38 @@ class Cart {
                         </p>
                         <p>
                             <span id="delete-item-button-${item.id}" class="oi oi-delete"></span>
-                            <span> ${item.price} Kr/st</span> 
+                            <span> ${itemprice} Kr/st</span> 
                             <span id="remove-item-button-${item.id}" class="oi oi-minus"></span>
                             ${item.qty}
                             <span id="add-item-button-${item.id}" class="oi oi-plus"></span> 
-                            <span class="data-price">${item.price * item.qty} Kr</span>
+                            <span class="data-price">${itemsum} Kr</span>
                         </p>
                     </li>
           `)
         }
       }
 
-      let shippingCost = this.calculateShippingCost();
-      let totalWeight = this.calculateTotalWeight();
-      let moms = sum / 4;
-      let grandTotalSum = sum + shippingCost;
-      store.grandTotalSum = grandTotalSum;
-      store.save();
+      let shippingCost = this.calculateShippingCost()
+      let totalWeight = this.calculateTotalWeight()
+      let moms = sum / 4
+      let grandTotalSum = sum + shippingCost
+      
+      sum = this.tusentalsavskiljare(Math.round(sum))
+      shippingCost = this.tusentalsavskiljare(Math.round(shippingCost))
+      totalWeight = this.tusentalsavskiljare(Math.round(totalWeight))
+      moms = this.tusentalsavskiljare(Math.round(moms))
+      grandTotalSum = this.tusentalsavskiljare(Math.round(grandTotalSum))
+      store.grandTotalSum = grandTotalSum
+      store.save()
 
       //skriv ut namn, pris per st, antal, pris total
       $('main .container').append(`
                         </ul>
-                        <h4 class="cartText">Pris: ${Math.round(sum)} kr</h4>
-                        <p class="cartText">Varav moms: ${Math.round(moms)} kr</p>
-                        <p class="cartText">Vikt: ${Math.round(totalWeight)} kg</p>
-                        <p class="cartText">Fraktkostnad: ${Math.round(shippingCost)} kr</p>
-                        <h4 class="cartText">Att betala: ${Math.round(grandTotalSum)} kr</h4>
+                        <h4 class="cartText">Pris: ${sum} kr</h4>
+                        <p class="cartText">Varav moms: ${moms} kr</p>
+                        <p class="cartText">Vikt: ${totalWeight} kg</p>
+                        <p class="cartText">Fraktkostnad: ${shippingCost} kr</p>
+                        <h4 class="cartText">Att betala: ${grandTotalSum} kr</h4>
                     </section>
                     <section>
                         <a class="nav-link ml-0 pl-0 mt-2 mb-3" href="#orderpage">

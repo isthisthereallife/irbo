@@ -1,7 +1,7 @@
 class Checkoutpage {
 
   render() {
-
+		
     //for (let order of store.order){
   $('main').html(/*html*/`
 			<section class="container">
