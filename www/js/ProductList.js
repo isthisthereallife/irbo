@@ -12,7 +12,7 @@ class ProductList {
   }
 
   render() {
-    $('main').attr('data-page','product-list-page');
+    $('main').attr('data-page', 'product-list-page');
     $('main').html(`
     <section class="container mt-4">
       <section class="row">

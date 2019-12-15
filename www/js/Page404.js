@@ -1,15 +1,5 @@
 class Page404 {
 
-  /*
-    I am a Page404.
-
-    I will be displayed when
-    the App could not find a route.
-    I will just say "sorry" to the user...
-  */
-
-
-  //metod som körs när changeRoute i App.js kör pageToShow.render() (med Page404 sparad som pageToShow)
   render() {
     $('main').html(/*html*/`
       <section class="row">

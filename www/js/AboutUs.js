@@ -4,9 +4,9 @@ class AboutUs {
     I am an About Us page.
     I display info about us.cv
   */
- 
+
   render() {
-    $('main').attr('data-page','about-us-page');
+    $('main').attr('data-page', 'about-us-page');
     $('main').html(/*html*/`
       <section class="container mt-3 data-aboutUs text-center">
         <section class="row w-100">

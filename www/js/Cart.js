@@ -1,29 +1,27 @@
 class Cart {
 
   constructor() {
-    //skapa en array i localstorage om det inte redan finns en
+
     store.cartProducts = store.cartProducts || [];
     store.cartQty = store.cartQty || 0;
-    //to do, en map för kvantitet
-    //id som nycklar, kvantitet som värde
+
     store.save();
   }
 
-  tusentalsavskiljare(siffror){
-    //loopa igenom talet
+  tusentalsavskiljare(siffror) {
     siffror = siffror.toString()
     let sifArr = siffror.split("")
-    if (sifArr.length >3){
-        for (let i = sifArr.length-1; i>0;i=i-3){
-                    if ((i-3) >= 0){
-            sifArr.splice(i-2,0," ")
-                    }
+    if (sifArr.length > 3) {
+      for (let i = sifArr.length - 1; i > 0; i = i - 3) {
+        if ((i - 3) >= 0) {
+          sifArr.splice(i - 2, 0, " ")
         }
+      }
     }
     siffror = sifArr.toString()
     siffror = siffror.replace(/,/g, "")
     return siffror
-}
+  }
   /**
    * lägga till produkter i kundvagnen
    * @param {*} product;
@@ -79,7 +77,7 @@ class Cart {
   }
   //töm kundvagnen helt
   clearCart() {
-    for (let item of store.cartProducts){
+    for (let item of store.cartProducts) {
       this.delete(item);
     }
     store.cartQty = 0;
@@ -97,7 +95,7 @@ class Cart {
       if (product.id === store.cartProducts[i].id) {
         store.cartQty -= store.cartProducts[i].qty;
         store.cartProducts[i].qty = 1;
-        store.cartProducts.splice(i,1);
+        store.cartProducts.splice(i, 1);
       }
     }
     store.save();
@@ -160,10 +158,10 @@ class Cart {
         let amountOfDiscounts = this.discountNrs(item.qty);
         let discountSum = this.calculateDiscount(item.discount, item.price, amountOfDiscounts);
         sum -= discountSum;
-        
+
         let itemprice = this.tusentalsavskiljare(item.price)
         let itemsum = this.tusentalsavskiljare(item.price * item.qty)
-        if (discountSum>0) {
+        if (discountSum > 0) {
           $('main .row .col').append(`
                         <li class="list-unstyled shadow p-2 mb-2 bg-white rounded data-list-item">
                         <p>
@@ -203,7 +201,7 @@ class Cart {
       let totalWeight = this.calculateTotalWeight()
       let moms = sum / 4
       let grandTotalSum = sum + shippingCost
-      
+
       sum = this.tusentalsavskiljare(Math.round(sum))
       shippingCost = this.tusentalsavskiljare(Math.round(shippingCost))
       totalWeight = this.tusentalsavskiljare(Math.round(totalWeight))

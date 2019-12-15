@@ -1,25 +1,25 @@
 class App {
 
   constructor() {
-    
+
     this.routes = {
       '': new StartPage(),
       'omoss': new AboutUs(),
       'page404': new Page404(),
-      'cart' : new Cart(),
-      'orderhistory' : new OrderHistory(),
+      'cart': new Cart(),
+      'orderhistory': new OrderHistory(),
       'orderpage': new Orderpage(),
       'checkoutpage': new Checkoutpage()
     };
-    
+
     this.cart = new Cart();
     new NavAnimation();
-    
+
     $(window).on('hashchange', () => this.changeRoute());
-    
+
     this.loadProducts();
 
-    $('body').on('click', '.productpage-btn', function () { 
+    $('body').on('click', '.productpage-btn', function () {
       $('.underline').animate(
         {
           left: $('.product-link').offset().left + 8,
@@ -29,11 +29,11 @@ class App {
       );
     })
     //simulate a click on "start" when the logo is clicked
-    $('body').on('click', '#nav-item-logo', function () { 
+    $('body').on('click', '#nav-item-logo', function () {
       $('#nav-item-start').click();
     })
   }
-  
+
 
   changeRoute() {
     // Get the hash from the url - remove the #-sign

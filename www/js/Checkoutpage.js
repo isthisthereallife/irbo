@@ -1,9 +1,9 @@
 class Checkoutpage {
 
-  render() {
-		
-    //for (let order of store.order){
-  $('main').html(/*html*/`
+	render() {
+
+		//for (let order of store.order){
+		$('main').html(/*html*/`
 			<section class="container">
 				<form id="paymentForm">
 					<h1 class="text-center mt-3">Kortbetalning</h1>
@@ -58,6 +58,6 @@ class Checkoutpage {
 		</section>
 		
   `)
-  }
+	}
 }
 

@@ -1,20 +1,9 @@
 class Product {
-  /*
-    I am a Product.
-
-    I know how to display myself on a single page (product detail).
-    I also know how to display myself in a list of products.
-    On top of that I know how to call the cart when someone
-    clicks my buy-button.
-  */
 
   constructor(data, cart) {
-    // Object.assign is used to copy (ADD, NOT OVERWRITE) all properties from data to me
-    //Object.assign kopierar (LÄGGER TILL) från source-objektet (eg. data) till target-objektet(eg. this)
+
     Object.assign(this, data);
-    // I also know who is my cart (the App sent me this info)
-    
-    // I add listeners to my buy-button(s)
+
     this.addBuyButtonListener(cart);
     this.addAddItemListener(cart);
     this.addRemoveItemListener(cart);
@@ -28,7 +17,7 @@ class Product {
       cart.clearCart();
     })
   }
-  
+
   //deleteknappen på varukorgssidan
   addDeleteItemListener(cart) {
     $('body').on('click', `#delete-item-button-${this.id}`, e => {
@@ -64,26 +53,24 @@ class Product {
     });
   }
 
-  tusentalsavskiljare(siffror){
-    //loopa igenom talet
+  tusentalsavskiljare(siffror) {
     siffror = siffror.toString()
     let sifArr = siffror.split("")
-    if (sifArr.length >3){
-        for (let i = sifArr.length-1; i>0;i=i-3){
-                    if ((i-3) >= 0){
-            sifArr.splice(i-2,0," ")
-                    }
+    if (sifArr.length > 3) {
+      for (let i = sifArr.length - 1; i > 0; i = i - 3) {
+        if ((i - 3) >= 0) {
+          sifArr.splice(i - 2, 0, " ")
         }
+      }
     }
     siffror = sifArr.toString()
     siffror = siffror.replace(/,/g, "")
     return siffror
-}
+  }
 
   render() {
     let pris = this.tusentalsavskiljare(this.price)
-    // This is how I render myself on a product-detail page
-    // there it only me
+
     $("main").html(/*html*/ `
     <section class="container">
      <section class="row">
@@ -112,8 +99,7 @@ class Product {
 
   renderInList() {
     let pris = this.tusentalsavskiljare(this.price)
-    // This is how I render myself in a list of products
-    // (this method is called from a ProductList)
+
     return `
         <div class="col-12 col-md-6 col-lg-4 mt-3 product">
           <a href="#${this.slug}">

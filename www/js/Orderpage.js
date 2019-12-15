@@ -1,33 +1,33 @@
 class Orderpage {
-  constructor() {
-	//store.order = [];
-	
-	$('body').on('click', '.confirmOrder-btn', () => {
-		setTimeout(() => $('body').css({padding:0}), 0);
-	});
+	constructor() {
+		//store.order = [];
 
-    $('body').on('click', '.yes-btn', () => {
-      $('body')
-        .removeClass('modal-open')
+		$('body').on('click', '.confirmOrder-btn', () => {
+			setTimeout(() => $('body').css({ padding: 0 }), 0);
+		});
+
+		$('body').on('click', '.yes-btn', () => {
+			$('body')
+				.removeClass('modal-open')
 				.css({ padding: 0 });
-		$('.modal').remove();
-		$('.modal-backdrop').remove();
-      //sparas tills köpet gått igenom
-      store.newOrder = {
-        firstname: $('#firstname').val(),
-        surname: $('#surname').val(),
-        email: $('#email').val(),
-        address: $('#address').val(),
-        city: $('#city').val(),
-        date: new Date().toLocaleString('SV'),
-        order: store.cartProducts,
-        price: store.grandTotalSum
-      };
-    });
-  }
+			$('.modal').remove();
+			$('.modal-backdrop').remove();
+			//sparas tills köpet gått igenom
+			store.newOrder = {
+				firstname: $('#firstname').val(),
+				surname: $('#surname').val(),
+				email: $('#email').val(),
+				address: $('#address').val(),
+				city: $('#city').val(),
+				date: new Date().toLocaleString('SV'),
+				order: store.cartProducts,
+				price: store.grandTotalSum
+			};
+		});
+	}
 
-  render() {
-    $("main").html(/*html*/ `
+	render() {
+		$("main").html(/*html*/ `
     <section class="container mt-3">
     <h1 class="text-center">Dina uppgifter</h1>
 			<form>
@@ -99,5 +99,5 @@ class Orderpage {
 				</section>
 			</section>
 `);
-  }
+	}
 }
